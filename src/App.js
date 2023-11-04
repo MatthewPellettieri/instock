@@ -1,7 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header/header";
+
 
 function App() {
   return (
+    <>
+    <Header />
     <BrowserRouter>
       <Routes>
 		{/* Warehouse */}
@@ -18,6 +22,7 @@ function App() {
 		<Route path="/addInventory" element={<AddInventory />}></Route>
       </Routes>
     </BrowserRouter>
+    </>
   );
 }
 
