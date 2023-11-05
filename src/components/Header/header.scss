@@ -1,0 +1,26 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.background {
+    background-color: $instock-graphite;
+    .logo--container {
+        text-align: center;
+        padding: 1.5rem 0 1.5rem 0;
+    }
+    .logo {
+
+    }
+    .button--container {
+        display: flex;
+        justify-content: space-around;
+    }
+    .nav__button {
+       border-radius: 20px;
+       border: none;
+       color: white;
+       height: 2rem;
+       width: 10rem;
+       background-color: rgb(18, 23, 43, 0.6);
+       padding: 0 1rem 0 1rem;
+    }
+}
