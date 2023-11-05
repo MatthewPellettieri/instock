@@ -1,0 +1,29 @@
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/text" as *;
+@use "./styles/partials/variables" as *;
+
+// removing/replacing default styling
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Titillium;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+
+	&:visited,
+	&:link {
+		color: inherit;
+	}
+}
+
+textarea {
+	overflow: hidden;
+	resize: none;
+}
