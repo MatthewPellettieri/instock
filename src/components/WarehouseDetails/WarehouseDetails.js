@@ -5,9 +5,6 @@ import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import InventoryCard from "../InventoryCard/InventoryCard";
 
 function WarehouseDetails() {
-	console.log(inventoryData);
-	console.log(warehouseData);
-
 	return (
 		<div className="warehouseDetails">
 			<div className="warehouse">
