@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+# remove before mergeing
+/test_data
 
 # production
 /build
