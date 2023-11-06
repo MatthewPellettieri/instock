@@ -2,6 +2,7 @@ import "./WarehouseDetails.scss";
 import warehouseData from "../../test_data/warehouse_JSON.json";
 import inventoryData from "../../test_data/inventory_JSON.json";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
+import InventoryCard from "../InventoryCard/InventoryCard";
 
 function WarehouseDetails() {
 	console.log(inventoryData);
@@ -42,6 +43,7 @@ function WarehouseDetails() {
 					</div>
 				</div>
 			</div>
+			<InventoryCard />
 		</div>
 	);
 }
