@@ -6,8 +6,6 @@ import chevron from "../../assets/Icons/chevron_right-24px.svg";
 function InventoryCard({ itemName, quantity, status, category }) {
 	const upperStatus = status.toUpperCase();
 
-	// need to add check for status
-
 	return (
 		<div className="inventoryCard">
 			<div className="inventoryCard__top">
@@ -31,8 +29,11 @@ function InventoryCard({ itemName, quantity, status, category }) {
 				<div className="inventoryCard__container--right">
 					<div className="inventoryCard__status">
 						<p className="inventoryCard__label">STATUS</p>
-						<div className="inventoryCard__tag">
-							<p className="inventoryCard__tag--text">{upperStatus}</p>
+						<div
+							className={`inventoryCard__tag${
+								status === "In Stock" ? "" : "--noStock"
+							}`}>
+							{upperStatus}
 						</div>
 					</div>
 					<div className="inventoryCard__quantity">
