@@ -1,2 +1,37 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.inventoryCard {
+	padding: 1rem;
+	@include divider;
+
+	&__top {
+		display: flex;
+		padding-bottom: 1rem;
+	}
+
+	&__container {
+		width: 55%;
+	}
+
+	&__item,
+	&__status {
+		padding-bottom: 1rem;
+	}
+
+	&__btm {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__label {
+		@include m-h4;
+		color: $instock-slate;
+		padding-bottom: 0.25rem;
+	}
+
+	&__text {
+		@include m-p2;
+		color: $instock-black;
+	}
+}
