@@ -40,4 +40,17 @@
 			background-repeat: no-repeat;
 		}
 	}
+
+	&__details {
+	}
+
+	&__label {
+		@include m-h4;
+		color: $instock-slate;
+	}
+
+	&__text {
+		@include m-p2;
+		color: $instock-black;
+	}
 }
