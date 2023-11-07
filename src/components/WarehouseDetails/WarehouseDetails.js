@@ -51,7 +51,7 @@ function WarehouseDetails() {
 					</div>
 				</div>
 			</div>
-			{/* <div className="inventoryList">
+			<div className="inventoryList">
 				{warehouseInv.map((item) => (
 					<InventoryCard
 						key={item.id}
@@ -61,7 +61,7 @@ function WarehouseDetails() {
 						category={item.category}
 					/>
 				))}
-			</div> */}
+			</div>
 		</div>
 	);
 }
