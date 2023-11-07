@@ -42,11 +42,24 @@
 	}
 
 	&__details {
+		padding: 1rem;
+		@include divider;
+	}
+
+	&__address {
+		padding-bottom: 2rem;
+	}
+
+	&__contacts {
+		display: flex;
+		justify-content: space-between;
+		width: 95%;
 	}
 
 	&__label {
 		@include m-h4;
 		color: $instock-slate;
+		padding-bottom: 0.25rem;
 	}
 
 	&__text {
