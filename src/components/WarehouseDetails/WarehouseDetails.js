@@ -32,7 +32,7 @@ function WarehouseDetails() {
 					</div>
 					<button className="warehouse__header--button"></button>
 				</div>
-				{/* <div className="warehouse__details">
+				<div className="warehouse__details">
 					<div className="warehouse__address">
 						<p className="warehouse__label">WAREHOUSE ADDRESS:</p>
 						<p className="warehouse__text">{`${address},${city},${country}`}</p>
@@ -49,7 +49,7 @@ function WarehouseDetails() {
 							<p className="warehouse__text">{contact_email}</p>
 						</div>
 					</div>
-				</div> */}
+				</div>
 			</div>
 			{/* <div className="inventoryList">
 				{warehouseInv.map((item) => (
