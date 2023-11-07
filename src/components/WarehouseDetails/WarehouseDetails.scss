@@ -1,2 +1,43 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.warehouseDetails {
+	background-color: $white;
+}
+
+.warehouse {
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		@include divider;
+		padding: 1.5rem 1rem;
+
+		&--container {
+			display: flex;
+			align-items: center;
+		}
+
+		&--icon {
+			width: 24px;
+			height: 24px;
+		}
+
+		&--title {
+			@include m-h1;
+			padding-left: 0.5rem;
+		}
+
+		&--button {
+			height: 36px;
+			width: 36px;
+			border: none;
+			background-color: $instock-indigo;
+			border-radius: 1.25rem;
+			background-image: url("../../assets/Icons/edit_white_24dp.svg");
+			background-size: 55%;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+}
