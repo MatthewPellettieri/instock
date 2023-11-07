@@ -36,7 +36,9 @@ function WarehouseDetails() {
 				<div className="warehouse__details">
 					<div className="warehouse__address">
 						<p className="warehouse__label">WAREHOUSE ADDRESS:</p>
-						<p className="warehouse__text">{`${address}, ${city}, ${country}`}</p>
+						<p className="warehouse__text">
+							{`${address}, ${city}, ${country}`}
+						</p>
 					</div>
 					<div className="warehouse__contacts">
 						<div className="warehouse__contact-name">
