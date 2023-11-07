@@ -118,3 +118,28 @@
 		color: $instock-black;
 	}
 }
+
+.inventoryHeader {
+	display: none;
+
+	@include tablet {
+		display: flex;
+		justify-content: space-between;
+		padding: 1rem 2rem;
+		background-color: rgba($color: $instock-light-grey, $alpha: 0.7);
+	}
+
+	&__container {
+		display: flex;
+	}
+
+	&__label {
+		@extend .warehouse__label;
+		padding-bottom: 0rem;
+	}
+
+	&__icon {
+		width: 16px;
+		height: 16px;
+	}
+}
