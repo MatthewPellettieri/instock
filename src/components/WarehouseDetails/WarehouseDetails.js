@@ -30,9 +30,9 @@ function WarehouseDetails() {
 						/>
 						<p className="warehouse__header--title">{warehouse_name}</p>
 					</div>
-					<button className="warehouse__header--button">EDIT</button>
+					<button className="warehouse__header--button"></button>
 				</div>
-				<div className="warehouse__details">
+				{/* <div className="warehouse__details">
 					<div className="warehouse__address">
 						<p className="warehouse__label">WAREHOUSE ADDRESS:</p>
 						<p className="warehouse__text">{`${address},${city},${country}`}</p>
@@ -49,9 +49,9 @@ function WarehouseDetails() {
 							<p className="warehouse__text">{contact_email}</p>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
-			<div className="inventoryList">
+			{/* <div className="inventoryList">
 				{warehouseInv.map((item) => (
 					<InventoryCard
 						key={item.id}
@@ -61,7 +61,7 @@ function WarehouseDetails() {
 						category={item.category}
 					/>
 				))}
-			</div>
+			</div> */}
 		</div>
 	);
 }
