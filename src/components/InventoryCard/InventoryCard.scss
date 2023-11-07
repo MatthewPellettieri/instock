@@ -47,10 +47,15 @@
 		justify-content: center;
 		align-items: center;
 		height: 1.5rem;
+		@include m-h4;
+		color: $instock-green;
+		width: 70%;
 
-		&--text {
-			@include m-h4;
-			color: $instock-green;
+		&--noStock {
+			@extend .inventoryCard__tag;
+			background-color: rgba($color: $instock-red, $alpha: 0.07);
+			color: $instock-red;
+			width: 100%;
 		}
 	}
 
@@ -69,4 +74,7 @@
 		display: flex;
 		justify-content: space-between;
 	}
+}
+
+.noStock {
 }
