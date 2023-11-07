@@ -30,7 +30,8 @@ function WarehouseDetails() {
 						/>
 						<p className="warehouse__header--title">{warehouse_name}</p>
 					</div>
-					<button className="warehouse__header--button"></button>
+					<button className="warehouse__button"></button>
+					<button className="warehouse__button--special">Edit</button>
 				</div>
 				<div className="warehouse__details">
 					<div className="warehouse__address">
