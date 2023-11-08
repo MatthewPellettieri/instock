@@ -116,13 +116,13 @@
 		@include tablet {
 			width: 60%;
 			border-left: 1px solid $instock-cloud;
-			padding: 0rem 2rem;
+			padding: 0rem 3rem;
 			justify-content: flex-start;
 			gap: 2.5rem;
 		}
 
 		@include desktop {
-			gap: 11.5rem;
+			gap: 10.5rem;
 		}
 	}
 
