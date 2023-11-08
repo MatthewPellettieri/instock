@@ -1,3 +1,6 @@
+@use "../../styles/partials/variables" as *;
+
 .footer--text {
     text-align: center;
+    background-color: $instock-light-grey;
 }
