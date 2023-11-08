@@ -87,6 +87,10 @@
 		@include tablet {
 			width: 48%;
 		}
+
+		@include desktop {
+			width: 44%;
+		}
 	}
 
 	&__category {
