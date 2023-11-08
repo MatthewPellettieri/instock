@@ -27,3 +27,11 @@ textarea {
 	overflow: hidden;
 	resize: none;
 }
+
+.whiteBox {
+	margin: 0rem 1rem;
+	border: 1px solid black;
+	position: relative;
+	z-index: 2;
+	top: -6.25rem;
+}
