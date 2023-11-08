@@ -3,6 +3,7 @@
 
 .inventoryCard {
 	padding: 1rem;
+	border-radius: 4px;
 	@include divider;
 
 	&__top {
