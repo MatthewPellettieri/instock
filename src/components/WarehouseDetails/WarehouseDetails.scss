@@ -18,6 +18,10 @@
 			padding: 1.5rem 2rem;
 		}
 
+		@include desktop {
+			padding: 1.5rem 3rem;
+		}
+
 		&--container {
 			display: flex;
 			align-items: center;
@@ -72,6 +76,11 @@
 				background-position: 10px 8px;
 				background-repeat: no-repeat;
 			}
+
+			@include desktop {
+				width: 8%;
+				background-position: 16px 8px;
+			}
 		}
 	}
 
@@ -84,6 +93,10 @@
 			display: flex;
 			justify-content: space-between;
 			border-bottom: 0px;
+		}
+
+		@include desktop {
+			padding: 1.5rem 3rem;
 		}
 	}
 
@@ -105,7 +118,11 @@
 			border-left: 1px solid $instock-cloud;
 			padding: 0rem 2rem;
 			justify-content: flex-start;
-			gap: 5rem;
+			gap: 2.5rem;
+		}
+
+		@include desktop {
+			gap: 11.5rem;
 		}
 	}
 
@@ -129,6 +146,30 @@
 		justify-content: space-between;
 		padding: 1rem 2rem;
 		background-color: rgba($color: $instock-light-grey, $alpha: 0.7);
+	}
+
+	@include desktop {
+		padding: 1rem 3rem;
+	}
+
+	&__left {
+		display: flex;
+		justify-content: space-between;
+		width: 33%;
+
+		@include desktop {
+			width: 28%;
+		}
+	}
+
+	&__right {
+		display: flex;
+		justify-content: space-between;
+		width: 56%;
+
+		@include desktop {
+			width: 58%;
+		}
 	}
 
 	&__container {
