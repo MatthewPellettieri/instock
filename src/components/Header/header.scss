@@ -2,25 +2,69 @@
 @use '../../styles/partials/variables' as *;
 
 .background {
+    @include desktop {
+        padding-top: 2rem;
+        padding-bottom: 11.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 12rem;
+        padding-right: 12rem;
+    }
+    @include tablet {
+        padding-top: 2rem;
+        padding-bottom: 11.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    @include mobile {
+        padding-bottom: 12rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
     background-color: $instock-graphite;
     .logo--container {
+        @include mobile {
         text-align: center;
         padding: 1.5rem 0 1.5rem 0;
-    }
-    .logo {
-
+        }
     }
     .button--container {
+        @include mobile {
         display: flex;
         justify-content: space-around;
+        }
     }
     .nav__button {
+        @include desktop {
        border-radius: 20px;
        border: none;
        color: white;
        height: 2rem;
+       width: 7rem;
+       background-color: rgb(18, 23, 43, 0.6);
+       padding: 0 1rem 0 1rem;
+        }
+        @include tablet {
+       border-radius: 20px;
+       border: none;
+       color: white;
+       height: 2rem;
+       width: 7rem;
+       background-color: rgb(18, 23, 43, 0.6);
+       padding: 0 1rem 0 1rem;
+        }
+        @include mobile {
+       border-radius: 20px;
+       border: none;
+       color: white;
+       height: 2.25rem;
        width: 10rem;
        background-color: rgb(18, 23, 43, 0.6);
        padding: 0 1rem 0 1rem;
+        }
     }
 }
