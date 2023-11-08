@@ -4,6 +4,7 @@ import Header from "./components/Header/header";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
+import Footer from "./components/Footer/footer";
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 		<Route path="/addInventory" element={<AddInventory />}></Route>*/}
 				</Routes>
 			</BrowserRouter>
+      <Footer />
 		</>
 	);
 }
