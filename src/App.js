@@ -2,19 +2,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Header/header";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
-import InventoryPage from "./pages/IventoryPage/InventoryPage";
+import InventoryPage from "./pages/InventoryPage/InventoryPage";
+import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 
 function App() {
   return (
     <>
-      {/* <WarehousePage /> */}
       <Header />
       <BrowserRouter>
         <Routes>
           {/* ------------------Warehouse-------------------------------- */}
-          <Route path="/" element={<WarehousePage />}>
-            {/* <Route path="/:id" element={<WarehouseId />} /> */}
-          </Route>
+          <Route path="/" element={<WarehousePage />}></Route>
+          <Route path="/warehouseDetails" element={<WarehouseDetails />} />
           {/* <Route path="/editWarehouse/:id" element={<EditWarehouse />}></Route>
 		<Route path="/addWarehouse" element={<AddWarehouse />}></Route> */}
 
