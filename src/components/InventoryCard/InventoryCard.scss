@@ -28,7 +28,7 @@
 			width: 55%;
 
 			@include tablet {
-				width: 41%;
+				width: 34%;
 			}
 		}
 
@@ -36,7 +36,7 @@
 			width: 30%;
 
 			@include tablet {
-				width: 44%;
+				width: 51%;
 			}
 		}
 
@@ -58,22 +58,21 @@
 		}
 	}
 
-	&__status,
-	&__item {
+	&__status {
 		@include tablet {
-			width: 35%;
+			width: 30%;
 		}
 	}
 
 	&__item {
 		@include tablet {
-			width: 50%;
+			width: 55%;
 		}
 	}
 
 	&__quantity {
 		@include tablet {
-			width: 46%;
+			width: 48%;
 		}
 	}
 
