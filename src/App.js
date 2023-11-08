@@ -5,28 +5,29 @@ import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import InventoryPage from "./pages/IventoryPage/InventoryPage";
 
 function App() {
-	return (
-		<>
-			<Header />
-			<BrowserRouter>
-				<Routes>
-					{/* ------------------Warehouse-------------------------------- */}
-					<Route path="/" element={<WarehousePage />}>
-						{/* <Route path="/:id" element={<WarehouseId />} /> */}
-					</Route>
-					{/* <Route path="/editWarehouse/:id" element={<EditWarehouse />}></Route>
+  return (
+    <>
+      {/* <WarehousePage /> */}
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          {/* ------------------Warehouse-------------------------------- */}
+          <Route path="/" element={<WarehousePage />}>
+            {/* <Route path="/:id" element={<WarehouseId />} /> */}
+          </Route>
+          {/* <Route path="/editWarehouse/:id" element={<EditWarehouse />}></Route>
 		<Route path="/addWarehouse" element={<AddWarehouse />}></Route> */}
 
-					{/* -------------------------Inventory----------------- */}
-					<Route path="/inventory" element={<InventoryPage />}>
-						{/* <Route path="/inventory/:id" element={<Inventory />} /> */}
-					</Route>
-					{/* <Route path="/editInventory/:id" element={<EditInventory />}></Route>
+          {/* -------------------------Inventory----------------- */}
+          <Route path="/inventory" element={<InventoryPage />}>
+            {/* <Route path="/inventory/:id" element={<Inventory />} /> */}
+          </Route>
+          {/* <Route path="/editInventory/:id" element={<EditInventory />}></Route>
 		<Route path="/addInventory" element={<AddInventory />}></Route>*/}
-				</Routes>
-			</BrowserRouter>
-		</>
-	);
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;
