@@ -1,4 +1,4 @@
-// media queries
+
 @mixin mobile {
 	@media (min-width: 0px) and (max-width: 767px) {
 		@content;
@@ -10,7 +10,6 @@
 		@content;
 	}
 }
-
 @mixin desktop {
 	@media (min-width: 1280px) and (max-width: 1920px) {
 		@content;
