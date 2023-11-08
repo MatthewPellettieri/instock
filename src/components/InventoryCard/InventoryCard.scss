@@ -6,24 +6,81 @@
 	border-radius: 4px;
 	@include divider;
 
+	@include tablet {
+		display: flex;
+		padding: 1rem 2rem;
+	}
+
 	&__top {
 		display: flex;
 		padding-bottom: 1rem;
+
+		@include tablet {
+			width: 90%;
+			padding-bottom: 0rem;
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 
 	&__container {
 		&--left {
 			width: 55%;
+
+			@include tablet {
+				width: 41%;
+			}
 		}
 
 		&--right {
 			width: 30%;
+
+			@include tablet {
+				width: 44%;
+			}
+		}
+
+		&--left,
+		&--right {
+			@include tablet {
+				display: flex;
+				justify-content: space-between;
+			}
 		}
 	}
 
 	&__item,
 	&__status {
 		padding-bottom: 1rem;
+
+		@include tablet {
+			padding-bottom: 0rem;
+		}
+	}
+
+	&__status,
+	&__item {
+		@include tablet {
+			width: 35%;
+		}
+	}
+
+	&__item {
+		@include tablet {
+			width: 50%;
+		}
+	}
+
+	&__quantity {
+		@include tablet {
+			width: 46%;
+		}
+	}
+
+	&__category {
+		@include tablet {
+			width: 25%;
+		}
 	}
 
 	&__link {
@@ -33,6 +90,10 @@
 		&--text {
 			@include m-h3;
 			color: $instock-indigo;
+
+			@include tablet {
+				@include d-h3;
+			}
 		}
 
 		&--icon {
@@ -52,6 +113,12 @@
 		color: $instock-green;
 		width: 70%;
 
+		@include tablet {
+			@include d-h4;
+			height: 1.625rem;
+			width: 80%;
+		}
+
 		&--noStock {
 			@extend .inventoryCard__tag;
 			background-color: rgba($color: $instock-red, $alpha: 0.07);
@@ -64,15 +131,35 @@
 		@include m-h4;
 		color: $instock-slate;
 		padding-bottom: 0.25rem;
+
+		@include tablet {
+			display: none;
+		}
 	}
 
 	&__text {
 		@include m-p2;
 		color: $instock-black;
+
+		@include tablet {
+			@include d-p2;
+		}
 	}
 
 	&__btm {
 		display: flex;
 		justify-content: space-between;
+
+		@include tablet {
+			width: 10%;
+			justify-content: space-around;
+		}
+
+		&--icon {
+			@include tablet {
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+		}
 	}
 }
