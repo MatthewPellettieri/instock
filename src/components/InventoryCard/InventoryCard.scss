@@ -11,6 +11,11 @@
 		padding: 1rem 2rem;
 	}
 
+	@include desktop {
+		justify-content: space-between;
+		padding: 1rem 3rem;
+	}
+
 	&__top {
 		display: flex;
 		padding-bottom: 1rem;
@@ -30,6 +35,10 @@
 			@include tablet {
 				width: 34%;
 			}
+
+			@include desktop {
+				width: 33%;
+			}
 		}
 
 		&--right {
@@ -37,6 +46,10 @@
 
 			@include tablet {
 				width: 51%;
+			}
+
+			@include desktop {
+				width: 54%;
 			}
 		}
 
@@ -118,11 +131,19 @@
 			width: 80%;
 		}
 
+		@include desktop {
+			width: 40%;
+		}
+
 		&--noStock {
 			@extend .inventoryCard__tag;
 			background-color: rgba($color: $instock-red, $alpha: 0.07);
 			color: $instock-red;
 			width: 100%;
+
+			@include desktop {
+				width: 55%;
+			}
 		}
 	}
 
@@ -152,6 +173,11 @@
 		@include tablet {
 			width: 10%;
 			justify-content: space-around;
+		}
+
+		@include desktop {
+			width: 5%;
+			justify-content: space-between;
 		}
 
 		&--icon {
