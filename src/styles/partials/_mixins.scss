@@ -1,3 +1,4 @@
+// media queries
 @mixin mobile {
 	@media (min-width: 0px) and (max-width: 767px) {
 		@content;
@@ -8,12 +9,101 @@
 	@media (min-width: 768px) and (max-width: 1279px) {
 		@content;
 	}
-	@media (min-width: 768px) {
-		@content;
-	}
 }
+
 @mixin desktop {
 	@media (min-width: 1280px) and (max-width: 1920px) {
 		@content;
 	}
+}
+
+// mobile text
+@mixin m-h1 {
+	font-size: 1.75rem;
+	line-height: 2.25rem;
+	font-weight: 600;
+}
+
+@mixin m-h2 {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+	font-weight: 600;
+}
+
+@mixin m-h3 {
+	font-size: 0.8125rem;
+	line-height: 1.25rem;
+	font-weight: 600;
+}
+
+@mixin m-h4 {
+	font-size: 0.6875rem;
+	line-height: 1rem;
+	font-weight: 600;
+}
+
+@mixin m-p1 {
+	font-size: 0.9375rem;
+	line-height: 1.625rem;
+	font-weight: 400;
+}
+
+@mixin m-p2 {
+	font-size: 0.8125rem;
+	line-height: 1.25rem;
+	font-weight: 400;
+}
+
+@mixin m-p3 {
+	font-size: 0.6875rem;
+	line-height: 1rem;
+	font-weight: 400;
+}
+
+// Desktop & Tablet text
+@mixin d-h1 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+	font-weight: 600;
+}
+
+@mixin d-h2 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: 600;
+}
+
+@mixin d-h3 {
+	font-size: 0.875rem;
+	line-height: 1.375rem;
+	font-weight: 600;
+}
+
+@mixin d-h4 {
+	font-size: 0.75rem;
+	line-height: 1.125rem;
+	font-weight: 600;
+}
+
+@mixin d-p1 {
+	font-size: 1rem;
+	line-height: 1.75rem;
+	font-weight: 400;
+}
+
+@mixin d-p2 {
+	font-size: 0.875rem;
+	line-height: 1.375rem;
+	font-weight: 400;
+}
+
+@mixin d-p3 {
+	font-size: 0.75rem;
+	line-height: 1.125rem;
+	font-weight: 400;
+}
+
+// special element styling
+@mixin divider {
+	border-bottom: 1px solid $instock-cloud;
 }
