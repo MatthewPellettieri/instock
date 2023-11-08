@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Header/header";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
-import InventoryPage from "./pages/IventoryPage/InventoryPage";
+import InventoryPage from "./pages/InventoryPage/InventoryPage";
 
 function App() {
 	return (
