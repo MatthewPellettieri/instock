@@ -1,10 +1,10 @@
-import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
+// import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
 
 function WarehousePage() {
 	return (
 		<div className="warehouse">
-			<p>WAREHOUSE</p>
-			<WarehouseDetails />
+			<p>WAREHOUSE PAGE</p>
+			{/* <WarehouseDetails /> */}
 		</div>
 	);
 }

@@ -1,0 +1,77 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.inventoryCard {
+	padding: 1rem;
+	@include divider;
+
+	&__top {
+		display: flex;
+		padding-bottom: 1rem;
+	}
+
+	&__container {
+		&--left {
+			width: 55%;
+		}
+
+		&--right {
+			width: 30%;
+		}
+	}
+
+	&__item,
+	&__status {
+		padding-bottom: 1rem;
+	}
+
+	&__link {
+		display: flex;
+		gap: 0.25rem;
+
+		&--text {
+			@include m-h3;
+			color: $instock-indigo;
+		}
+
+		&--icon {
+			width: 1.25rem;
+			height: 1.25rem;
+		}
+	}
+
+	&__tag {
+		background-color: rgba($color: $instock-green, $alpha: 0.07);
+		border-radius: 1.25rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 1.5rem;
+		@include m-h4;
+		color: $instock-green;
+		width: 70%;
+
+		&--noStock {
+			@extend .inventoryCard__tag;
+			background-color: rgba($color: $instock-red, $alpha: 0.07);
+			color: $instock-red;
+			width: 100%;
+		}
+	}
+
+	&__label {
+		@include m-h4;
+		color: $instock-slate;
+		padding-bottom: 0.25rem;
+	}
+
+	&__text {
+		@include m-p2;
+		color: $instock-black;
+	}
+
+	&__btm {
+		display: flex;
+		justify-content: space-between;
+	}
+}
