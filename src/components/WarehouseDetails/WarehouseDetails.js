@@ -58,40 +58,44 @@ function WarehouseDetails() {
 			<div className="inventoryList">
 				{/* inventoryHeader is only visable at 768px and above */}
 				<div className="inventoryHeader">
-					<div className="inventoryHeader__container">
-						<p className="inventoryHeader__label">INVENTORY ITEM</p>
-						<img
-							src={sortIcon}
-							alt="sort-icon"
-							className="inventoryHeader__icon"
-						/>
+					<div className="inventoryHeader__left">
+						<div className="inventoryHeader__container">
+							<p className="inventoryHeader__label">INVENTORY ITEM</p>
+							<img
+								src={sortIcon}
+								alt="sort-icon"
+								className="inventoryHeader__icon"
+							/>
+						</div>
+						<div className="inventoryHeader__container">
+							<p className="inventoryHeader__label">CATEGORY</p>
+							<img
+								src={sortIcon}
+								alt="sort-icon"
+								className="inventoryHeader__icon"
+							/>
+						</div>
 					</div>
-					<div className="inventoryHeader__container">
-						<p className="inventoryHeader__label">CATEGORY</p>
-						<img
-							src={sortIcon}
-							alt="sort-icon"
-							className="inventoryHeader__icon"
-						/>
-					</div>
-					<div className="inventoryHeader__container">
-						<p className="inventoryHeader__label">STATUS</p>
-						<img
-							src={sortIcon}
-							alt="sort-icon"
-							className="inventoryHeader__icon"
-						/>
-					</div>
-					<div className="inventoryHeader__container">
-						<p className="inventoryHeader__label">QUANTITY</p>
-						<img
-							src={sortIcon}
-							alt="sort-icon"
-							className="inventoryHeader__icon"
-						/>
-					</div>
-					<div className="inventoryHeader__container">
-						<p className="inventoryHeader__label">ACTIONS</p>
+					<div className="inventoryHeader__right">
+						<div className="inventoryHeader__container">
+							<p className="inventoryHeader__label">STATUS</p>
+							<img
+								src={sortIcon}
+								alt="sort-icon"
+								className="inventoryHeader__icon"
+							/>
+						</div>
+						<div className="inventoryHeader__container">
+							<p className="inventoryHeader__label">QUANTITY</p>
+							<img
+								src={sortIcon}
+								alt="sort-icon"
+								className="inventoryHeader__icon"
+							/>
+						</div>
+						<div className="inventoryHeader__container">
+							<p className="inventoryHeader__label">ACTIONS</p>
+						</div>
 					</div>
 				</div>
 				{warehouseInv.map((item) => (
