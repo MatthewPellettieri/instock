@@ -14,6 +14,10 @@
 	@include desktop {
 		justify-content: space-between;
 		padding: 1rem 3rem;
+
+		&:hover {
+			background-color: rgba($color: $instock-indigo, $alpha: 0.1);
+		}
 	}
 
 	&__top {
