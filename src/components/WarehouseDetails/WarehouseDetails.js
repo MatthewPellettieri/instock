@@ -1,4 +1,5 @@
 import "./WarehouseDetails.scss";
+import { Link } from "react-router-dom";
 import warehouseData from "../../test_data/warehouse_JSON.json";
 import inventoryData from "../../test_data/inventory_JSON.json";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
@@ -24,11 +25,13 @@ function WarehouseDetails() {
 			<div className="warehouse">
 				<div className="warehouse__header">
 					<div className="warehouse__header--container">
-						<img
-							className="warehouse__header--icon"
-							src={backArrow}
-							alt="back-arrow"
-						/>
+						<Link to="/">
+							<img
+								className="warehouse__header--icon"
+								src={backArrow}
+								alt="back-arrow"
+							/>
+						</Link>
 						<p className="warehouse__header--title">{warehouse_name}</p>
 					</div>
 					<button className="warehouse__button"></button>
