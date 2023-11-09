@@ -40,6 +40,10 @@
 				@include d-h1;
 			}
 		}
+
+		&--link {
+			height: 24px;
+		}
 	}
 
 	&__button {
