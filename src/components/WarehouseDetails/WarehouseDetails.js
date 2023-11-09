@@ -25,7 +25,7 @@ function WarehouseDetails() {
 			<div className="warehouse">
 				<div className="warehouse__header">
 					<div className="warehouse__header--container">
-						<Link to="/">
+						<Link to="/" className="warehouse__header--link">
 							<img
 								className="warehouse__header--icon"
 								src={backArrow}
