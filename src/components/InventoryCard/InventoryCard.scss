@@ -3,26 +3,104 @@
 
 .inventoryCard {
 	padding: 1rem;
+	border-radius: 4px;
 	@include divider;
+
+	@include tablet {
+		display: flex;
+		padding: 1rem 2rem;
+	}
+
+	@include desktop {
+		justify-content: space-between;
+		padding: 1rem 3rem;
+
+		&:hover {
+			background-color: rgba($color: $instock-indigo, $alpha: 0.1);
+		}
+	}
 
 	&__top {
 		display: flex;
 		padding-bottom: 1rem;
+
+		@include tablet {
+			width: 90%;
+			padding-bottom: 0rem;
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 
 	&__container {
 		&--left {
 			width: 55%;
+
+			@include tablet {
+				width: 34%;
+			}
+
+			@include desktop {
+				width: 33%;
+			}
 		}
 
 		&--right {
 			width: 30%;
+
+			@include tablet {
+				width: 51%;
+			}
+
+			@include desktop {
+				width: 54%;
+			}
+		}
+
+		&--left,
+		&--right {
+			@include tablet {
+				display: flex;
+				justify-content: space-between;
+			}
 		}
 	}
 
 	&__item,
 	&__status {
 		padding-bottom: 1rem;
+
+		@include tablet {
+			padding-bottom: 0rem;
+		}
+	}
+
+	&__status {
+		@include tablet {
+			width: 30%;
+		}
+	}
+
+	&__item {
+		@include tablet {
+			width: 55%;
+		}
+	}
+
+	&__quantity {
+		@include tablet {
+			width: 48%;
+		}
+
+		@include desktop {
+			width: 44%;
+		}
+	}
+
+	&__category {
+		@include tablet {
+			width: 25%;
+		}
 	}
 
 	&__link {
@@ -32,6 +110,14 @@
 		&--text {
 			@include m-h3;
 			color: $instock-indigo;
+
+			@include tablet {
+				@include d-h3;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
 		}
 
 		&--icon {
@@ -51,11 +137,25 @@
 		color: $instock-green;
 		width: 70%;
 
+		@include tablet {
+			@include d-h4;
+			height: 1.625rem;
+			width: 80%;
+		}
+
+		@include desktop {
+			width: 40%;
+		}
+
 		&--noStock {
 			@extend .inventoryCard__tag;
 			background-color: rgba($color: $instock-red, $alpha: 0.07);
 			color: $instock-red;
 			width: 100%;
+
+			@include desktop {
+				width: 55%;
+			}
 		}
 	}
 
@@ -63,15 +163,40 @@
 		@include m-h4;
 		color: $instock-slate;
 		padding-bottom: 0.25rem;
+
+		@include tablet {
+			display: none;
+		}
 	}
 
 	&__text {
 		@include m-p2;
 		color: $instock-black;
+
+		@include tablet {
+			@include d-p2;
+		}
 	}
 
 	&__btm {
 		display: flex;
 		justify-content: space-between;
+
+		@include tablet {
+			width: 10%;
+			justify-content: space-around;
+		}
+
+		@include desktop {
+			width: 5%;
+			justify-content: space-between;
+		}
+
+		&--icon {
+			@include tablet {
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+		}
 	}
 }

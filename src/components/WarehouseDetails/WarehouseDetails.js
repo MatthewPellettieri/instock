@@ -1,4 +1,5 @@
 import "./WarehouseDetails.scss";
+import { Link } from "react-router-dom";
 import warehouseData from "../../test_data/warehouse_JSON.json";
 import inventoryData from "../../test_data/inventory_JSON.json";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
@@ -24,11 +25,13 @@ function WarehouseDetails() {
 			<div className="warehouse">
 				<div className="warehouse__header">
 					<div className="warehouse__header--container">
-						<img
-							className="warehouse__header--icon"
-							src={backArrow}
-							alt="back-arrow"
-						/>
+						<Link to="/" className="warehouse__header--link">
+							<img
+								className="warehouse__header--icon"
+								src={backArrow}
+								alt="back-arrow"
+							/>
+						</Link>
 						<p className="warehouse__header--title">{warehouse_name}</p>
 					</div>
 					<button className="warehouse__button"></button>
@@ -58,40 +61,44 @@ function WarehouseDetails() {
 			<div className="inventoryList">
 				{/* inventoryHeader is only visable at 768px and above */}
 				<div className="inventoryHeader">
-					<div className="inventoryHeader__container">
-						<p className="inventoryHeader__label">INVENTORY ITEM</p>
-						<img
-							src={sortIcon}
-							alt="sort-icon"
-							className="inventoryHeader__icon"
-						/>
+					<div className="inventoryHeader__left">
+						<div className="inventoryHeader__container">
+							<p className="inventoryHeader__label">INVENTORY ITEM</p>
+							<img
+								src={sortIcon}
+								alt="sort-icon"
+								className="inventoryHeader__icon"
+							/>
+						</div>
+						<div className="inventoryHeader__container">
+							<p className="inventoryHeader__label">CATEGORY</p>
+							<img
+								src={sortIcon}
+								alt="sort-icon"
+								className="inventoryHeader__icon"
+							/>
+						</div>
 					</div>
-					<div className="inventoryHeader__container">
-						<p className="inventoryHeader__label">CATEGORY</p>
-						<img
-							src={sortIcon}
-							alt="sort-icon"
-							className="inventoryHeader__icon"
-						/>
-					</div>
-					<div className="inventoryHeader__container">
-						<p className="inventoryHeader__label">STATUS</p>
-						<img
-							src={sortIcon}
-							alt="sort-icon"
-							className="inventoryHeader__icon"
-						/>
-					</div>
-					<div className="inventoryHeader__container">
-						<p className="inventoryHeader__label">QUANTITY</p>
-						<img
-							src={sortIcon}
-							alt="sort-icon"
-							className="inventoryHeader__icon"
-						/>
-					</div>
-					<div className="inventoryHeader__container">
-						<p className="inventoryHeader__label">ACTIONS</p>
+					<div className="inventoryHeader__right">
+						<div className="inventoryHeader__container">
+							<p className="inventoryHeader__label">STATUS</p>
+							<img
+								src={sortIcon}
+								alt="sort-icon"
+								className="inventoryHeader__icon"
+							/>
+						</div>
+						<div className="inventoryHeader__container">
+							<p className="inventoryHeader__label">QUANTITY</p>
+							<img
+								src={sortIcon}
+								alt="sort-icon"
+								className="inventoryHeader__icon"
+							/>
+						</div>
+						<div className="inventoryHeader__container">
+							<p className="inventoryHeader__label">ACTIONS</p>
+						</div>
 					</div>
 				</div>
 				{warehouseInv.map((item) => (
