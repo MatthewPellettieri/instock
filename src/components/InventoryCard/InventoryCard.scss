@@ -109,6 +109,10 @@
 
 			@include tablet {
 				@include d-h3;
+
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
 
