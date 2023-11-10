@@ -1,25 +1,28 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
-.warehouse__info {
-  display: flex;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  gap: 2rem;
-  font-size: 0.8rem;
-  padding-top: 1rem;
-}
 
-.warehouse__name-link {
-  display: flex;
-  color: $instock-indigo;
-}
+.warehouseCard {
+  &__flex-container {
+    display: flex;
+    gap: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.8rem;
+    padding-top: 1rem;
+  }
 
-.warehouse__icons {
-  display: flex;
-  justify-content: space-between;
-}
+  &__name-link {
+    display: flex;
+    color: $instock-indigo;
+  }
 
-.warehouse__name-box,
-.warehouse__contact-box {
-  width: 115px;
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name-box,
+  &__contact-box {
+    width: 115px;
+  }
 }
