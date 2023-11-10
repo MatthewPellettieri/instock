@@ -1,0 +1,25 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+.warehouse__info {
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  gap: 2rem;
+  font-size: 0.8rem;
+  padding-top: 1rem;
+}
+
+.warehouse__name-link {
+  display: flex;
+  color: $instock-indigo;
+}
+
+.warehouse__icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.warehouse__name-box,
+.warehouse__contact-box {
+  width: 115px;
+}

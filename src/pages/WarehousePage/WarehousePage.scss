@@ -1,0 +1,75 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.warehouse {
+  background-color: $white;
+  z-index: 2;
+  position: relative;
+  top: -61px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 4px;
+
+  &__container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &__header {
+    @include m-h1;
+    padding-top: 2rem;
+    padding-bottom: 0.7rem;
+
+    @include tablet {
+      padding-top: 0rem;
+      margin-right: 9rem;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    border-radius: 1.25rem;
+    padding-left: 0.7rem;
+    background-position: right;
+    height: 2rem;
+    border: none;
+    background-color: $instock-indigo;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      width: 30%;
+    }
+  }
+
+  &__button-text {
+    color: $white;
+
+    @include tablet {
+      padding-right: 0.7rem;
+    }
+  }
+}
+
+input.warehouse__search-bar {
+  width: 100%;
+  border-radius: 1.25rem;
+  padding-left: 0.7rem;
+  background: transparent url(../../assets/Icons/search-24px.svg) no-repeat 13px;
+  background-position: right;
+  height: 2rem;
+  border: 1px solid $instock-cloud;
+  margin-bottom: 0.8rem;
+
+  @include tablet {
+    width: 30%;
+  }
+}
+
+@include tablet {
+  .warehouse__head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+  }
+}
