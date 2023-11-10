@@ -54,13 +54,13 @@
 			@include tablet{
 				@include d-p2;
 			}
+			padding: 0.5rem 1rem;
 			height: 2.25rem;
 			width:100%;
 			background-color:#FAFAFA;
 			border: 1px solid $instock-cloud;
 			border-radius: 20px;
 			&::placeholder{
-				padding: 0.5rem 1rem;
 				color:$instock-slate;
 			}
 		}
