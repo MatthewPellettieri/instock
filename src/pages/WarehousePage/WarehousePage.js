@@ -40,7 +40,7 @@ function WarehousePage() {
             alt="double arrow"
           ></img>
         </div>{" "}
-        <div className="warehouseList__label">
+        <div className="warehouseList__label 2">
           <p className="warehouseList__name">contact name</p>
           <img
             className="warehouseList__icon"

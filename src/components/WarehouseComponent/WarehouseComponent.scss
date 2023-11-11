@@ -158,23 +158,28 @@
     }
 
     &__postal {
-      width: 120px;
-      margin-right: 0.8rem;
+      width: 230px;
+      margin-right: 2rem;
+    }
+
+    &__address {
+      display: flex;
+      align-items: center;
     }
 
     &__name {
-      width: 118px;
+      width: 200px;
       display: flex;
       align-items: center;
     }
 
     &__contact-info {
-      width: 190px;
+      width: 210px;
       padding-top: 0.1rem;
     }
 
     &__contact {
-      width: 130px;
+      width: 210px;
       display: flex;
       align-items: center;
     }
