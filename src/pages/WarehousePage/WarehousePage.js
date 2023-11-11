@@ -1,6 +1,7 @@
 import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
 import wareHouseData from "../../test_data/warehouse_JSON.json";
 import WarehouseComponent from "../../components/WarehouseComponent/WarehouseComponent";
+import doubleArrow from "../../assets/Icons/sort-24px.svg";
 import "./WarehousePage.scss";
 console.log(wareHouseData);
 function WarehousePage() {
@@ -21,6 +22,44 @@ function WarehousePage() {
           </button>
         </div>
       </div>
+
+      <section className="warehouseList">
+        <div className="warehouseList__label">
+          <p className="warehouseList__name">warehouse</p>
+          <img
+            className="warehouseList__icon"
+            src={doubleArrow}
+            alt="double arrow"
+          ></img>
+        </div>
+        <div className="warehouseList__label">
+          <p className="warehouseList__name">address</p>
+          <img
+            className="warehouseList__icon"
+            src={doubleArrow}
+            alt="double arrow"
+          ></img>
+        </div>{" "}
+        <div className="warehouseList__label">
+          <p className="warehouseList__name">contact name</p>
+          <img
+            className="warehouseList__icon"
+            src={doubleArrow}
+            alt="double arrow"
+          ></img>
+        </div>{" "}
+        <div className="warehouseList__label-info">
+          <p className="warehouseList__name-info">contact Information</p>
+          <img
+            className="warehouseList__icon"
+            src={doubleArrow}
+            alt="double arrow"
+          ></img>
+        </div>
+        <div className="warehouseList__label">
+          <p className="warehouseList__name action">actions</p>
+        </div>
+      </section>
       {wareHouseData.map((data) => (
         <WarehouseComponent
           key={data.id}

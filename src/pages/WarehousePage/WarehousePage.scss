@@ -10,9 +10,20 @@
   margin-right: 1rem;
   border-radius: 4px;
 
+  @include tablet {
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+  }
+
   &__container {
     padding-left: 1rem;
     padding-right: 1rem;
+    @include mobile {
+      @include divider;
+    }
+
+    @include tablet {
+    }
   }
 
   &__header {
@@ -22,7 +33,7 @@
 
     @include tablet {
       padding-top: 0rem;
-      margin-right: 9rem;
+      margin-right: 7rem;
     }
   }
 
@@ -37,7 +48,7 @@
     margin-bottom: 1rem;
 
     @include tablet {
-      width: 30%;
+      width: 60%;
     }
   }
 
@@ -46,6 +57,43 @@
 
     @include tablet {
       padding-right: 0.7rem;
+    }
+  }
+}
+
+/*styling for the the greybar on tablet and desktop*/
+@include tablet {
+  .warehouseList {
+    display: flex;
+    max-width: 50%;
+    gap: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    @include desktop {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+
+    &__label {
+      display: flex;
+      align-items: center;
+      min-width: 100px;
+    }
+
+    &__label-info {
+      min-width: 160px;
+      display: flex;
+      align-items: center;
+      @include m-p3;
+      color: $instock-slate;
+      text-transform: uppercase;
+    }
+
+    &__name {
+      text-transform: uppercase;
+      @include m-p3;
+      color: $instock-slate;
     }
   }
 }
@@ -61,7 +109,7 @@ input.warehouse__search-bar {
   margin-bottom: 0.8rem;
 
   @include tablet {
-    width: 30%;
+    width: 60%;
   }
 }
 
@@ -70,6 +118,12 @@ input.warehouse__search-bar {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 2rem;
+    padding: 2rem 0.5rem 1rem 1rem;
+  }
+}
+
+@include mobile {
+  .warehouseList {
+    display: none;
   }
 }

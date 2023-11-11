@@ -27,11 +27,10 @@ export default function warehouseComponent({
                   alt={"blue arrow link"}
                 ></img>
               </div>
-
-              <div className="warehouseCard__address">
-                <p className="warehouseCard__address-text">address</p>
-                <p className="warehouseCard__location">{`${address}, ${city}, ${country}`}</p>
-              </div>
+            </div>
+            <div className="warehouseCard__address">
+              <p className="warehouseCard__address-text">address</p>
+              <p className="warehouseCard__postal">{`${address}, ${city}, ${country}`}</p>
             </div>
           </div>
 
@@ -42,7 +41,7 @@ export default function warehouseComponent({
             </div>
 
             <div className="warehouseCard__contact-info">
-              <p className="warehouseCard__contact-info-text">
+              <p className="warehouseCard__contact-title">
                 Contact Information
               </p>
               <p className="warehouseCard__contact-number">{contactPhone}</p>
