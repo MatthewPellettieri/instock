@@ -1,38 +1,38 @@
-@use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/variables' as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .background {
-    @include desktop {
-        padding-top: 2rem;
-        padding-bottom: 11.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-left: 12rem;
-        padding-right: 12rem;
-    }
-    @include tablet {
-        padding-top: 2rem;
-        padding-bottom: 11.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
+  @include desktop {
+    padding-top: 2rem;
+    padding-bottom: 11.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+  @include tablet {
+    padding-top: 2rem;
+    padding-bottom: 11.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  @include mobile {
+    padding-bottom: 12rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  background-color: $instock-graphite;
+  .logo--container {
     @include mobile {
-        padding-bottom: 12rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
+      text-align: center;
+      padding: 1.5rem 0 1.5rem 0;
     }
-    background-color: $instock-graphite;
-    .logo--container {
-        @include mobile {
-        text-align: center;
-        padding: 1.5rem 0 1.5rem 0;
-        }
-    }
-    .link {
+  }
+      .link {
         display: contents;
         text-decoration: none;
     }
