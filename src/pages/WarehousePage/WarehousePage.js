@@ -68,12 +68,11 @@ function WarehousePage() {
 					country={data.country}
 				/>
 			))}
+			<Link to="/warehouseDetails">
+				<p> To warehouseDetails</p>
+			</Link>
 		</section>
 	);
-
-	// <Link to="/warehouseDetails">
-	// 			<p> To warehouseDetails</p>
-	// 		</Link>
 }
 
 export default WarehousePage;
