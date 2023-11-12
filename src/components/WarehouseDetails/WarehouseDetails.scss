@@ -2,195 +2,195 @@
 @use "../../styles/partials/variables" as *;
 
 .warehouseDetails {
-	background-color: $white;
-	border-radius: 4px;
+  background-color: $white;
+  border-radius: 4px;
 }
 
-.warehouse {
-	&__header {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-		@include divider;
-		padding: 1.5rem 1rem;
+.warehouseDetails {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    @include divider;
+    padding: 1.5rem 1rem;
 
-		@include tablet {
-			padding: 1.5rem 2rem;
-		}
+    @include tablet {
+      padding: 1.5rem 2rem;
+    }
 
-		@include desktop {
-			padding: 1.5rem 3rem;
-		}
+    @include desktop {
+      padding: 1.5rem 3rem;
+    }
 
-		&--container {
-			display: flex;
-			align-items: center;
-		}
+    &--container {
+      display: flex;
+      align-items: center;
+    }
 
-		&--icon {
-			width: 1.5rem;
-			height: 1.5rem;
-		}
+    &--icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
 
-		&--title {
-			@include m-h1;
-			padding-left: 0.5rem;
+    &--title {
+      @include m-h1;
+      padding-left: 0.5rem;
 
-			@include tablet {
-				@include d-h1;
-			}
-		}
+      @include tablet {
+        @include d-h1;
+      }
+    }
 
-		&--link {
-			height: 1.5rem;
-		}
-	}
+    &--link {
+      height: 1.5rem;
+    }
+  }
 
-	&__button {
-		height: 2.25rem;
-		width: 2.25rem;
-		border: none;
-		background-color: $instock-indigo;
-		border-radius: 1.25rem;
-		background-image: url("../../assets/Icons/edit_white_24dp.svg");
-		background-size: 55%;
-		background-position: center;
-		background-repeat: no-repeat;
+  &__button {
+    height: 2.25rem;
+    width: 2.25rem;
+    border: none;
+    background-color: $instock-indigo;
+    border-radius: 1.25rem;
+    background-image: url("../../assets/Icons/edit_white_24dp.svg");
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
 
-		@include tablet {
-			display: none;
-		}
+    @include tablet {
+      display: none;
+    }
 
-		&--special {
-			display: none;
+    &--special {
+      display: none;
 
-			@include tablet {
-				display: block;
-				@include d-h3;
-				color: $white;
-				padding-left: 1rem;
-				width: 11%;
-				height: 2.375rem;
+      @include tablet {
+        display: block;
+        @include d-h3;
+        color: $white;
+        padding-left: 1rem;
+        width: 11%;
+        height: 2.375rem;
 
-				border: none;
-				background-color: $instock-indigo;
-				border-radius: 1.25rem;
-				background-image: url("../../assets/Icons/edit_white_24dp.svg");
-				background-size: 20px 20px;
-				background-position: 10px 8px;
-				background-repeat: no-repeat;
+        border: none;
+        background-color: $instock-indigo;
+        border-radius: 1.25rem;
+        background-image: url("../../assets/Icons/edit_white_24dp.svg");
+        background-size: 20px 20px;
+        background-position: 10px 8px;
+        background-repeat: no-repeat;
 
-				&:hover {
-					background-color: $instock-graphite;
-				}
-			}
+        &:hover {
+          background-color: $instock-graphite;
+        }
+      }
 
-			@include desktop {
-				width: 8%;
-				background-position: 16px 8px;
-			}
-		}
-	}
+      @include desktop {
+        width: 8%;
+        background-position: 16px 8px;
+      }
+    }
+  }
 
-	&__details {
-		padding: 1rem;
-		@include divider;
+  &__details {
+    padding: 1rem;
+    @include divider;
 
-		@include tablet {
-			padding: 1.5rem 2rem;
-			display: flex;
-			justify-content: space-between;
-			border-bottom: 0px;
-		}
+    @include tablet {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 0px;
+    }
 
-		@include desktop {
-			padding: 1.5rem 3rem;
-		}
-	}
+    @include desktop {
+      padding: 1.5rem 3rem;
+    }
+  }
 
-	&__address {
-		padding-bottom: 2rem;
+  &__address {
+    padding-bottom: 2rem;
 
-		@include tablet {
-			padding-bottom: 0rem;
-		}
-	}
+    @include tablet {
+      padding-bottom: 0rem;
+    }
+  }
 
-	&__contacts {
-		display: flex;
-		justify-content: space-between;
-		width: 95%;
+  &__contacts {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
 
-		@include tablet {
-			width: 60%;
-			border-left: 1px solid $instock-cloud;
-			padding: 0rem 3rem;
-			justify-content: flex-start;
-			gap: 2.5rem;
-		}
+    @include tablet {
+      width: 60%;
+      border-left: 1px solid $instock-cloud;
+      padding: 0rem 3rem;
+      justify-content: flex-start;
+      gap: 2.5rem;
+    }
 
-		@include desktop {
-			gap: 10.5rem;
-		}
-	}
+    @include desktop {
+      gap: 10.5rem;
+    }
+  }
 
-	&__label {
-		@include m-h4;
-		color: $instock-slate;
-		padding-bottom: 0.25rem;
-	}
+  &__label {
+    @include m-h4;
+    color: $instock-slate;
+    padding-bottom: 0.25rem;
+  }
 
-	&__text {
-		@include m-p2;
-		color: $instock-black;
-	}
+  &__text {
+    @include m-p2;
+    color: $instock-black;
+  }
 }
 
 .inventoryHeader {
-	display: none;
+  display: none;
 
-	@include tablet {
-		display: flex;
-		justify-content: space-between;
-		padding: 1rem 2rem;
-		background-color: rgba($color: $instock-light-grey, $alpha: 0.7);
-	}
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: rgba($color: $instock-light-grey, $alpha: 0.7);
+  }
 
-	@include desktop {
-		padding: 1rem 3rem;
-	}
+  @include desktop {
+    padding: 1rem 3rem;
+  }
 
-	&__left {
-		display: flex;
-		justify-content: space-between;
-		width: 33%;
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    width: 33%;
 
-		@include desktop {
-			width: 28%;
-		}
-	}
+    @include desktop {
+      width: 28%;
+    }
+  }
 
-	&__right {
-		display: flex;
-		justify-content: space-between;
-		width: 56%;
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    width: 56%;
 
-		@include desktop {
-			width: 58%;
-		}
-	}
+    @include desktop {
+      width: 58%;
+    }
+  }
 
-	&__container {
-		display: flex;
-	}
+  &__container {
+    display: flex;
+  }
 
-	&__label {
-		@extend .warehouse__label;
-		padding-bottom: 0rem;
-	}
+  &__label {
+    // @extend .warehouse__label;
+    padding-bottom: 0rem;
+  }
 
-	&__icon {
-		width: 16px;
-		height: 16px;
-	}
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
 }
