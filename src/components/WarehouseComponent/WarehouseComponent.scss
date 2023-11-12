@@ -1,0 +1,204 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+@include mobile {
+  .warehouseCard {
+    @include divider;
+    padding-bottom: 1rem;
+    &__flex-container {
+      display: flex;
+      gap: 1.65rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-size: 0.8rem;
+      padding-top: 1rem;
+    }
+
+    &__name-link {
+      display: flex;
+      color: $instock-indigo;
+      align-items: center;
+    }
+
+    &__icons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__name-box,
+    &__contact-box {
+      width: 115px;
+    }
+    &__contact-text,
+    &__name-text {
+      text-transform: uppercase;
+      @include m-p3;
+      padding-bottom: 0.2rem;
+      color: $instock-slate;
+    }
+
+    &__name-link {
+      padding-bottom: 0.89rem;
+    }
+
+    &__contact-name {
+      padding-bottom: 1rem;
+    }
+
+    &__address-text {
+      text-transform: uppercase;
+      color: $instock-slate;
+      @include m-p3;
+    }
+
+    &__contact-title {
+      color: $instock-slate;
+      text-transform: uppercase;
+      @include m-p3;
+    }
+
+    &__icons {
+      padding-left: 0.5rem;
+      padding-top: 1rem;
+    }
+  }
+}
+
+@include tablet {
+  .warehouseCard {
+    display: flex;
+    @include divider;
+    height: 7rem;
+    align-items: center;
+    padding-left: 2rem;
+
+    &__flex-container {
+      display: flex;
+      flex-direction: row;
+    }
+    &__name-box {
+      display: flex;
+      gap: 1rem;
+    }
+
+    &__contact-box {
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    &__name-link {
+      display: flex;
+    }
+
+    &__postal {
+      width: 120px;
+      margin-right: 0.8rem;
+    }
+
+    &__name {
+      width: 118px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__contact-info {
+      width: 190px;
+      padding-top: 0.1rem;
+    }
+
+    &__contact {
+      width: 130px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__name-text,
+    &__address-text,
+    &__contact-text,
+    &__contact-title {
+      display: none;
+    }
+
+    &__location {
+      color: $instock-indigo;
+    }
+
+    &__icons {
+      display: flex;
+      justify-content: center;
+      gap: 0.7rem;
+    }
+  }
+}
+
+@include desktop {
+  .warehouseCard {
+    display: flex;
+    @include divider;
+    height: 7rem;
+    align-items: center;
+    padding-left: 2rem;
+
+    &__flex-container {
+      display: flex;
+      flex-direction: row;
+    }
+    &__name-box {
+      display: flex;
+      gap: 1rem;
+    }
+
+    &__contact-box {
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    &__name-link {
+      display: flex;
+    }
+
+    &__postal {
+      width: 230px;
+      margin-right: 2rem;
+    }
+
+    &__address {
+      display: flex;
+      align-items: center;
+    }
+
+    &__name {
+      width: 200px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__contact-info {
+      width: 210px;
+      padding-top: 0.1rem;
+    }
+
+    &__contact {
+      width: 210px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__name-text,
+    &__address-text,
+    &__contact-text,
+    &__contact-title {
+      display: none;
+    }
+
+    &__location {
+      color: $instock-indigo;
+    }
+
+    &__icons {
+      display: flex;
+      justify-content: center;
+      gap: 0.7rem;
+    }
+  }
+}

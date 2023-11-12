@@ -1,0 +1,184 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.warehouse {
+  background-color: $white;
+  z-index: 2;
+  position: relative;
+  top: -61px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 4px;
+
+  @include tablet {
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+  }
+
+  @include desktop {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  &__container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include mobile {
+      @include divider;
+    }
+
+    @include tablet {
+    }
+  }
+
+  &__header {
+    @include m-h1;
+    padding-top: 2rem;
+    padding-bottom: 0.7rem;
+
+    @include tablet {
+      padding-top: 0rem;
+      margin-right: 7rem;
+      @include d-h1;
+    }
+
+    @include desktop {
+      padding-top: 0rem;
+      margin-right: 19rem;
+      @include d-h1;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    border-radius: 1.25rem;
+    padding-left: 0.7rem;
+    background-position: right;
+    height: 2rem;
+    border: none;
+    background-color: $instock-indigo;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      width: 60%;
+    }
+
+    @include desktop {
+      width: 18%;
+      padding: 0;
+    }
+  }
+
+  &__button-text {
+    color: $white;
+
+    @include tablet {
+      padding-right: 0.7rem;
+    }
+  }
+}
+
+/*styling for the the greybar on tablet and desktop*/
+@include tablet {
+  .warehouseList {
+    display: flex;
+    max-width: 50%;
+    gap: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    &__label {
+      display: flex;
+      align-items: center;
+      min-width: 100px;
+    }
+
+    &__label-info {
+      min-width: 160px;
+      display: flex;
+      align-items: center;
+      @include m-p3;
+      color: $instock-slate;
+      text-transform: uppercase;
+    }
+
+    &__name {
+      text-transform: uppercase;
+      @include m-p3;
+      color: $instock-slate;
+    }
+  }
+}
+
+@include desktop {
+  .warehouseList {
+    display: flex;
+    gap: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    &__label {
+      display: flex;
+      align-items: center;
+      min-width: 200px;
+    }
+
+    &__label-info {
+      min-width: 180px;
+      display: flex;
+      align-items: center;
+      @include m-p3;
+      color: $instock-slate;
+      text-transform: uppercase;
+    }
+
+    &__name {
+      text-transform: uppercase;
+      @include m-p3;
+      color: $instock-slate;
+    }
+  }
+}
+
+input.warehouse__search-bar {
+  width: 100%;
+  border-radius: 1.25rem;
+  padding-left: 0.7rem;
+  background: transparent url(../../assets/Icons/search-24px.svg) no-repeat 13px;
+  background-position: right;
+  height: 2rem;
+  border: 1px solid $instock-cloud;
+  margin-bottom: 0.8rem;
+
+  @include tablet {
+    width: 60%;
+  }
+
+  @include desktop {
+    width: 30%;
+  }
+}
+
+@include tablet {
+  .warehouse__head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0.5rem 1rem 1rem;
+  }
+}
+
+@include desktop {
+  .warehouse__head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0.5rem 1rem 1rem;
+  }
+}
+
+@include mobile {
+  .warehouseList {
+    display: none;
+  }
+}
