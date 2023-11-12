@@ -1,4 +1,3 @@
-
 // import "./WarehouseDetails.scss";
 // import { Link } from "react-router-dom";
 // import warehouseData from "../../test_data/warehouse_JSON.json";
