@@ -43,8 +43,16 @@ function InventoryCard({ itemName, quantity, status, category }) {
 				</div>
 			</div>
 			<div className="inventoryCard__btm">
-				<img src={deleteIcon} alt="delete-icon" />
-				<img src={editIcon} alt="edit-icon" />
+				<img
+					className="inventoryCard__btm--icon"
+					src={deleteIcon}
+					alt="delete-icon"
+				/>
+				<img
+					className="inventoryCard__btm--icon"
+					src={editIcon}
+					alt="edit-icon"
+				/>
 			</div>
 		</div>
 	);
