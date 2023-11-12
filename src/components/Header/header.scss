@@ -37,18 +37,7 @@
       display: flex;
       justify-content: space-around;
     }
-  }
-  .nav__button {
-    @include desktop {
-      border-radius: 20px;
-      border: none;
-      color: white;
-      height: 2rem;
-      width: 7rem;
-      background-color: rgb(18, 23, 43, 0.6);
-      padding: 0 1rem 0 1rem;
-    }
-    
+  } 
     .link {
         display: contents;
         text-decoration: none;
