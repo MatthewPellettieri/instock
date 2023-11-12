@@ -48,23 +48,77 @@
       background-color: rgb(18, 23, 43, 0.6);
       padding: 0 1rem 0 1rem;
     }
-    @include tablet {
-      border-radius: 20px;
-      border: none;
-      color: white;
-      height: 2rem;
-      width: 7rem;
-      background-color: rgb(18, 23, 43, 0.6);
-      padding: 0 1rem 0 1rem;
+    
+    .link {
+        display: contents;
+        text-decoration: none;
     }
-    @include mobile {
-      border-radius: 20px;
-      border: none;
-      color: white;
-      height: 2.25rem;
-      width: 10rem;
-      background-color: rgb(18, 23, 43, 0.6);
-      padding: 0 1rem 0 1rem;
+    .navLink {
+        display: contents;
+        text-decoration: none;
     }
-  }
+    .button--container {
+        @include mobile {
+        display: flex;
+        justify-content: space-around;
+        }
+    }
+    .nav__button {
+        @include desktop {
+       border-radius: 20px;
+       border: none;
+       color: white;
+       height: 2rem;
+       width: 7rem;
+       background-color: $instock-graphite;
+       padding: 0 1rem 0 1rem;
+        }
+        @include tablet {
+       border-radius: 20px;
+       border: none;
+       color: white;
+       height: 2rem;
+       width: 7rem;
+       background-color: $instock-graphite;
+       padding: 0 1rem 0 1rem;
+        }
+        @include mobile {
+       border-radius: 20px;
+       border: none;
+       color: white;
+       height: 2.25rem;
+       width: 10rem;
+       background-color: $instock-graphite;
+       padding: 0 1rem 0 1rem;
+        }
+    }
+}
+.active {
+    @include desktop {
+        border-radius: 20px;
+        border: none;
+        color: white;
+        height: 2rem;
+        width: 7rem;
+        background-color: rgb(18, 23, 43, 0.6);
+        padding: 0 1rem 0 1rem;
+         }
+         @include tablet {
+        border-radius: 20px;
+        border: none;
+        color: white;
+        height: 2rem;
+        width: 7rem;
+        background-color: rgb(18, 23, 43, 0.6);
+        padding: 0 1rem 0 1rem;
+         }
+         @include mobile {
+        border-radius: 20px;
+        border: none;
+        color: white;
+        height: 2.25rem;
+        width: 10rem;
+        background-color: rgb(18, 23, 43, 0.6);
+        padding: 0 1rem 0 1rem;
+         }
 }

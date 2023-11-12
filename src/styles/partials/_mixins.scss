@@ -1,20 +1,14 @@
 @use "../partials/variables" as *;
 
 @mixin mobile {
-	@media (min-width: 0px) {
-		@content;
-	}
+    @media (min-width: 0px) and (max-width: 767px) { @content }
 }
 
 @mixin tablet {
-	@media (min-width: 768px) {
-		@content;
-	}
+    @media (min-width: 768px) and (max-width: 1279px) { @content }
 }
 @mixin desktop {
-	@media (min-width: 1280px) {
-		@content;
-	}
+    @media (min-width: 1280px) { @content }
 }
 
 // mobile text
