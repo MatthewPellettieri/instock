@@ -32,6 +32,14 @@
         padding: 1.5rem 0 1.5rem 0;
         }
     }
+    .link {
+        display: contents;
+        text-decoration: none;
+    }
+    .navLink {
+        display: contents;
+        text-decoration: none;
+    }
     .button--container {
         @include mobile {
         display: flex;
@@ -45,7 +53,7 @@
        color: white;
        height: 2rem;
        width: 7rem;
-       background-color: rgb(18, 23, 43, 0.6);
+       background-color: $instock-graphite;
        padding: 0 1rem 0 1rem;
         }
         @include tablet {
@@ -54,7 +62,7 @@
        color: white;
        height: 2rem;
        width: 7rem;
-       background-color: rgb(18, 23, 43, 0.6);
+       background-color: $instock-graphite;
        padding: 0 1rem 0 1rem;
         }
         @include mobile {
@@ -63,8 +71,37 @@
        color: white;
        height: 2.25rem;
        width: 10rem;
-       background-color: rgb(18, 23, 43, 0.6);
+       background-color: $instock-graphite;
        padding: 0 1rem 0 1rem;
         }
     }
+}
+.active {
+    @include desktop {
+        border-radius: 20px;
+        border: none;
+        color: white;
+        height: 2rem;
+        width: 7rem;
+        background-color: rgb(18, 23, 43, 0.6);
+        padding: 0 1rem 0 1rem;
+         }
+         @include tablet {
+        border-radius: 20px;
+        border: none;
+        color: white;
+        height: 2rem;
+        width: 7rem;
+        background-color: rgb(18, 23, 43, 0.6);
+        padding: 0 1rem 0 1rem;
+         }
+         @include mobile {
+        border-radius: 20px;
+        border: none;
+        color: white;
+        height: 2.25rem;
+        width: 10rem;
+        background-color: rgb(18, 23, 43, 0.6);
+        padding: 0 1rem 0 1rem;
+         }
 }
