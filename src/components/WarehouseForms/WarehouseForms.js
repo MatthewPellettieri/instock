@@ -5,15 +5,15 @@ import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 function WarehouseForms(props) {
 	return (
 		<div className="warehouseForms">
-			<div className="warehouse__header--container">
-				<Link to="/" className="warehouse__header--link">
+			<div className="warehouseForms__header--container">
+				<Link to="/" className="warehouseForms__header--link">
 					<img
-						className="warehouse__header--icon"
+						className="warehouseForms__header--icon"
 						src={backArrow}
 						alt="back-arrow"
 					/>
 				</Link>
-				<p className="warehouse__header--title">{props.heading}</p>
+				<p className="warehouseForms__header--title">{props.heading}</p>
 			</div>
 			<div className="warehouseForms__container">
 				<form className="warehouseForms__form">
