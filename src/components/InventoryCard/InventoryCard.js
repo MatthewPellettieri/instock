@@ -6,6 +6,14 @@ import chevron from "../../assets/Icons/chevron_right-24px.svg";
 function InventoryCard({ itemName, quantity, status, category }) {
 	const upperStatus = status.toUpperCase();
 
+	const ifInventoryPage = () => {
+		if (window.location.href === "http://localhost:3000/inventory") {
+			return true;
+		} else {
+			return false;
+		}
+	};
+
 	return (
 		<div className="inventoryCard">
 			<div className="inventoryCard__top">
@@ -39,6 +47,13 @@ function InventoryCard({ itemName, quantity, status, category }) {
 					<div className="inventoryCard__quantity">
 						<p className="inventoryCard__label">QTY</p>
 						<p className="inventoryCard__text">{quantity}</p>
+					</div>
+					<div
+						className={`inventoryCard__warehouse ${
+							ifInventoryPage() ? "" : "disable"
+						}`}>
+						<p className="inventoryCard__label">WAREHOUSE</p>
+						<p className="inventoryCard__text">Manhattan</p>
 					</div>
 				</div>
 			</div>
