@@ -6,7 +6,7 @@
 	border-radius: 4px;
 }
 
-.warehouse {
+.warehouseDetails {
 	&__header {
 		display: flex;
 		justify-content: space-between;
@@ -185,7 +185,7 @@
 	}
 
 	&__label {
-		@extend .warehouse__label;
+		@extend .warehouseDetails__label;
 		padding-bottom: 0rem;
 	}
 

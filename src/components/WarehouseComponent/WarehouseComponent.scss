@@ -5,8 +5,14 @@
   .warehouseCard {
     @include divider;
     padding-bottom: 1rem;
+
+    &:hover {
+      background-color: $instock-light-grey;
+    }
+
     &__flex-container {
       display: flex;
+      justify-content: space-between;
       gap: 1.65rem;
       padding-left: 1rem;
       padding-right: 1rem;
@@ -67,49 +73,51 @@
 @include tablet {
   .warehouseCard {
     display: flex;
-    @include divider;
-    height: 7rem;
     align-items: center;
-    padding-left: 2rem;
+    padding-left: 2.1rem;
+    padding-bottom: 0rem;
+    height: 6rem;
 
     &__flex-container {
       display: flex;
       flex-direction: row;
+      padding: 0rem;
     }
+
     &__name-box {
       display: flex;
-      gap: 1rem;
+      width: 15%;
+      align-items: center;
     }
 
     &__contact-box {
       display: flex;
-      gap: 0.3rem;
+      width: 19.375rem;
+      align-items: center;
     }
 
     &__name-link {
-      display: flex;
+      width: 6.25rem;
+      padding-bottom: 0rem;
     }
 
     &__postal {
-      width: 120px;
-      margin-right: 0.8rem;
+      width: 6.25rem;
+    }
+
+    &__contact-name {
+      width: 8.2rem;
+      padding-bottom: 0rem;
     }
 
     &__name {
-      width: 118px;
-      display: flex;
-      align-items: center;
+      margin-right: 2rem;
     }
 
-    &__contact-info {
-      width: 190px;
-      padding-top: 0.1rem;
-    }
-
-    &__contact {
-      width: 130px;
+    &__icons {
       display: flex;
-      align-items: center;
+      gap: 0.7rem;
+      padding: 0rem;
     }
 
     &__name-text,
@@ -117,16 +125,6 @@
     &__contact-text,
     &__contact-title {
       display: none;
-    }
-
-    &__location {
-      color: $instock-indigo;
-    }
-
-    &__icons {
-      display: flex;
-      justify-content: center;
-      gap: 0.7rem;
     }
   }
 }
@@ -134,54 +132,51 @@
 @include desktop {
   .warehouseCard {
     display: flex;
-    @include divider;
-    height: 7rem;
     align-items: center;
-    padding-left: 2rem;
+    padding-left: 4rem;
+    padding-bottom: 0rem;
+    height: 6rem;
 
     &__flex-container {
       display: flex;
       flex-direction: row;
+      padding: 0rem;
     }
+
     &__name-box {
       display: flex;
-      gap: 1rem;
+      width: 590px;
+      align-items: center;
     }
 
     &__contact-box {
       display: flex;
-      gap: 0.3rem;
+      width: 465px;
+      align-items: center;
     }
 
     &__name-link {
-      display: flex;
+      width: 250px;
+      padding-bottom: 0rem;
     }
 
     &__postal {
-      width: 230px;
-      margin-right: 2rem;
+      width: 200px;
     }
 
-    &__address {
-      display: flex;
-      align-items: center;
+    &__contact-name {
+      width: 230px;
+      padding-bottom: 0rem;
     }
 
     &__name {
-      width: 200px;
-      display: flex;
-      align-items: center;
+      margin-right: 2rem;
     }
 
-    &__contact-info {
-      width: 210px;
-      padding-top: 0.1rem;
-    }
-
-    &__contact {
-      width: 210px;
+    &__icons {
       display: flex;
-      align-items: center;
+      gap: 0.7rem;
+      padding: 0rem;
     }
 
     &__name-text,
@@ -191,14 +186,8 @@
       display: none;
     }
 
-    &__location {
-      color: $instock-indigo;
-    }
-
-    &__icons {
-      display: flex;
-      justify-content: center;
-      gap: 0.7rem;
+    &__contact-info {
+      width: 400px;
     }
   }
 }
