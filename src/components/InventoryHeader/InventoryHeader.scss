@@ -31,7 +31,9 @@
 		width: 40%;
 
 		@include desktop {
-			width: 58%;
+			justify-content: flex-start;
+			gap: 256px;
+			width: 40%;
 		}
 	}
 
