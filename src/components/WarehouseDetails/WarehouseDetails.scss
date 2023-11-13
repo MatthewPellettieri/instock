@@ -4,9 +4,7 @@
 .warehouseDetails {
 	background-color: $white;
 	border-radius: 4px;
-}
 
-.warehouseDetails {
 	&__header {
 		display: flex;
 		justify-content: space-between;
@@ -28,6 +26,7 @@
 		}
 
 		&--icon {
+			margin-top: 0.0625rem;
 			width: 1.5rem;
 			height: 1.5rem;
 		}
