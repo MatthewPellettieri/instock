@@ -2,9 +2,6 @@
 @use "../../styles/partials/variables" as *;
 
 .warehouseDetails {
-	background-color: $white;
-	border-radius: 4px;
-
 	&__header {
 		display: flex;
 		justify-content: space-between;
