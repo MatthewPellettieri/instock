@@ -28,7 +28,7 @@
 	&__right {
 		display: flex;
 		justify-content: space-between;
-		width: 56%;
+		width: 40%;
 
 		@include desktop {
 			width: 58%;
@@ -37,6 +37,10 @@
 
 	&__container {
 		display: flex;
+
+		&--warehouse {
+			@extend .inventoryHeader__container;
+		}
 	}
 
 	&__label {
@@ -50,4 +54,8 @@
 		width: 16px;
 		height: 16px;
 	}
+}
+
+.disable {
+	display: none;
 }
