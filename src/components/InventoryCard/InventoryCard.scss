@@ -55,6 +55,18 @@
 			@include desktop {
 				width: 53%;
 			}
+
+			&--inventoryPage {
+				@include tablet {
+					display: flex;
+					justify-content: space-between;
+					width: 56%;
+				}
+
+				@include desktop {
+					width: 55%;
+				}
+			}
 		}
 
 		&--left,
@@ -79,6 +91,15 @@
 		@include tablet {
 			width: 30%;
 		}
+
+		&--inventoryPage {
+			@include tablet {
+				width: 25%;
+			}
+			@include desktop {
+				width: 28%;
+			}
+		}
 	}
 
 	&__item {
@@ -95,6 +116,16 @@
 		@include desktop {
 			width: 44%;
 		}
+
+		&--inventoryPage {
+			@include tablet {
+				width: 18%;
+			}
+
+			@include desktop {
+				width: 24%;
+			}
+		}
 	}
 
 	&__category {
@@ -108,7 +139,10 @@
 
 		@include tablet {
 			padding-top: 0rem;
-			width: 32%;
+			width: 30%;
+		}
+		@include desktop {
+			width: 26%;
 		}
 	}
 

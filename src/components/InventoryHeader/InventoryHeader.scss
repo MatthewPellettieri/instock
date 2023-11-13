@@ -35,6 +35,18 @@
 			gap: 256px;
 			width: 40%;
 		}
+
+		&--inventoryPage {
+			@include tablet {
+				display: flex;
+				justify-content: space-between;
+				width: 46%;
+			}
+
+			@include desktop {
+				width: 43%;
+			}
+		}
 	}
 
 	&__container {
