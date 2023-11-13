@@ -8,30 +8,41 @@ import WarehouseForms from "./components/WarehouseForms/WarehouseForms";
 import Footer from "./components/Footer/footer";
 
 function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <Header />
-        <div className="whiteBox">
-          <Routes>
-            {/* ------------------Warehouse-------------------------------- */}
-            <Route path="/" element={<WarehousePage />}></Route>
-            <Route path="/warehouseDetails" element={<WarehouseDetails />} />
-            <Route path="/editWarehouse" element={<WarehouseForms heading="Edit Warehouse" buttonText="Save" />}></Route>
-			<Route path="/addWarehouse" element={<WarehouseForms heading="Add New Warehouse" buttonText="+ AddWarehouse" />}></Route>
-            {/* -------------------------Inventory----------------- */}
-            <Route path="/inventory" element={<InventoryPage />}>
-              {/* <Route path="/inventory/:id" element={<Inventory />} /> */}
-            </Route>
-            {/* <Route path="/editInventory/:id" element={<EditInventory />}></Route>
+	return (
+		<>
+			<BrowserRouter>
+				<Header />
+				<div className="whiteBox">
+					<Routes>
+						{/* ------------------Warehouse-------------------------------- */}
+						<Route path="/" element={<WarehousePage />}></Route>
+						<Route path="/warehouseDetails" element={<WarehouseDetails />} />
+						<Route
+							path="/editWarehouse"
+							element={
+								<WarehouseForms heading="Edit Warehouse" buttonText="Save" />
+							}></Route>
+						<Route
+							path="/addWarehouse"
+							element={
+								<WarehouseForms
+									heading="Add New Warehouse"
+									buttonText="+ AddWarehouse"
+								/>
+							}></Route>
+						{/* -------------------------Inventory----------------- */}
+						<Route path="/inventory" element={<InventoryPage />}>
+							{/* <Route path="/inventory/:id" element={<Inventory />} /> */}
+						</Route>
+						{/* <Route path="/editInventory/:id" element={<EditInventory />}></Route>
 						<Route path="/addInventory" element={<AddInventory />}></Route>*/}
-          </Routes>
-        </div>
-      </BrowserRouter>
+					</Routes>
+				</div>
+			</BrowserRouter>
 
-      <Footer />
-    </>
-  );
+			<Footer />
+		</>
+	);
 }
 
 export default App;
