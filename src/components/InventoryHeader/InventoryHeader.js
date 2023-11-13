@@ -1,4 +1,5 @@
 import "./InventoryHeader.scss";
+import sortIcon from "../../assets/Icons/sort-24px.svg";
 
 function InventoryHeader() {
 	// const ifInventoryPage = () => {
@@ -10,13 +11,45 @@ function InventoryHeader() {
 	// };
 
 	return (
-		<div className="inventoryPage">
-			<div className="inventoryPage__header">
-				<div className="inventoryPage__header--container">
-					<p className="inventoryPage__header--title">Inventory</p>
+		<div className="inventoryHeader">
+			<div className="inventoryHeader__left">
+				<div className="inventoryHeader__container">
+					<p className="inventoryHeader__label">INVENTORY ITEM</p>
+					<img
+						src={sortIcon}
+						alt="sort-icon"
+						className="inventoryHeader__icon"
+					/>
 				</div>
-				<button className="inventoryPage__button"></button>
-				<button className="inventoryPage__button--special">Edit</button>
+				<div className="inventoryHeader__container">
+					<p className="inventoryHeader__label">CATEGORY</p>
+					<img
+						src={sortIcon}
+						alt="sort-icon"
+						className="inventoryHeader__icon"
+					/>
+				</div>
+			</div>
+			<div className="inventoryHeader__right">
+				<div className="inventoryHeader__container">
+					<p className="inventoryHeader__label">STATUS</p>
+					<img
+						src={sortIcon}
+						alt="sort-icon"
+						className="inventoryHeader__icon"
+					/>
+				</div>
+				<div className="inventoryHeader__container">
+					<p className="inventoryHeader__label">QUANTITY</p>
+					<img
+						src={sortIcon}
+						alt="sort-icon"
+						className="inventoryHeader__icon"
+					/>
+				</div>
+				<div className="inventoryHeader__container">
+					<p className="inventoryHeader__label">ACTIONS</p>
+				</div>
 			</div>
 		</div>
 	);
