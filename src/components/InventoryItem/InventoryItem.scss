@@ -1,0 +1,93 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.inventoryItem {
+	background-color: $white;
+	border-radius: 4px;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		@include divider;
+		padding: 1.5rem 1rem;
+
+		@include tablet {
+			padding: 1.5rem 2rem;
+		}
+
+		@include desktop {
+			padding: 1.5rem 3rem;
+		}
+
+		&--container {
+			display: flex;
+			align-items: center;
+		}
+
+		&--icon {
+			margin-top: 0.0625rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		&--title {
+			@include m-h1;
+			padding-left: 0.5rem;
+
+			@include tablet {
+				@include d-h1;
+			}
+		}
+
+		&--link {
+			height: 1.5rem;
+		}
+	}
+
+	&__button {
+		height: 2.25rem;
+		width: 2.25rem;
+		border: none;
+		background-color: $instock-indigo;
+		border-radius: 1.25rem;
+		background-image: url("../../assets/Icons/edit_white_24dp.svg");
+		background-size: 55%;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		@include tablet {
+			display: none;
+		}
+
+		&--special {
+			display: none;
+
+			@include tablet {
+				display: block;
+				@include d-h3;
+				color: $white;
+				padding-left: 1rem;
+				width: 11%;
+				height: 2.375rem;
+
+				border: none;
+				background-color: $instock-indigo;
+				border-radius: 1.25rem;
+				background-image: url("../../assets/Icons/edit_white_24dp.svg");
+				background-size: 20px 20px;
+				background-position: 10px 8px;
+				background-repeat: no-repeat;
+
+				&:hover {
+					background-color: $instock-graphite;
+				}
+			}
+
+			@include desktop {
+				width: 8%;
+				background-position: 16px 8px;
+			}
+		}
+	}
+}
