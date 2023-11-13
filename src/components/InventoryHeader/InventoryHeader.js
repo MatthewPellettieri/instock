@@ -10,6 +10,8 @@ function InventoryHeader() {
 		}
 	};
 
+	let QtyLabel = ifInventoryPage() ? "QTY" : "QUANTITY";
+
 	return (
 		<div className="inventoryHeader">
 			<div className="inventoryHeader__left">
@@ -30,7 +32,10 @@ function InventoryHeader() {
 					/>
 				</div>
 			</div>
-			<div className="inventoryHeader__right">
+			<div
+				className={`inventoryHeader__right${
+					ifInventoryPage() ? "--inventoryPage" : ""
+				}`}>
 				<div className="inventoryHeader__container">
 					<p className="inventoryHeader__label">STATUS</p>
 					<img
@@ -40,7 +45,7 @@ function InventoryHeader() {
 					/>
 				</div>
 				<div className="inventoryHeader__container">
-					<p className="inventoryHeader__label">QUANTITY</p>
+					<p className="inventoryHeader__label">{QtyLabel}</p>
 					<img
 						src={sortIcon}
 						alt="sort-icon"

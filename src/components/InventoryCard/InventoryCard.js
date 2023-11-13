@@ -34,8 +34,14 @@ function InventoryCard({ itemName, quantity, status, category }) {
 						<p className="inventoryCard__text">{category}</p>
 					</div>
 				</div>
-				<div className="inventoryCard__container--right">
-					<div className="inventoryCard__status">
+				<div
+					className={`inventoryCard__container--right${
+						ifInventoryPage() ? "--inventoryPage" : ""
+					}`}>
+					<div
+						className={`inventoryCard__status${
+							ifInventoryPage() ? "--inventoryPage" : ""
+						}`}>
 						<p className="inventoryCard__label">STATUS</p>
 						<div
 							className={`inventoryCard__tag${
@@ -44,7 +50,10 @@ function InventoryCard({ itemName, quantity, status, category }) {
 							{upperStatus}
 						</div>
 					</div>
-					<div className="inventoryCard__quantity">
+					<div
+						className={`inventoryCard__quantity${
+							ifInventoryPage() ? "--inventoryPage" : ""
+						}`}>
 						<p className="inventoryCard__label">QTY</p>
 						<p className="inventoryCard__text">{quantity}</p>
 					</div>
