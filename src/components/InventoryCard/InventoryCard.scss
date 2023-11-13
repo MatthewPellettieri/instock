@@ -103,6 +103,10 @@
 		}
 	}
 
+	&__warehouse {
+		padding-top: 1rem;
+	}
+
 	&__link {
 		display: flex;
 		gap: 0.25rem;
@@ -199,4 +203,8 @@
 			}
 		}
 	}
+}
+
+.disable {
+	display: none;
 }
