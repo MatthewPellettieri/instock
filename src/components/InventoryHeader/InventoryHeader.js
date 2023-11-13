@@ -2,13 +2,13 @@ import "./InventoryHeader.scss";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 
 function InventoryHeader() {
-	// const ifInventoryPage = () => {
-	// 	if (window.location.href === "http://localhost:3000/inventory") {
-	// 		return true;
-	// 	} else {
-	// 		return false;
-	// 	}
-	// };
+	const ifInventoryPage = () => {
+		if (window.location.href === "http://localhost:3000/inventory") {
+			return true;
+		} else {
+			return false;
+		}
+	};
 
 	return (
 		<div className="inventoryHeader">
@@ -47,9 +47,21 @@ function InventoryHeader() {
 						className="inventoryHeader__icon"
 					/>
 				</div>
-				<div className="inventoryHeader__container">
-					<p className="inventoryHeader__label">ACTIONS</p>
+				{/* --warehouse only shows up on /inventory page */}
+				<div
+					className={`inventoryHeader__container--warehouse ${
+						ifInventoryPage() ? "" : "disable"
+					}`}>
+					<p className="inventoryHeader__label">WAREHOUSE</p>
+					<img
+						src={sortIcon}
+						alt="sort-icon"
+						className="inventoryHeader__icon"
+					/>
 				</div>
+			</div>
+			<div className="inventoryHeader__actions">
+				<p className="inventoryHeader__label">ACTIONS</p>
 			</div>
 		</div>
 	);
