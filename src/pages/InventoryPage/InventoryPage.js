@@ -1,15 +1,9 @@
 import "./InventoryPage.scss";
 import inventoryData from "../../test_data/inventory_JSON.json";
+import InventoryHeader from "../../components/InventoryHeader/InventoryHeader";
+import InventoryCard from "../../components/InventoryCard/InventoryCard";
 
 function InventoryPage() {
-	// const ifInventoryPage = () => {
-	// 	if (window.location.href === "http://localhost:3000/inventory") {
-	// 		return true;
-	// 	} else {
-	// 		return false;
-	// 	}
-	// };
-
 	return (
 		<div className="inventoryPage">
 			<div className="inventoryPage__header">
@@ -19,6 +13,16 @@ function InventoryPage() {
 				<button className="inventoryPage__button"></button>
 				<button className="inventoryPage__button--special">Edit</button>
 			</div>
+			<InventoryHeader />
+			{inventoryData.map((item) => (
+				<InventoryCard
+					key={item.id}
+					itemName={item.item_name}
+					quantity={item.quantity}
+					status={item.status}
+					category={item.category}
+				/>
+			))}
 		</div>
 	);
 }
