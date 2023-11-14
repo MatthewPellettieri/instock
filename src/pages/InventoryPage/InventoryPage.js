@@ -7,11 +7,20 @@ function InventoryPage() {
 	return (
 		<div className="inventoryPage">
 			<div className="inventoryPage__header">
-				<div className="inventoryPage__header--container">
-					<p className="inventoryPage__header--title">Inventory</p>
+				<div className="inventoryPage__title">
+					<p className="inventoryPage__title--text">Inventory</p>
 				</div>
-				<button className="inventoryPage__button"></button>
-				<button className="inventoryPage__button--special">Edit</button>
+				<div className="inventoryPage__container">
+					<form className="inventoryPage__form">
+						<input
+							className="inventoryPage__form--input"
+							type="text"
+							id="search"
+							name="search"
+							placeholder="Search..."></input>
+					</form>
+					<button className="inventoryPage__button">+ Add New Item</button>
+				</div>
 			</div>
 			<InventoryHeader />
 			{inventoryData.map((item) => (
