@@ -46,7 +46,7 @@
 		}
 
 		&--right {
-			width: 30%;
+			width: 34%;
 
 			@include tablet {
 				width: 52%;
@@ -57,6 +57,8 @@
 			}
 
 			&--inventoryPage {
+				width: 34%;
+
 				@include tablet {
 					display: flex;
 					justify-content: space-between;
@@ -93,8 +95,10 @@
 		}
 
 		&--inventoryPage {
+			padding-bottom: 1rem;
 			@include tablet {
-				width: 25%;
+				padding-bottom: 0rem;
+				width: 26%;
 			}
 			@include desktop {
 				width: 28%;
@@ -114,23 +118,19 @@
 		}
 
 		@include desktop {
-			width: 44%;
+			width: 43%;
 		}
 
 		&--inventoryPage {
 			@include tablet {
-				width: 18%;
-			}
-
-			@include desktop {
-				width: 24%;
+				width: 10%;
 			}
 		}
 	}
 
 	&__category {
 		@include tablet {
-			width: 25%;
+			width: 27%;
 		}
 	}
 
@@ -139,10 +139,7 @@
 
 		@include tablet {
 			padding-top: 0rem;
-			width: 30%;
-		}
-		@include desktop {
-			width: 26%;
+			width: 44%;
 		}
 	}
 
@@ -227,12 +224,10 @@
 
 		@include tablet {
 			width: 10%;
-			justify-content: space-around;
 		}
 
 		@include desktop {
 			width: 5%;
-			justify-content: space-between;
 		}
 
 		&--icon {

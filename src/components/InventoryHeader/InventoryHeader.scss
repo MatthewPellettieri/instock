@@ -40,7 +40,7 @@
 			@include tablet {
 				display: flex;
 				justify-content: space-between;
-				width: 46%;
+				width: 47%;
 			}
 
 			@include desktop {
@@ -54,6 +54,18 @@
 
 		&--warehouse {
 			@extend .inventoryHeader__container;
+			margin-right: 2rem;
+
+			@include tablet {
+				width: 30%;
+			}
+		}
+
+		&--inventoryPage {
+			@extend .inventoryHeader__container;
+			@include tablet {
+				width: 30%;
+			}
 		}
 	}
 
@@ -62,9 +74,14 @@
 		color: $instock-slate;
 		padding-bottom: 0.25rem;
 		padding-bottom: 0rem;
+
+		@include tablet {
+			@include d-h4;
+		}
 	}
 
 	&__icon {
+		margin-left: 0.25rem;
 		width: 16px;
 		height: 16px;
 	}
