@@ -3,11 +3,41 @@
 
 @include mobile {
   .editInventory {
+    &__header-back-button {
+      @include tablet {
+        padding-right: 0.5rem;
+      }
+    }
+
+    &__title {
+      @include m-h1;
+
+      @include tablet {
+        @include d-h1;
+      }
+    }
+
     &__header {
       display: flex;
       @include divider;
       padding: 1.5rem 1rem 1rem 1rem;
       align-items: center;
+
+      @include tablet {
+        padding: 1.5rem 1rem 1rem 2rem;
+      }
+
+      @include desktop {
+        padding: 1.5rem 1rem 1rem 3rem;
+      }
+    }
+
+    &__details-header {
+      @include m-h2;
+
+      @include tablet {
+        @include d-h2;
+      }
     }
 
     &__details {
@@ -18,8 +48,8 @@
       @include tablet {
         display: flex;
         justify-content: space-around;
-        gap: 1rem;
         width: 100%;
+        margin-bottom: 1rem;
       }
     }
 
@@ -31,7 +61,8 @@
 
     &__details-form-container {
       @include tablet {
-        width: 40%;
+        width: 48%;
+        border-right: 1px solid $instock-cloud;
       }
     }
 
@@ -45,7 +76,11 @@
       margin-top: 1rem;
 
       @include tablet {
-        margin: 0;
+        padding-right: 2rem;
+      }
+
+      @include desktop {
+        padding-right: 5rem;
       }
     }
 
@@ -64,6 +99,10 @@
       padding-top: 0.2rem;
       border: 1px solid $instock-cloud;
       margin-bottom: 1rem;
+
+      @include tablet {
+        margin-bottom: 0rem;
+      }
     }
 
     &__details-drop-down {
@@ -91,7 +130,19 @@
 
     &__form-header {
       margin-top: 1rem;
+      padding-bottom: 0.4rem;
+      @include m-h3;
       @include tablet {
+        font-size: 14px;
+      }
+    }
+    // added another class to enable tablet styling
+    &__form-header--two {
+      @include m-h2;
+      @include tablet {
+        margin-top: 0rem;
+        padding-bottom: 0.7rem;
+        @include d-h2;
       }
     }
 
@@ -113,12 +164,32 @@
     &__buttons-container {
       display: flex;
       gap: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+
+      @include tablet {
+        width: 30%;
+        position: relative;
+        justify-content: flex-end;
+        left: 64%;
+        padding: 0;
+      }
     }
 
     &__cancel {
       width: 50%;
       border-radius: 20px;
       border: 1px solid $instock-cloud;
+      background-color: white;
+
+      @include tablet {
+        width: 30%;
+      }
+
+      @include desktop {
+        width: 20%;
+      }
     }
 
     &__save {
@@ -128,10 +199,22 @@
       border: none;
       color: white;
       height: 2rem;
+
+      @include tablet {
+        width: 30%;
+      }
+
+      @include desktop {
+        width: 20%;
+      }
+    }
+
+    &__grey-bar {
+      width: 100%;
+      background-color: $instock-light-grey;
+      height: 3rem;
+      text-align: center;
+      padding-top: 0.5rem;
     }
   }
 }
-
-// @include mobile {
-
-// }

@@ -10,14 +10,14 @@ function EditInventory() {
           src={backButton}
           alt="button to back"
         ></img>
-        <h1 className="EditInventory__title">Edit Inventory Item</h1>
+        <h1 className="editInventory__title">Edit Inventory Item</h1>
       </div>
 
       <section className="editInventory__details">
         <div className="editInventory__details-form-container">
-          <h3 className="editInventory__details-header">Item Details</h3>
+          <h2 className="editInventory__details-header">Item Details</h2>
           <form className="editInventory__details-form">
-            <h5 className="editInventory__form-header">Item Name</h5>
+            <h3 className="editInventory__form-header">Item Name</h3>
             <input
               type="text"
               name="item name"
@@ -25,7 +25,7 @@ function EditInventory() {
               placeholder="Television"
             ></input>
 
-            <h5 className="editInventory__form-header">Description</h5>
+            <h3 className="editInventory__form-header">Description</h3>
             <textarea
               type="text"
               name="item description"
@@ -35,7 +35,7 @@ function EditInventory() {
             ></textarea>
 
             <div className="editInventory__details-dropdown">
-              <h5 className="editInventory__form-header">Category</h5>
+              <h3 className="editInventory__form-header">Category</h3>
               <select
                 name="categories"
                 className="editInventory__details-drop-down"
@@ -47,7 +47,9 @@ function EditInventory() {
         </div>
         <hr className="editInventory__divider" />
         <div className="editInventory__form-container">
-          <h3 className="editInventory__form-header">Item Availability</h3>
+          <h2 className="editInventory__form-header editInventory__form-header--two">
+            Item Availability
+          </h2>
           <form className="editInventory__form">
             <h5 className="editInventory__form-header">Status</h5>
             <div className="editInventory__radio-container">
@@ -71,7 +73,7 @@ function EditInventory() {
             </div>
 
             <div className="editInventory__details-dropdown">
-              <h5 className="editInventory__form-header">Warehouse</h5>
+              <h3 className="editInventory__form-header">Warehouse</h3>
               <select
                 name="categories"
                 className="editInventory__details-drop-down"
@@ -82,9 +84,11 @@ function EditInventory() {
           </form>
         </div>
       </section>
-      <div className="editInventory__buttons-container">
-        <button className="editInventory__cancel">Cancel</button>
-        <button className="editInventory__save">Save</button>
+      <div className="editInventory__grey-bar">
+        <div className="editInventory__buttons-container">
+          <button className="editInventory__cancel">Cancel</button>
+          <button className="editInventory__save">Save</button>
+        </div>
       </div>
     </section>
   );
