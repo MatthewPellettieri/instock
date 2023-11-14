@@ -115,18 +115,17 @@
 	&__contacts {
 		display: flex;
 		justify-content: space-between;
-		width: 95%;
 
 		@include tablet {
 			width: 60%;
 			border-left: 1px solid $instock-cloud;
 			padding: 0rem 3rem;
 			justify-content: flex-start;
-			gap: 3.8rem;
+			gap: 3.5rem;
 		}
 
 		@include desktop {
-			gap: 10.5rem;
+			gap: 10.8rem;
 		}
 	}
 
