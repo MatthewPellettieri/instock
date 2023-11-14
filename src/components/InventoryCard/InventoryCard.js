@@ -6,6 +6,14 @@ import chevron from "../../assets/Icons/chevron_right-24px.svg";
 function InventoryCard({ itemName, quantity, status, category }) {
 	const upperStatus = status.toUpperCase();
 
+	const ifInventoryPage = () => {
+		if (window.location.href === "http://localhost:3000/inventory") {
+			return true;
+		} else {
+			return false;
+		}
+	};
+
 	return (
 		<div className="inventoryCard">
 			<div className="inventoryCard__top">
@@ -26,8 +34,14 @@ function InventoryCard({ itemName, quantity, status, category }) {
 						<p className="inventoryCard__text">{category}</p>
 					</div>
 				</div>
-				<div className="inventoryCard__container--right">
-					<div className="inventoryCard__status">
+				<div
+					className={`inventoryCard__container--right${
+						ifInventoryPage() ? "--inventoryPage" : ""
+					}`}>
+					<div
+						className={`inventoryCard__status${
+							ifInventoryPage() ? "--inventoryPage" : ""
+						}`}>
 						<p className="inventoryCard__label">STATUS</p>
 						<div
 							className={`inventoryCard__tag${
@@ -36,9 +50,19 @@ function InventoryCard({ itemName, quantity, status, category }) {
 							{upperStatus}
 						</div>
 					</div>
-					<div className="inventoryCard__quantity">
+					<div
+						className={`inventoryCard__quantity${
+							ifInventoryPage() ? "--inventoryPage" : ""
+						}`}>
 						<p className="inventoryCard__label">QTY</p>
 						<p className="inventoryCard__text">{quantity}</p>
+					</div>
+					<div
+						className={`inventoryCard__warehouse ${
+							ifInventoryPage() ? "" : "disable"
+						}`}>
+						<p className="inventoryCard__label">WAREHOUSE</p>
+						<p className="inventoryCard__text">Manhattan</p>
 					</div>
 				</div>
 			</div>
