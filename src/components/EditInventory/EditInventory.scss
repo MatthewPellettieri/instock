@@ -1,2 +1,137 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+@include mobile {
+  .editInventory {
+    &__header {
+      display: flex;
+      @include divider;
+      padding: 1.5rem 1rem 1rem 1rem;
+      align-items: center;
+    }
+
+    &__details {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-top: 1rem;
+
+      @include tablet {
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem;
+        width: 100%;
+      }
+    }
+
+    &__form-container {
+      @include tablet {
+        width: 40%;
+      }
+    }
+
+    &__details-form-container {
+      @include tablet {
+        width: 40%;
+      }
+    }
+
+    &__back-button {
+      margin-right: 0.5rem;
+    }
+
+    &__details-form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+
+      @include tablet {
+        margin: 0;
+      }
+    }
+
+    &__details-input-1 {
+      border-radius: 20px;
+      height: 2rem;
+      padding-left: 1rem;
+      border: 1px solid $instock-cloud;
+      margin-bottom: 1rem;
+    }
+
+    &__details-input {
+      border-radius: 20px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.2rem;
+      border: 1px solid $instock-cloud;
+      margin-bottom: 1rem;
+    }
+
+    &__details-drop-down {
+      width: 100%;
+      border-radius: 20px;
+      height: 2rem;
+      padding-left: 1rem;
+      border: 1px solid $instock-cloud;
+      background: url("../../assets/Icons/arrow_drop_down-24px.svg") no-repeat
+        13px;
+      background-position: right;
+      appearance: none;
+      margin-bottom: 1.5rem;
+    }
+
+    &__divider {
+      width: 100%;
+      border-color: $instock-cloud;
+      appearance: none;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &__form-header {
+      margin-top: 1rem;
+      @include tablet {
+      }
+    }
+
+    &__radio-container {
+      display: flex;
+      gap: 4rem;
+    }
+
+    &__in,
+    &__out {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    &__radio-title {
+      @include m-p3;
+    }
+
+    &__buttons-container {
+      display: flex;
+      gap: 1rem;
+    }
+
+    &__cancel {
+      width: 50%;
+      border-radius: 20px;
+      border: 1px solid $instock-cloud;
+    }
+
+    &__save {
+      width: 50%;
+      border-radius: 20px;
+      background-color: $instock-indigo;
+      border: none;
+      color: white;
+      height: 2rem;
+    }
+  }
+}
+
+// @include mobile {
+
+// }
