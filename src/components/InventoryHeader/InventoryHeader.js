@@ -36,7 +36,10 @@ function InventoryHeader() {
 				className={`inventoryHeader__right${
 					ifInventoryPage() ? "--inventoryPage" : ""
 				}`}>
-				<div className="inventoryHeader__container">
+				<div
+					className={`inventoryHeader__container${
+						ifInventoryPage() ? "--inventoryPage" : ""
+					}`}>
 					<p className="inventoryHeader__label">STATUS</p>
 					<img
 						src={sortIcon}
