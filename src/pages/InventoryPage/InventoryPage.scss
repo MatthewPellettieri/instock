@@ -46,11 +46,19 @@
 			gap: 0rem;
 			width: 55%;
 		}
+
+		@include desktop {
+			width: 45%;
+		}
 	}
 
 	&__form {
 		@include tablet {
 			width: 55%;
+		}
+
+		@include desktop {
+			width: 65%;
 		}
 		&--input {
 			height: 2.25rem;
@@ -101,6 +109,10 @@
 			&:hover {
 				background-color: $instock-graphite;
 			}
+		}
+
+		@include desktop {
+			width: 30%;
 		}
 	}
 }
