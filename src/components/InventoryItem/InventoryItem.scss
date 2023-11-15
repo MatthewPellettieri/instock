@@ -1,0 +1,161 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.inventoryItem {
+	background-color: $white;
+	border-radius: 4px;
+
+	&__container {
+		display: flex;
+		margin: 1rem 1.5rem;
+		flex-direction: column;
+		@include tablet {
+			flex-direction:row;
+		}
+	}
+
+	&__heading {
+		@include m-h4;
+		color: $instock-slate;
+		@include tablet {
+			@include d-h4;
+		}
+	}
+
+	&__tag {
+		background-color: rgba($color: $instock-green, $alpha: 0.07);
+		border-radius: 1.25rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 1.5rem;
+		@include m-h4;
+		color: $instock-green;
+		width: max-content;
+		padding: 0rem 0.5rem;
+		position: relative;
+		left: -5%;
+
+		@include tablet {
+			@include d-h4;
+			height: 1.625rem;
+		}
+
+		&--noStock {
+			@extend .inventoryItem__tag;
+			background-color: rgba($color: $instock-red, $alpha: 0.07);
+			color: $instock-red;
+		}
+	}
+
+	&__info {
+		@include m-p2;
+		@include tablet {
+			@include d-p2;
+		}
+		margin-bottom: 1rem;
+	}
+
+	&__divider {
+		display: none;
+		@include tablet {
+			display: block;
+			margin:0rem 2.5rem 1rem;
+		}
+	}
+
+	&__quantity {
+		padding-left: 9rem;
+	}
+
+	&__stats-container {
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		@include divider;
+		padding: 1.5rem 1rem;
+
+		@include tablet {
+			padding: 1.5rem 2rem;
+		}
+
+		@include desktop {
+			padding: 1.5rem 3rem;
+		}
+
+		&--container {
+			display: flex;
+			align-items: center;
+		}
+
+		&--icon {
+			margin-top: 0.0625rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		&--title {
+			@include m-h1;
+			padding-left: 0.5rem;
+
+			@include tablet {
+				@include d-h1;
+			}
+		}
+
+		&--link {
+			height: 1.5rem;
+		}
+	}
+
+	&__button {
+		height: 2.25rem;
+		width: 2.25rem;
+		border: none;
+		background-color: $instock-indigo;
+		border-radius: 1.25rem;
+		background-image: url("../../assets/Icons/edit_white_24dp.svg");
+		background-size: 55%;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		@include tablet {
+			display: none;
+		}
+
+		&--special {
+			display: none;
+
+			@include tablet {
+				display: block;
+				@include d-h3;
+				color: $white;
+				padding-left: 1rem;
+				width: 11%;
+				height: 2.375rem;
+
+				border: none;
+				background-color: $instock-indigo;
+				border-radius: 1.25rem;
+				background-image: url("../../assets/Icons/edit_white_24dp.svg");
+				background-size: 20px 20px;
+				background-position: 10px 8px;
+				background-repeat: no-repeat;
+
+				&:hover {
+					background-color: $instock-graphite;
+				}
+			}
+
+			@include desktop {
+				width: 8%;
+				background-position: 16px 8px;
+			}
+		}
+	}
+}
