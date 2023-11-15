@@ -1,0 +1,224 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+@include mobile {
+  .AddInventory {
+    &__header-back-button {
+      @include tablet {
+        padding-right: 0.5rem;
+      }
+    }
+
+    &__title {
+      @include m-h1;
+
+      @include tablet {
+        @include d-h1;
+      }
+    }
+
+    &__header {
+      display: flex;
+      @include divider;
+      padding: 1.5rem 1rem 1rem 1rem;
+      align-items: center;
+
+      @include tablet {
+        padding: 1.5rem 1rem 1rem 2rem;
+      }
+
+      @include desktop {
+        padding: 1.5rem 1rem 1rem 3rem;
+      }
+    }
+
+    &__details-header {
+      @include m-h2;
+
+      @include tablet {
+        @include d-h2;
+      }
+    }
+
+    &__details {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-top: 1rem;
+
+      @include tablet {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__form-container {
+      @include tablet {
+        width: 40%;
+      }
+    }
+
+    &__details-form-container {
+      @include tablet {
+        width: 48%;
+        border-right: 1px solid $instock-cloud;
+      }
+    }
+
+    &__back-button {
+      margin-right: 0.5rem;
+    }
+
+    &__details-form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+
+      @include tablet {
+        padding-right: 2rem;
+      }
+
+      @include desktop {
+        padding-right: 5rem;
+      }
+    }
+
+    &__details-input-1 {
+      border-radius: 20px;
+      height: 2rem;
+      padding-left: 1rem;
+      border: 1px solid $instock-cloud;
+      margin-bottom: 1rem;
+    }
+
+    &__details-input {
+      border-radius: 20px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.2rem;
+      border: 1px solid $instock-cloud;
+      margin-bottom: 1rem;
+
+      @include tablet {
+        margin-bottom: 0rem;
+      }
+    }
+
+    &__details-drop-down {
+      width: 100%;
+      border-radius: 20px;
+      height: 2rem;
+      padding-left: 1rem;
+      border: 1px solid $instock-cloud;
+      background: url("../../assets/Icons/arrow_drop_down-24px.svg") no-repeat
+        13px;
+      background-position: right;
+      appearance: none;
+      margin-bottom: 1.5rem;
+    }
+
+    &__divider {
+      width: 100%;
+      border-color: $instock-cloud;
+      appearance: none;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &__form-header {
+      margin-top: 1rem;
+      padding-bottom: 0.4rem;
+      @include m-h3;
+      @include tablet {
+        font-size: 14px;
+      }
+    }
+    // added another class to enable tablet styling
+    &__form-header--two {
+      @include m-h2;
+      @include tablet {
+        margin-top: 0rem;
+        padding-bottom: 0.7rem;
+        @include d-h2;
+      }
+    }
+
+    &__radio-container {
+      display: flex;
+      gap: 4rem;
+    }
+
+    &__in,
+    &__out {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    &__radio-title {
+      @include m-p3;
+    }
+
+    &__buttons-container {
+      display: flex;
+      gap: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+
+      @include tablet {
+        width: 30%;
+        position: relative;
+        justify-content: flex-end;
+        left: 64%;
+        padding: 0;
+      }
+    }
+
+    &__cancel {
+      width: 50%;
+      border-radius: 20px;
+      border: 1px solid $instock-cloud;
+      background-color: white;
+
+      @include tablet {
+        width: 30%;
+      }
+
+      @include desktop {
+        width: 20%;
+      }
+    }
+
+    &__save {
+      width: 50%;
+      border-radius: 20px;
+      background-color: $instock-indigo;
+      border: none;
+      color: white;
+      height: 2rem;
+
+      @include tablet {
+        width: 30%;
+      }
+
+      @include desktop {
+        width: 20%;
+      }
+    }
+
+    &__grey-bar {
+      width: 100%;
+      background-color: $instock-light-grey;
+      height: 3rem;
+      text-align: center;
+      padding-top: 0.5rem;
+    }
+  }
+}
+
+.dynamic {
+  display: none;
+}
