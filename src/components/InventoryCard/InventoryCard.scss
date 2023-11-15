@@ -231,11 +231,9 @@
 			width: 5%;
 		}
 
-		&--icon {
-			@include tablet {
-				width: 1.5rem;
-				height: 1.5rem;
-			}
+		&--link {
+			width: 1.5rem;
+			height: 1.5rem;
 		}
 	}
 }
