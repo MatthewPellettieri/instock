@@ -36,17 +36,16 @@ function App() {
 						<Route path="/inventory" element={<InventoryPage />}>
 							{/* <Route path="/inventory/:id" element={<Inventory />} /> */}
 						</Route>
-            <Route path="/inventory/item" element={<InventoryItem />} />
+						<Route path="/inventory/item" element={<InventoryItem />} />
 						{/* <Route path="/editInventory/:id" element={<EditInventory />}></Route>
 						<Route path="/addInventory" element={<AddInventory />}></Route>*/}
 					</Routes>
 				</div>
 			</BrowserRouter>
 
-
-      <Footer />
-    </>
-  );
+			<Footer />
+		</>
+	);
 }
 
 export default App;
