@@ -1,0 +1,92 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.inventoryHeader {
+	display: none;
+
+	@include tablet {
+		display: flex;
+		justify-content: space-between;
+		padding: 1rem 2rem;
+		background-color: rgba($color: $instock-light-grey, $alpha: 0.7);
+	}
+
+	@include desktop {
+		padding: 1rem 3rem;
+	}
+
+	&__left {
+		display: flex;
+		justify-content: space-between;
+		width: 33%;
+
+		@include desktop {
+			width: 28%;
+		}
+	}
+
+	&__right {
+		display: flex;
+		justify-content: space-between;
+		width: 40%;
+
+		@include desktop {
+			justify-content: flex-start;
+			gap: 256px;
+			width: 40%;
+		}
+
+		&--inventoryPage {
+			@include tablet {
+				display: flex;
+				justify-content: space-between;
+				width: 47%;
+			}
+
+			@include desktop {
+				width: 43%;
+			}
+		}
+	}
+
+	&__container {
+		display: flex;
+
+		&--warehouse {
+			@extend .inventoryHeader__container;
+			margin-right: 2rem;
+
+			@include tablet {
+				width: 30%;
+			}
+		}
+
+		&--inventoryPage {
+			@extend .inventoryHeader__container;
+			@include tablet {
+				width: 30%;
+			}
+		}
+	}
+
+	&__label {
+		@include m-h4;
+		color: $instock-slate;
+		padding-bottom: 0.25rem;
+		padding-bottom: 0rem;
+
+		@include tablet {
+			@include d-h4;
+		}
+	}
+
+	&__icon {
+		margin-left: 0.25rem;
+		width: 16px;
+		height: 16px;
+	}
+}
+
+.disable {
+	display: none;
+}

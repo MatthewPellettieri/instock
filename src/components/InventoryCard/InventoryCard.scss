@@ -46,14 +46,28 @@
 		}
 
 		&--right {
-			width: 30%;
+			width: 34%;
 
 			@include tablet {
-				width: 51%;
+				width: 52%;
 			}
 
 			@include desktop {
-				width: 54%;
+				width: 53%;
+			}
+
+			&--inventoryPage {
+				width: 34%;
+
+				@include tablet {
+					display: flex;
+					justify-content: space-between;
+					width: 56%;
+				}
+
+				@include desktop {
+					width: 55%;
+				}
 			}
 		}
 
@@ -79,6 +93,17 @@
 		@include tablet {
 			width: 30%;
 		}
+
+		&--inventoryPage {
+			padding-bottom: 1rem;
+			@include tablet {
+				padding-bottom: 0rem;
+				width: 26%;
+			}
+			@include desktop {
+				width: 28%;
+			}
+		}
 	}
 
 	&__item {
@@ -89,23 +114,39 @@
 
 	&__quantity {
 		@include tablet {
-			width: 48%;
+			width: 37%;
 		}
 
 		@include desktop {
-			width: 44%;
+			width: 43%;
+		}
+
+		&--inventoryPage {
+			@include tablet {
+				width: 10%;
+			}
 		}
 	}
 
 	&__category {
 		@include tablet {
-			width: 25%;
+			width: 27%;
+		}
+	}
+
+	&__warehouse {
+		padding-top: 1rem;
+
+		@include tablet {
+			padding-top: 0rem;
+			width: 44%;
 		}
 	}
 
 	&__link {
 		display: flex;
 		gap: 0.25rem;
+		align-items: center;
 
 		&--text {
 			@include m-h3;
@@ -184,19 +225,19 @@
 
 		@include tablet {
 			width: 10%;
-			justify-content: space-around;
 		}
 
 		@include desktop {
 			width: 5%;
-			justify-content: space-between;
 		}
 
-		&--icon {
-			@include tablet {
-				width: 1.5rem;
-				height: 1.5rem;
-			}
+		&--link {
+			width: 1.5rem;
+			height: 1.5rem;
 		}
 	}
+}
+
+.disable {
+	display: none;
 }

@@ -1,10 +1,10 @@
 import "./WarehouseDetails.scss";
 import { Link } from "react-router-dom";
+import InventoryCard from "../InventoryCard/InventoryCard";
+import InventoryHeader from "../InventoryHeader/InventoryHeader";
 import warehouseData from "../../test_data/warehouse_JSON.json";
 import inventoryData from "../../test_data/inventory_JSON.json";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
-import InventoryCard from "../InventoryCard/InventoryCard";
-import sortIcon from "../../assets/Icons/sort-24px.svg";
 
 function WarehouseDetails() {
 	const {
@@ -60,47 +60,7 @@ function WarehouseDetails() {
 			</div>
 			<div className="inventoryList">
 				{/* inventoryHeader is only visable at 768px and above */}
-				<div className="inventoryHeader">
-					<div className="inventoryHeader__left">
-						<div className="inventoryHeader__container">
-							<p className="inventoryHeader__label">INVENTORY ITEM</p>
-							<img
-								src={sortIcon}
-								alt="sort-icon"
-								className="inventoryHeader__icon"
-							/>
-						</div>
-						<div className="inventoryHeader__container">
-							<p className="inventoryHeader__label">CATEGORY</p>
-							<img
-								src={sortIcon}
-								alt="sort-icon"
-								className="inventoryHeader__icon"
-							/>
-						</div>
-					</div>
-					<div className="inventoryHeader__right">
-						<div className="inventoryHeader__container">
-							<p className="inventoryHeader__label">STATUS</p>
-							<img
-								src={sortIcon}
-								alt="sort-icon"
-								className="inventoryHeader__icon"
-							/>
-						</div>
-						<div className="inventoryHeader__container">
-							<p className="inventoryHeader__label">QUANTITY</p>
-							<img
-								src={sortIcon}
-								alt="sort-icon"
-								className="inventoryHeader__icon"
-							/>
-						</div>
-						<div className="inventoryHeader__container">
-							<p className="inventoryHeader__label">ACTIONS</p>
-						</div>
-					</div>
-				</div>
+				<InventoryHeader />
 				{warehouseInv.map((item) => (
 					<InventoryCard
 						key={item.id}

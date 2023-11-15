@@ -7,6 +7,7 @@ import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import WarehouseForms from "./components/WarehouseForms/WarehouseForms";
 import InventoryItem from "./components/InventoryItem/InventoryItem";
 import Footer from "./components/Footer/footer";
+import EditInventory from "./components/EditInventory/EditInventory";
 
 function App() {
 	return (
@@ -42,9 +43,10 @@ function App() {
 				</div>
 			</BrowserRouter>
 
-			<Footer />
-		</>
-	);
+
+      <Footer />
+    </>
+  );
 }
 
 export default App;
