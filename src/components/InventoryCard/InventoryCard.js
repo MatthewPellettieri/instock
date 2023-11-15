@@ -75,16 +75,20 @@ function InventoryCard({
 				</div>
 			</div>
 			<div className="inventoryCard__btm">
-				<img
-					className="inventoryCard__btm--icon"
-					src={deleteIcon}
-					alt="delete-icon"
-				/>
-				<img
-					className="inventoryCard__btm--icon"
-					src={editIcon}
-					alt="edit-icon"
-				/>
+				<Link to={"/deleteItem/:id"} className="inventoryCard__btm--link">
+					<img
+						className="inventoryCard__btm--icon"
+						src={deleteIcon}
+						alt="delete-icon"
+					/>
+				</Link>
+				<Link to={"/editInventory/:id"} className="inventoryCard__btm--link">
+					<img
+						className="inventoryCard__btm--icon"
+						src={editIcon}
+						alt="edit-icon"
+					/>
+				</Link>
 			</div>
 		</div>
 	);
