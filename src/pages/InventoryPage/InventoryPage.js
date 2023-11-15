@@ -1,5 +1,6 @@
 import "./InventoryPage.scss";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import InventoryHeader from "../../components/InventoryHeader/InventoryHeader";
 import InventoryCard from "../../components/InventoryCard/InventoryCard";
@@ -20,6 +21,12 @@ function InventoryPage() {
 			});
 	}, []);
 
+	const navigate = useNavigate();
+
+	const handleClick = () => {
+		navigate("/addItem");
+	};
+
 	if (!invData) {
 		console.log("loading data");
 	} else {
@@ -38,7 +45,9 @@ function InventoryPage() {
 								name="search"
 								placeholder="Search..."></input>
 						</form>
-						<button className="inventoryPage__button">+ Add New Item</button>
+						<button className="inventoryPage__button" onClick={handleClick}>
+							+ Add New Item
+						</button>
 					</div>
 				</div>
 				<InventoryHeader />
