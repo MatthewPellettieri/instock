@@ -1,7 +1,6 @@
 import "./InventoryPage.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import inventoryData from "../../test_data/inventory_JSON.json";
 import InventoryHeader from "../../components/InventoryHeader/InventoryHeader";
 import InventoryCard from "../../components/InventoryCard/InventoryCard";
 
