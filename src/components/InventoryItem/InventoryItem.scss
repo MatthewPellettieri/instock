@@ -5,6 +5,81 @@
 	background-color: $white;
 	border-radius: 4px;
 
+	&__container {
+		display: flex;
+		margin: 1rem 1.5rem;
+		flex-direction: column;
+		@include tablet {
+			flex-direction:row;
+		}
+	}
+
+	&__heading {
+		@include m-h4;
+		color: $instock-slate;
+		@include tablet {
+			@include d-h4;
+		}
+	}
+
+	&__tag {
+		background-color: rgba($color: $instock-green, $alpha: 0.07);
+		border-radius: 1.25rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 1.5rem;
+		@include m-h4;
+		color: $instock-green;
+		width: max-content;
+		padding: 0rem 0.5rem;
+
+		@include tablet {
+			@include d-h4;
+			height: 1.625rem;
+			width: 80%;
+		}
+
+		@include desktop {
+			width: 40%;
+		}
+
+		&--noStock {
+			@extend .inventoryItem__tag;
+			background-color: rgba($color: $instock-red, $alpha: 0.07);
+			color: $instock-red;
+			width: 100%;
+
+			@include desktop {
+				width: 55%;
+			}
+		}
+	}
+
+	&__info {
+		@include m-p2;
+		@include tablet {
+			@include d-p2;
+		}
+		margin-bottom: 1rem;
+	}
+
+	&__divider {
+		display: none;
+		@include tablet {
+			display: block;
+		}
+	}
+
+	&__quantity {
+		padding-left: 9rem;
+	}
+
+	&__stats-container {
+		display: flex;
+		justify-content: flex-start;
+	}
+
 	&__header {
 		display: flex;
 		justify-content: space-between;
