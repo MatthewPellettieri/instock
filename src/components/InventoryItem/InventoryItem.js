@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 
 function InventoryItem() {
-    // const status = "Out of Stock"
     const status = "In Stock"
     const upperStatus = status.toUpperCase()
 	return (

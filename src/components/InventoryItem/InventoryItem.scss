@@ -33,26 +33,18 @@
 		color: $instock-green;
 		width: max-content;
 		padding: 0rem 0.5rem;
+		position: relative;
+		left: -5%;
 
 		@include tablet {
 			@include d-h4;
 			height: 1.625rem;
-			width: 80%;
-		}
-
-		@include desktop {
-			width: 40%;
 		}
 
 		&--noStock {
 			@extend .inventoryItem__tag;
 			background-color: rgba($color: $instock-red, $alpha: 0.07);
 			color: $instock-red;
-			width: 100%;
-
-			@include desktop {
-				width: 55%;
-			}
 		}
 	}
 
@@ -68,6 +60,7 @@
 		display: none;
 		@include tablet {
 			display: block;
+			margin:0rem 2.5rem 1rem;
 		}
 	}
 
