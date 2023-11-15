@@ -3,7 +3,7 @@ import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
 
-function InventoryCard({ itemName, quantity, status, category }) {
+function InventoryCard({ itemName, quantity, status, category, warehouse }) {
 	const upperStatus = status.toUpperCase();
 
 	const ifInventoryPage = () => {
@@ -62,7 +62,7 @@ function InventoryCard({ itemName, quantity, status, category }) {
 							ifInventoryPage() ? "" : "disable"
 						}`}>
 						<p className="inventoryCard__label">WAREHOUSE</p>
-						<p className="inventoryCard__text">Manhattan</p>
+						<p className="inventoryCard__text">{warehouse}</p>
 					</div>
 				</div>
 			</div>
