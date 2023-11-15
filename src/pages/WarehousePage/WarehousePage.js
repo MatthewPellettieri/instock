@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
 import wareHouseData from "../../test_data/warehouse_JSON.json";
 import WarehouseComponent from "../../components/WarehouseComponent/WarehouseComponent";
 import doubleArrow from "../../assets/Icons/sort-24px.svg";
