@@ -1,9 +1,17 @@
 import "./InventoryCard.scss";
+import { Link } from "react-router-dom";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
 
-function InventoryCard({ itemName, quantity, status, category, warehouse }) {
+function InventoryCard({
+	itemName,
+	quantity,
+	status,
+	category,
+	warehouse,
+	id,
+}) {
 	const upperStatus = status.toUpperCase();
 
 	const ifInventoryPage = () => {
@@ -20,14 +28,14 @@ function InventoryCard({ itemName, quantity, status, category, warehouse }) {
 				<div className="inventoryCard__container--left">
 					<div className="inventoryCard__item">
 						<p className="inventoryCard__label">INVENTORY ITEM</p>
-						<div className="inventoryCard__link">
+						<Link to={`${id}`} className="inventoryCard__link">
 							<p className="inventoryCard__link--text">{itemName}</p>
 							<img
 								src={chevron}
 								alt="chevron-icon"
 								className="inventoryCard__link--icon"
 							/>
-						</div>
+						</Link>
 					</div>
 					<div className="inventoryCard__category">
 						<p className="inventoryCard__label">CATEGORY</p>
