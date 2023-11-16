@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
+import { useState } from "react";
+import DeleteInventoryModal from "../DeleteModal/deleteInventoryModal";
 
 function InventoryCard({
 	itemName,
@@ -21,9 +23,19 @@ function InventoryCard({
 			return false;
 		}
 	};
+	const [modal, setModal] = useState(false);
+  	const toggleModal = () => {
+    setModal(!modal);
+  	};
+  	if (modal) {
+      document.body.classList.add('active--modal')
+  	} else {
+      document.body.classList.remove('active--modal')
+  	}
 
 	return (
 		<div className="inventoryCard">
+			{modal === true && <DeleteInventoryModal toggleModal={toggleModal}/>}
 			<div className="inventoryCard__top">
 				<div className="inventoryCard__container--left">
 					<div className="inventoryCard__item">
@@ -77,6 +89,7 @@ function InventoryCard({
 			<div className="inventoryCard__btm">
 				<Link to={"/deleteItem/:id"} className="inventoryCard__btm--link">
 					<img
+						onClick={toggleModal}
 						className="inventoryCard__btm--icon"
 						src={deleteIcon}
 						alt="delete-icon"
