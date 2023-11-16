@@ -12,10 +12,10 @@ function DeleteInventoryModal(props) {
                   <img src={exitIcon} alt="" className="exit" />
                 </button>
               </div>
-              <h1 className="modal__header">Delete Washington warehouse?</h1>
-              <p className="modal__text">
-                Please confirm that you'd like to delete the Washington from the
-                list of warehouses. You won't be able to undo this action.
+              <h1 className="modal__header">Delete {`${props.itemName}`} inventory item?</h1>
+              <p className="modal__text-i">
+                Please confirm that you'd like to delete {`${props.itemName}`} from the inventory list.
+                You won't be able to undo this action.
               </p>
               <div className="modal__button__container">
               <button onClick={props.toggleModal} className="close--modal">

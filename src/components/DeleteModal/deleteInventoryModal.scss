@@ -81,7 +81,7 @@
         min-width: 27.125rem;
     }
   }
-  .modal__text {
+  .modal__text-i {
     font-size: 1rem;
     line-height: 28px;
     width: 34rem;
@@ -90,7 +90,7 @@
       padding-right: 3rem;
     }
     @include desktop {
-        padding-right: 3rem;
+        padding-right: 4rem;
     }
   }
   .modal__button__container {

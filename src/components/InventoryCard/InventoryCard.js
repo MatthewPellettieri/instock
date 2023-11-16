@@ -6,6 +6,7 @@ import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import { useState } from "react";
 import DeleteInventoryModal from "../DeleteModal/deleteInventoryModal";
 
+
 function InventoryCard({
 	itemName,
 	quantity,
@@ -23,8 +24,10 @@ function InventoryCard({
 			return false;
 		}
 	};
+	// MODAL LOGIC BELOW
 	const [modal, setModal] = useState(false);
-  	const toggleModal = () => {
+  	const toggleModal = (event) => {
+	const inventoryItem = event.target.parentNode;
     setModal(!modal);
   	};
   	if (modal) {
@@ -35,7 +38,7 @@ function InventoryCard({
 
 	return (
 		<div className="inventoryCard">
-			{modal === true && <DeleteInventoryModal toggleModal={toggleModal}/>}
+			{modal === true && <DeleteInventoryModal toggleModal={toggleModal} />}
 			<div className="inventoryCard__top">
 				<div className="inventoryCard__container--left">
 					<div className="inventoryCard__item">
@@ -87,14 +90,12 @@ function InventoryCard({
 				</div>
 			</div>
 			<div className="inventoryCard__btm">
-				<Link to={"/deleteItem/:id"} className="inventoryCard__btm--link">
 					<img
 						onClick={toggleModal}
 						className="inventoryCard__btm--icon"
 						src={deleteIcon}
 						alt="delete-icon"
 					/>
-				</Link>
 				<Link to={"/editInventory/:id"} className="inventoryCard__btm--link">
 					<img
 						className="inventoryCard__btm--icon"
