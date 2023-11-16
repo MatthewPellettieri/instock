@@ -90,6 +90,7 @@
       padding-left: 1rem;
       border: 1px solid $instock-cloud;
       margin-bottom: 1rem;
+      width: 100%;
     }
 
     &__details-input {
@@ -217,8 +218,4 @@
       padding-top: 0.5rem;
     }
   }
-}
-
-.dynamic {
-  display: none;
 }

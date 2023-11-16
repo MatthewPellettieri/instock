@@ -94,7 +94,7 @@ function AddInventory() {
                   type="text"
                   name="item name"
                   className="AddInventory__details-input-1"
-                  placeholder="Item Name"
+                  placeholder="0"
                 ></input>
               </>
             )}
