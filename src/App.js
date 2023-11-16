@@ -20,7 +20,7 @@ function App() {
 						<Route path="/" element={<WarehousePage />}></Route>
 						<Route path="/warehouseDetails" element={<WarehouseDetails />} />
 						<Route
-							path="/editWarehouse"
+							path="/editWarehouse/:id"
 							element={
 								<WarehouseForms heading="Edit Warehouse" buttonText="Save" />
 							}></Route>
@@ -29,7 +29,7 @@ function App() {
 							element={
 								<WarehouseForms
 									heading="Add New Warehouse"
-									buttonText="+ AddWarehouse"
+									buttonText="+ Add Warehouse"
 								/>
 							}></Route>
 						{/* -------------------------Inventory----------------- */}
