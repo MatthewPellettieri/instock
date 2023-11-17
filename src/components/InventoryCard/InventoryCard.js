@@ -23,6 +23,7 @@ function InventoryCard({
 			return false;
 		}
 	};
+
 	// MODAL LOGIC BELOW
 	const [modal, setModal] = useState(false);
 	const toggleModal = (event) => {
