@@ -23,17 +23,6 @@ function InventoryCard({
 			return false;
 		}
 	};
-	// MODAL LOGIC BELOW
-	const [modal, setModal] = useState(false);
-	const toggleModal = (event) => {
-		const inventoryItem = event.target.parentNode;
-		setModal(!modal);
-	};
-	if (modal) {
-		document.body.classList.add("active--modal");
-	} else {
-		document.body.classList.remove("active--modal");
-	}
 
 	// MODAL LOGIC BELOW
 	const [modal, setModal] = useState(false);
