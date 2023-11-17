@@ -6,7 +6,6 @@ import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import { useState } from "react";
 import DeleteInventoryModal from "../DeleteModal/deleteInventoryModal";
 
-
 function InventoryCard({
 	itemName,
 	quantity,
@@ -26,15 +25,15 @@ function InventoryCard({
 	};
 	// MODAL LOGIC BELOW
 	const [modal, setModal] = useState(false);
-  	const toggleModal = (event) => {
-	const inventoryItem = event.target.parentNode;
-    setModal(!modal);
-  	};
-  	if (modal) {
-      document.body.classList.add('active--modal')
-  	} else {
-      document.body.classList.remove('active--modal')
-  	}
+	const toggleModal = (event) => {
+		const inventoryItem = event.target.parentNode;
+		setModal(!modal);
+	};
+	if (modal) {
+		document.body.classList.add("active--modal");
+	} else {
+		document.body.classList.remove("active--modal");
+	}
 
 	return (
 		<div className="inventoryCard">
@@ -46,9 +45,9 @@ function InventoryCard({
 						<Link to={`${id}`} className="inventoryCard__link">
 							<p className="inventoryCard__link--text">{itemName}</p>
 							<img
+								className="inventoryCard__link--icon"
 								src={chevron}
 								alt="chevron-icon"
-								className="inventoryCard__link--icon"
 							/>
 						</Link>
 					</div>
@@ -90,12 +89,12 @@ function InventoryCard({
 				</div>
 			</div>
 			<div className="inventoryCard__btm">
-					<img
-						onClick={toggleModal}
-						className="inventoryCard__btm--icon"
-						src={deleteIcon}
-						alt="delete-icon"
-					/>
+				<img
+					onClick={toggleModal}
+					className="inventoryCard__btm--icon"
+					src={deleteIcon}
+					alt="delete-icon"
+				/>
 				<Link to={"/editInventory/:id"} className="inventoryCard__btm--link">
 					<img
 						className="inventoryCard__btm--icon"
