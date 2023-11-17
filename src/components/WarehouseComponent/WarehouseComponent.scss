@@ -2,210 +2,196 @@
 @use "../../styles/partials/variables" as *;
 
 @include mobile {
-  .warehouseCard {
-    @include divider;
-    padding-bottom: 1rem;
-    &__flex-container {
-      display: flex;
-      gap: 1.65rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      font-size: 0.8rem;
-      padding-top: 1rem;
-    }
+	.warehouseCard {
+		@include divider;
+		padding-bottom: 1rem;
 
-    &__name-link {
-      display: flex;
-      color: $instock-indigo;
-      align-items: center;
-    }
+		&:hover {
+			background-color: $instock-light-grey;
+		}
 
-    &__icons {
-      display: flex;
-      justify-content: space-between;
-    }
+		&__flex-container {
+			display: flex;
+			justify-content: space-between;
+			gap: 1.65rem;
+			padding-left: 1rem;
+			padding-right: 1rem;
+			font-size: 0.8rem;
+			padding-top: 1rem;
+		}
 
-    &__name-box,
-    &__contact-box {
-      width: 115px;
-    }
-    &__contact-text,
-    &__name-text {
-      text-transform: uppercase;
-      @include m-p3;
-      padding-bottom: 0.2rem;
-      color: $instock-slate;
-    }
+		&__name-link {
+			display: flex;
+			color: $instock-indigo;
+			align-items: center;
+		}
 
-    &__name-link {
-      padding-bottom: 0.89rem;
-    }
+		&__icons {
+			display: flex;
+			justify-content: space-between;
+		}
 
-    &__contact-name {
-      padding-bottom: 1rem;
-    }
+		&__name-box,
+		&__contact-box {
+			width: 115px;
+		}
+		&__contact-text,
+		&__name-text {
+			text-transform: uppercase;
+			@include m-p3;
+			padding-bottom: 0.2rem;
+			color: $instock-slate;
+		}
 
-    &__address-text {
-      text-transform: uppercase;
-      color: $instock-slate;
-      @include m-p3;
-    }
+		&__name-link {
+			padding-bottom: 0.89rem;
+		}
 
-    &__contact-title {
-      color: $instock-slate;
-      text-transform: uppercase;
-      @include m-p3;
-    }
+		&__contact-name {
+			padding-bottom: 1rem;
+		}
 
-    &__icons {
-      padding-left: 0.5rem;
-      padding-top: 1rem;
-    }
-  }
+		&__address-text {
+			text-transform: uppercase;
+			color: $instock-slate;
+			@include m-p3;
+		}
+
+		&__contact-title {
+			color: $instock-slate;
+			text-transform: uppercase;
+			@include m-p3;
+		}
+
+		&__icons {
+			padding-left: 0.5rem;
+			padding-top: 1rem;
+		}
+	}
 }
 
 @include tablet {
-  .warehouseCard {
-    display: flex;
-    @include divider;
-    height: 7rem;
-    align-items: center;
-    padding-left: 2rem;
+	.warehouseCard {
+		display: flex;
+		align-items: center;
+		padding-left: 2.1rem;
+		padding-bottom: 0rem;
+		height: 6rem;
 
-    &__flex-container {
-      display: flex;
-      flex-direction: row;
-    }
-    &__name-box {
-      display: flex;
-      gap: 1rem;
-    }
+		&__flex-container {
+			display: flex;
+			flex-direction: row;
+			padding: 0rem;
+		}
 
-    &__contact-box {
-      display: flex;
-      gap: 0.3rem;
-    }
+		&__name-box {
+			display: flex;
+			width: 15%;
+			align-items: center;
+		}
 
-    &__name-link {
-      display: flex;
-    }
+		&__contact-box {
+			display: flex;
+			width: 19.375rem;
+			align-items: center;
+		}
 
-    &__postal {
-      width: 120px;
-      margin-right: 0.8rem;
-    }
+		&__name-link {
+			width: 6.25rem;
+			padding-bottom: 0rem;
+		}
 
-    &__name {
-      width: 118px;
-      display: flex;
-      align-items: center;
-    }
+		&__postal {
+			width: 6.25rem;
+		}
 
-    &__contact-info {
-      width: 190px;
-      padding-top: 0.1rem;
-    }
+		&__contact-name {
+			width: 8.2rem;
+			padding-bottom: 0rem;
+		}
 
-    &__contact {
-      width: 130px;
-      display: flex;
-      align-items: center;
-    }
+		&__name {
+			margin-right: 2rem;
+		}
 
-    &__name-text,
-    &__address-text,
-    &__contact-text,
-    &__contact-title {
-      display: none;
-    }
+		&__icons {
+			display: flex;
+			gap: 0.7rem;
+			padding: 0rem;
+		}
 
-    &__location {
-      color: $instock-indigo;
-    }
-
-    &__icons {
-      display: flex;
-      justify-content: center;
-      gap: 0.7rem;
-    }
-  }
+		&__name-text,
+		&__address-text,
+		&__contact-text,
+		&__contact-title {
+			display: none;
+		}
+	}
 }
 
 @include desktop {
-  .warehouseCard {
-    display: flex;
-    @include divider;
-    height: 7rem;
-    align-items: center;
-    padding-left: 2rem;
+	.warehouseCard {
+		display: flex;
+		align-items: center;
+		padding-left: 4rem;
+		padding-bottom: 0rem;
+		height: 6rem;
 
-    &__flex-container {
-      display: flex;
-      flex-direction: row;
-    }
-    &__name-box {
-      display: flex;
-      gap: 1rem;
-    }
+		&__flex-container {
+			display: flex;
+			flex-direction: row;
+			padding: 0rem;
+		}
 
-    &__contact-box {
-      display: flex;
-      gap: 0.3rem;
-    }
+		&__name-box {
+			display: flex;
+			width: 590px;
+			align-items: center;
+		}
 
-    &__name-link {
-      display: flex;
-    }
+		&__contact-box {
+			display: flex;
+			width: 465px;
+			align-items: center;
+		}
 
-    &__postal {
-      width: 230px;
-      margin-right: 2rem;
-    }
+		&__name-link {
+			width: 250px;
+			padding-bottom: 0rem;
+		}
 
-    &__address {
-      display: flex;
-      align-items: center;
-    }
+		&__postal {
+			width: 200px;
+		}
 
-    &__name {
-      width: 200px;
-      display: flex;
-      align-items: center;
-    }
+		&__contact-name {
+			width: 230px;
+			padding-bottom: 0rem;
+		}
 
-    &__contact-info {
-      width: 210px;
-      padding-top: 0.1rem;
-    }
+		&__name {
+			margin-right: 2rem;
+		}
 
-    &__contact {
-      width: 210px;
-      display: flex;
-      align-items: center;
-    }
+		&__icons {
+			display: flex;
+			gap: 0.7rem;
+			padding: 0rem;
+		}
 
-    &__name-text,
-    &__address-text,
-    &__contact-text,
-    &__contact-title {
-      display: none;
-    }
+		&__name-text,
+		&__address-text,
+		&__contact-text,
+		&__contact-title {
+			display: none;
+		}
 
-    &__location {
-      color: $instock-indigo;
-    }
-
-    &__icons {
-      display: flex;
-      justify-content: center;
-      gap: 0.7rem;
-    }
-  }
+		&__contact-info {
+			width: 400px;
+		}
+	}
 }
-.delete--button {
-  border: none;
-  background-color: white;
-}
+
 .active--modal {
-  overflow-y: hidden;
+	overflow-y: hidden;
 }
