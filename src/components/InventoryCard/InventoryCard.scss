@@ -158,6 +158,11 @@
 				&:hover {
 					text-decoration: underline;
 				}
+
+				&:hover + .inventoryCard__link--icon {
+					transition: 1s ease-in-out;
+					translate: (0.25rem);
+				}
 			}
 		}
 
@@ -245,4 +250,10 @@
 
 .disable {
 	display: none;
+}
+
+@keyframe in {
+}
+
+@keyframe out {
 }
