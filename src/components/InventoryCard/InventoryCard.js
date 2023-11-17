@@ -6,7 +6,6 @@ import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import { useState } from "react";
 import DeleteInventoryModal from "../DeleteModal/deleteInventoryModal";
 
-
 function InventoryCard({
 	itemName,
 	quantity,
@@ -24,31 +23,34 @@ function InventoryCard({
 			return false;
 		}
 	};
+
 	// MODAL LOGIC BELOW
 	const [modal, setModal] = useState(false);
-  	const toggleModal = (event) => {
-	const inventoryItem = event.target.parentNode;
-    setModal(!modal);
-  	};
-  	if (modal) {
-      document.body.classList.add('active--modal')
-  	} else {
-      document.body.classList.remove('active--modal')
-  	}
+	const toggleModal = (event) => {
+		const inventoryItem = event.target.parentNode;
+		setModal(!modal);
+	};
+	if (modal) {
+		document.body.classList.add("active--modal");
+	} else {
+		document.body.classList.remove("active--modal");
+	}
 
 	return (
 		<div className="inventoryCard">
-			{modal === true && <DeleteInventoryModal toggleModal={toggleModal} itemName={itemName}/>}
+			{modal === true && (
+				<DeleteInventoryModal toggleModal={toggleModal} itemName={itemName} />
+			)}
 			<div className="inventoryCard__top">
 				<div className="inventoryCard__container--left">
 					<div className="inventoryCard__item">
 						<p className="inventoryCard__label">INVENTORY ITEM</p>
 						<Link to={`${id}`} className="inventoryCard__link">
-							<p className="inventoryCard__link--text">{itemName}</p>
+							<span className="inventoryCard__link--text">{itemName}</span>
 							<img
+								className="inventoryCard__link--icon"
 								src={chevron}
 								alt="chevron-icon"
-								className="inventoryCard__link--icon"
 							/>
 						</Link>
 					</div>
@@ -90,12 +92,12 @@ function InventoryCard({
 				</div>
 			</div>
 			<div className="inventoryCard__btm">
-					<img
-						onClick={toggleModal}
-						className="inventoryCard__btm--icon"
-						src={deleteIcon}
-						alt="delete-icon"
-					/>
+				<img
+					onClick={toggleModal}
+					className="inventoryCard__btm--icon"
+					src={deleteIcon}
+					alt="delete-icon"
+				/>
 				<Link to={"/editInventory/:id"} className="inventoryCard__btm--link">
 					<img
 						className="inventoryCard__btm--icon"
