@@ -8,6 +8,7 @@ import WarehouseForms from "./components/WarehouseForms/WarehouseForms";
 import InventoryItem from "./components/InventoryItem/InventoryItem";
 import Footer from "./components/Footer/footer";
 import EditInventory from "./components/EditInventory/EditInventory";
+import AddInventory from "./components/AddNewInventory/AddNewInventory";
 
 function App() {
 	return (
@@ -20,7 +21,7 @@ function App() {
 						<Route path="/" element={<WarehousePage />}></Route>
 						<Route path="/warehouseDetails" element={<WarehouseDetails />} />
 						<Route
-							path="/editWarehouse"
+							path="/editWarehouse/:id"
 							element={
 								<WarehouseForms heading="Edit Warehouse" buttonText="Save" />
 							}></Route>
@@ -29,23 +30,22 @@ function App() {
 							element={
 								<WarehouseForms
 									heading="Add New Warehouse"
-									buttonText="+ AddWarehouse"
+									buttonText="+ Add Warehouse"
 								/>
 							}></Route>
 						{/* -------------------------Inventory----------------- */}
 						<Route path="/inventory" element={<InventoryPage />}>
 							{/* <Route path="/inventory/:id" element={<Inventory />} /> */}
 						</Route>
-						<Route path="/inventory/item" element={<InventoryItem />} />
+						<Route path="/inventory/:id" element={<InventoryItem />} />
 						{/* <Route path="/editInventory/:id" element={<EditInventory />}></Route>
 						<Route path="/addInventory" element={<AddInventory />}></Route>*/}
 					</Routes>
 				</div>
 			</BrowserRouter>
-
-			<Footer />
-		</>
-	);
+      <Footer />
+    </>
+  );
 }
 
 export default App;

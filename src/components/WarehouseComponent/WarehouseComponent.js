@@ -1,8 +1,12 @@
 import "./WarehouseComponent.scss";
+import { useState } from "react";
 import arrow from "../../assets/Icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
-export default function warehouseComponent({
+import { toFormData } from "axios";
+import DeleteWarehouseModal from "../../components/DeleteModal/DeleteWarehouseModal";
+
+export default function WarehouseComponent({
 	warehouseName,
 	contactName,
 	contactEmail,
@@ -11,9 +15,19 @@ export default function warehouseComponent({
 	city,
 	country,
 }) {
+	const [modal, setModal] = useState(false);
+	const toggleModal = () => {
+		setModal(!modal);
+	};
+	if (modal) {
+		document.body.classList.add("active--modal");
+	} else {
+		document.body.classList.remove("active--modal");
+	}
 	return (
 		<>
 			<section className="warehouseCard">
+				{modal === true && <DeleteWarehouseModal toggleModal={toggleModal} />}
 				<div className="warehouseCard__flex-container">
 					<div className="warehouseCard__name-box">
 						<div className="warehouseCard__name">
@@ -48,7 +62,7 @@ export default function warehouseComponent({
 					</div>
 				</div>
 				<div className="warehouseCard__icons">
-					<img src={deleteIcon} alt={"delete-icon"} />
+					<img src={deleteIcon} alt={"delete-icon"} onClick={toggleModal} />
 					<img src={editIcon} alt={"edit-icon"} />
 				</div>
 			</section>

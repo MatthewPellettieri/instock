@@ -4,6 +4,7 @@ import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import { useState } from "react";
+import DeleteInventoryModal from "../DeleteModal/deleteInventoryModal";
 
 function InventoryCard({
 	itemName,
@@ -22,6 +23,17 @@ function InventoryCard({
 			return false;
 		}
 	};
+	// MODAL LOGIC BELOW
+	const [modal, setModal] = useState(false);
+	const toggleModal = (event) => {
+		const inventoryItem = event.target.parentNode;
+		setModal(!modal);
+	};
+	if (modal) {
+		document.body.classList.add("active--modal");
+	} else {
+		document.body.classList.remove("active--modal");
+	}
 
 	// MODAL LOGIC BELOW
 	const [modal, setModal] = useState(false);
@@ -37,6 +49,9 @@ function InventoryCard({
 
 	return (
 		<div className="inventoryCard">
+			{modal === true && (
+				<DeleteInventoryModal toggleModal={toggleModal} itemName={itemName} />
+			)}
 			<div className="inventoryCard__top">
 				<div className="inventoryCard__container--left">
 					<div className="inventoryCard__item">
