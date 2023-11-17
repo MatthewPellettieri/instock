@@ -38,7 +38,7 @@ function InventoryCard({
 
 	return (
 		<div className="inventoryCard">
-			{modal === true && <DeleteInventoryModal toggleModal={toggleModal} />}
+			{modal === true && <DeleteInventoryModal toggleModal={toggleModal} itemName={itemName}/>}
 			<div className="inventoryCard__top">
 				<div className="inventoryCard__container--left">
 					<div className="inventoryCard__item">
