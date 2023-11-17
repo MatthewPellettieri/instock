@@ -46,7 +46,7 @@ function InventoryCard({
 					<div className="inventoryCard__item">
 						<p className="inventoryCard__label">INVENTORY ITEM</p>
 						<Link to={`${id}`} className="inventoryCard__link">
-							<p className="inventoryCard__link--text">{itemName}</p>
+							<span className="inventoryCard__link--text">{itemName}</span>
 							<img
 								className="inventoryCard__link--icon"
 								src={chevron}
