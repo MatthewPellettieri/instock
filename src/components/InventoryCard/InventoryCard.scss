@@ -172,8 +172,10 @@
 			height: 1.25rem;
 			animation: slide-in 1s ease-in-out forwards;
 
-			&:hover {
-				animation: slide-out 1s ease-in-out forwards;
+			@include tablet {
+				&:hover {
+					animation: slide-out 1s ease-in-out forwards;
+				}
 			}
 		}
 	}
