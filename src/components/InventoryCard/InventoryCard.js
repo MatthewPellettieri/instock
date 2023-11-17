@@ -4,7 +4,6 @@ import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import { useState } from "react";
-import DeleteInventoryModal from "../DeleteModal/deleteInventoryModal";
 
 function InventoryCard({
 	itemName,
