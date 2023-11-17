@@ -1,25 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
-
-@keyframes slide-out {
-	from {
-		transform: translate(0rem);
-	}
-
-	to {
-		transform: translate(0.25rem);
-	}
-}
-
-@keyframes slide-in {
-	from {
-		transform: translate(0.25rem);
-	}
-
-	to {
-		transform: translate(0rem);
-	}
-}
+@use "../../styles/partials/animations" as *;
 
 .inventoryCard {
 	padding: 1rem;
@@ -180,7 +161,8 @@
 				}
 
 				&:hover + .inventoryCard__link--icon {
-					animation: slide-out 1s ease-in-out;
+					// animation: slide-out 1s ease-in-out;
+					animation: slide-out 1s ease-in-out forwards;
 				}
 			}
 		}
@@ -188,10 +170,10 @@
 		&--icon {
 			width: 1.25rem;
 			height: 1.25rem;
+			animation: slide-in 1s ease-in-out forwards;
 
 			&:hover {
-				transition: 1s ease-in-out;
-				translate: (0.25rem);
+				animation: slide-out 1s ease-in-out forwards;
 			}
 		}
 	}
