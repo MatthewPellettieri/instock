@@ -1,0 +1,19 @@
+@keyframes slide-out {
+	from {
+		transform: translate(0rem);
+	}
+
+	to {
+		transform: translate(0.25rem);
+	}
+}
+
+@keyframes slide-in {
+	from {
+		transform: translate(0.25rem);
+	}
+
+	to {
+		transform: translate(0rem);
+	}
+}
