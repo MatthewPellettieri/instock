@@ -38,14 +38,16 @@ function App() {
 							{/* <Route path="/inventory/:id" element={<Inventory />} /> */}
 						</Route>
 						<Route path="/inventory/:id" element={<InventoryItem />} />
-						{/* <Route path="/editInventory/:id" element={<EditInventory />}></Route>
-						<Route path="/addInventory" element={<AddInventory />}></Route>*/}
+						<Route
+							path="/editInventory/:id"
+							element={<EditInventory />}></Route>
+						<Route path="/addInventory" element={<AddInventory />}></Route>
 					</Routes>
 				</div>
 			</BrowserRouter>
-      <Footer />
-    </>
-  );
+			<Footer />
+		</>
+	);
 }
 
 export default App;
