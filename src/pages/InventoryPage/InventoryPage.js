@@ -27,6 +27,9 @@ function InventoryPage() {
 		navigate("/addItem");
 	};
 
+	// search functionality
+	const [searchQuery, setSearchQuery] = useState("");
+
 	if (!invData) {
 		console.log("loading data");
 	} else {
@@ -43,7 +46,10 @@ function InventoryPage() {
 								type="text"
 								id="search"
 								name="search"
-								placeholder="Search..."></input>
+								placeholder="Search..."
+								onChange={(e) =>
+									setSearchQuery(e.target.value.toLocaleLowerCase())
+								}></input>
 						</form>
 						<button className="inventoryPage__button" onClick={handleClick}>
 							+ Add New Item
@@ -51,17 +57,19 @@ function InventoryPage() {
 					</div>
 				</div>
 				<InventoryHeader />
-				{invData.map((item) => (
-					<InventoryCard
-						key={item.id}
-						id={item.id}
-						itemName={item.item_name}
-						quantity={item.quantity}
-						status={item.status}
-						category={item.category}
-						warehouse={item.warehouse_name}
-					/>
-				))}
+				{invData
+					.filter((item) => item.item_name.toLowerCase().includes(searchQuery))
+					.map((item) => (
+						<InventoryCard
+							key={item.id}
+							id={item.id}
+							itemName={item.item_name}
+							quantity={item.quantity}
+							status={item.status}
+							category={item.category}
+							warehouse={item.warehouse_name}
+						/>
+					))}
 			</div>
 		);
 	}
