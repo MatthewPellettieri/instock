@@ -30,6 +30,10 @@ function InventoryPage() {
 	// search functionality
 	const [searchQuery, setSearchQuery] = useState("");
 
+	const handleSearch = (e) => {
+		return setSearchQuery(e.target.value.toLocaleLowerCase());
+	};
+
 	const searchFilter = (data) => {
 		return data.filter((item) => {
 			return (
@@ -57,9 +61,7 @@ function InventoryPage() {
 								id="search"
 								name="search"
 								placeholder="Search..."
-								onChange={(e) =>
-									setSearchQuery(e.target.value.toLocaleLowerCase())
-								}></input>
+								onChange={handleSearch}></input>
 						</form>
 						<button className="inventoryPage__button" onClick={handleClick}>
 							+ Add New Item
