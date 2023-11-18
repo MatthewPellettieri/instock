@@ -28,9 +28,29 @@ function WarehousePage() {
 		});
 	};
   
-  const apiURL = "http://localhost:8080/api/warehouses";
+  const apiURL = "http://localhost:8080/api/warehouses/";
 	
 	const [wareData, setWareData] = useState();
+	
+	const updatePage = () => {
+		axios
+			.get(apiURL)
+			.then((res) => {
+				setWareData(res.data);
+			})
+	}
+
+	const deleteWarehouse = (id) => {
+		console.log(id)
+        axios
+			.delete(apiURL + id )
+			.then(() => {
+				updatePage()
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+}
 
 	useEffect(() => {
 		axios
@@ -56,8 +76,7 @@ function WarehousePage() {
 					<input
 						className="warehouse__search-bar"
 						type="text"
-						placeholder="Search..."
-						onChange={handleSearch}></input>
+						placeholder="Search..."></input>
 
 					<button className="warehouse__button-blue">
 						<p className="warehouse__button-text">+ Add New Warehouse</p>
@@ -98,7 +117,7 @@ function WarehousePage() {
 					<p className="warehouseList__name action">actions</p>
 				</div>
 			</section>
-			{searchFilter(wareData).map((data) => (
+			{wareData.map((data) => (
 				<WarehouseComponent
 					key={data.id}
 					id={data.id}
@@ -109,11 +128,14 @@ function WarehousePage() {
 					address={data.address}
 					city={data.city}
 					country={data.country}
+					deleteWarehouse={deleteWarehouse}
 				/>
 			))}
+			<Link to="/warehouseDetails">
+				<p> To warehouseDetails</p>
+			</Link>
 		</>
 	);
-			}
 }
-
+}
 export default WarehousePage;
