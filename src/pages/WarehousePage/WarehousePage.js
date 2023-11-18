@@ -6,26 +6,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function WarehousePage() {
-	const navigate = useNavigate();
-	const apiURL = "http://localhost:8080/api/warehouses";
-
-	const [wareData, setWareData] = useState();
-
-	useEffect(() => {
-		axios
-			.get(apiURL)
-			.then((res) => {
-				setWareData(res.data);
-			})
-			.catch((err) => {
-				console.error(err);
-			});
-	}, []);
-
-	const clickHandler = () => {
-		navigate("/warehouse/add");
-	};
-
 	// search functionality
 	const [searchQuery, setSearchQuery] = useState("");
 
@@ -45,6 +25,43 @@ function WarehousePage() {
 				warehouse.country.toLowerCase().includes(searchQuery)
 			);
 		});
+	};
+	const navigate = useNavigate();
+	const apiURL = "http://localhost:8080/api/warehouses/";
+
+	const [wareData, setWareData] = useState();
+
+	const updatePage = () => {
+		axios.get(apiURL).then((res) => {
+			setWareData(res.data);
+		});
+	};
+
+	const deleteWarehouse = (id) => {
+		console.log(id);
+		axios
+			.delete(apiURL + id)
+			.then(() => {
+				updatePage();
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	};
+
+	useEffect(() => {
+		axios
+			.get(apiURL)
+			.then((res) => {
+				setWareData(res.data);
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	}, []);
+
+	const clickHandler = () => {
+		navigate("/warehouse/add");
 	};
 
 	if (!wareData) {
@@ -112,11 +129,11 @@ function WarehousePage() {
 						address={data.address}
 						city={data.city}
 						country={data.country}
+						deleteWarehouse={deleteWarehouse}
 					/>
 				))}
 			</>
 		);
 	}
 }
-
 export default WarehousePage;

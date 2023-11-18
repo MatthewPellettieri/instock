@@ -15,6 +15,7 @@ export default function WarehouseComponent({
 	contactName,
 	contactPhone,
 	contactEmail,
+	deleteWarehouse,
 }) {
 	// modal control
 	const [modal, setModal] = useState(false);
@@ -30,7 +31,13 @@ export default function WarehouseComponent({
 	return (
 		<>
 			<section className="warehouseCard">
-				{modal === true && <DeleteWarehouseModal toggleModal={toggleModal} />}
+				{modal === true && (
+					<DeleteWarehouseModal
+						deleteWarehouse={() => deleteWarehouse(id)}
+						warehouseName={warehouseName}
+						toggleModal={toggleModal}
+					/>
+				)}
 				<div className="warehouseCard__flex-container">
 					<div className="warehouseCard__name-box">
 						<div className="warehouseCard__name">
