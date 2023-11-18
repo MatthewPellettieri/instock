@@ -2,6 +2,18 @@
 @use "../../styles/partials/variables" as *;
 
 .background {
+	@include mobile {
+		padding: 2rem 1rem 12rem 1rem
+	}
+	@include tablet {
+		padding-top: 2rem;
+		padding-bottom: 11.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 	@include desktop {
 		padding-top: 2rem;
 		padding-bottom: 11.5rem;
@@ -11,25 +23,17 @@
 		padding-left: 12rem;
 		padding-right: 12rem;
 	}
-	@include tablet {
-		padding-top: 2rem;
-		padding-bottom: 11.5rem;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
-	@include mobile {
-		padding-bottom: 12rem;
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
 	background-color: $instock-graphite;
 	.logo--container {
 		@include mobile {
 			text-align: center;
-			padding: 1.5rem 0 1.5rem 0;
+			padding: 0 0 1rem 0;
+		}
+		@include tablet {
+			padding: 0;
+		}
+		@include desktop {
+			padding: 0;
 		}
 	}
 	.button--container {
@@ -53,25 +57,8 @@
 		}
 	}
 	.nav__button {
-		@include desktop {
-			border-radius: 20px;
-			border: none;
-			color: white;
-			height: 2rem;
-			width: 7rem;
-			background-color: $instock-graphite;
-			padding: 0 1rem 0 1rem;
-		}
-		@include tablet {
-			border-radius: 20px;
-			border: none;
-			color: white;
-			height: 2rem;
-			width: 7rem;
-			background-color: $instock-graphite;
-			padding: 0 1rem 0 1rem;
-		}
 		@include mobile {
+			font-size: 13px;
 			border-radius: 20px;
 			border: none;
 			color: white;
@@ -80,34 +67,55 @@
 			background-color: $instock-graphite;
 			padding: 0 1rem 0 1rem;
 		}
+		@include tablet {
+			font-size: 14px;
+			border-radius: 20px;
+			border: none;
+			color: white;
+			height: 2.375rem;
+			width: 7rem;
+			background-color: $instock-graphite;
+			padding: 0;
+		}
+		@include desktop {
+			border-radius: 20px;
+			border: none;
+			color: white;
+			height: 2.375rem;
+			width: 7rem;
+			background-color: $instock-graphite;
+			padding: 0;
+		}
 	}
 }
 .active {
-	@include desktop {
-		border-radius: 20px;
-		border: none;
-		color: white;
-		height: 2rem;
-		width: 7rem;
-		background-color: rgb(18, 23, 43, 0.6);
-		padding: 0 1rem 0 1rem;
-	}
-	@include tablet {
-		border-radius: 20px;
-		border: none;
-		color: white;
-		height: 2rem;
-		width: 7rem;
-		background-color: rgb(18, 23, 43, 0.6);
-		padding: 0 1rem 0 1rem;
-	}
 	@include mobile {
+		font-size: 13px;
 		border-radius: 20px;
 		border: none;
 		color: white;
 		height: 2.25rem;
 		width: 10rem;
-		background-color: rgb(18, 23, 43, 0.6);
+		background-color: rgb(18, 23, 43, 0.8);
 		padding: 0 1rem 0 1rem;
+	}
+	@include tablet {
+		font-size: 14px;
+		border-radius: 20px;
+		border: none;
+		color: white;
+		height: 2.375rem;
+		width: 7rem;
+		background-color: rgb(18, 23, 43, 0.8);
+		padding: 0;
+	}
+	@include desktop {
+		border-radius: 20px;
+		border: none;
+		color: white;
+		height: 2.375rem;
+		width: 7rem;
+		background-color: rgb(18, 23, 43, 0.8);
+		padding: 0;
 	}
 }
