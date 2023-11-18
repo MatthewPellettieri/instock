@@ -64,6 +64,10 @@
 		background-color: $instock-indigo;
 		margin-bottom: 1rem;
 
+		&:hover {
+			cursor: pointer;
+		}
+
 		@include tablet {
 			width: 25%;
 			&:hover {

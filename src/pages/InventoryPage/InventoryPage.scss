@@ -101,6 +101,10 @@
 		color: $white;
 		@include m-h3;
 
+		&:hover {
+			cursor: pointer;
+		}
+
 		@include tablet {
 			height: 2.375rem;
 			width: 40%;
