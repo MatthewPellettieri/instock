@@ -27,6 +27,12 @@
 			display: flex;
 			justify-content: space-between;
 
+			&--delete,
+			&--edit {
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+
 			&--delete {
 				&:hover {
 					cursor: pointer;
