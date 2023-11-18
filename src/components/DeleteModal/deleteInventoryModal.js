@@ -21,7 +21,7 @@ function DeleteInventoryModal(props) {
               <button onClick={props.toggleModal} className="close--modal">
                 Cancel
               </button>
-              <button className="confirm--delete">Delete</button>
+              <button onClick={props.deleteItem} className="confirm--delete">Delete</button>
               </div>
             </div>
           </div>
