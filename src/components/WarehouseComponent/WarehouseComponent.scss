@@ -7,9 +7,9 @@
 		@include divider;
 		padding-bottom: 1rem;
 
-		&:hover {
-			background-color: $instock-light-grey;
-		}
+		// &:hover {
+		// 	background-color: $instock-light-grey;
+		// }
 
 		&__flex-container {
 			display: flex;
@@ -146,6 +146,10 @@
 		padding-left: 4rem;
 		padding-bottom: 0rem;
 		height: 6rem;
+
+		&:hover {
+			background-color: rgba($color: $instock-indigo, $alpha: 0.05);
+		}
 
 		&__flex-container {
 			display: flex;
