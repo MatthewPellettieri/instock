@@ -17,7 +17,7 @@
 		padding: 1rem 3rem;
 
 		&:hover {
-			background-color: rgba($color: $instock-indigo, $alpha: 0.1);
+			background-color: rgba($color: $instock-indigo, $alpha: 0.05);
 		}
 	}
 
@@ -240,6 +240,13 @@
 		&--link {
 			width: 1.5rem;
 			height: 1.5rem;
+		}
+
+		&--delete {
+			@extend .inventoryCard__btm--link;
+			&:hover {
+				cursor: pointer;
+			}
 		}
 	}
 }
