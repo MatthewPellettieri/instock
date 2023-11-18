@@ -1,10 +1,30 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import wareHouseData from "../../test_data/warehouse_JSON.json";
 import WarehouseComponent from "../../components/WarehouseComponent/WarehouseComponent";
 import doubleArrow from "../../assets/Icons/sort-24px.svg";
 import "./WarehousePage.scss";
 
 function WarehousePage() {
+	// search functionality
+	const [searchQuery, setSearchQuery] = useState("");
+
+	const handleSearch = (e) => {
+		return setSearchQuery(e.target.value.toLocaleLowerCase());
+	};
+
+	const searchFilter = (data) => {
+		return data.filter((warehouse) => {
+			return (
+				warehouse.warehouse_name.toLowerCase().includes(searchQuery) ||
+				warehouse.contact_name.toLowerCase().includes(searchQuery) ||
+				warehouse.contact_email.toLowerCase().includes(searchQuery) ||
+				warehouse.contact_phone.toLowerCase().includes(searchQuery) ||
+				warehouse.address.toLowerCase().includes(searchQuery)
+			);
+		});
+	};
+
 	return (
 		<>
 			<div className="warehouse__container">
@@ -14,7 +34,8 @@ function WarehousePage() {
 					<input
 						className="warehouse__search-bar"
 						type="text"
-						placeholder="Search..."></input>
+						placeholder="Search..."
+						onChange={handleSearch}></input>
 
 					<button className="warehouse__button-blue">
 						<p className="warehouse__button-text">+ Add New Warehouse</p>
@@ -55,7 +76,7 @@ function WarehousePage() {
 					<p className="warehouseList__name action">actions</p>
 				</div>
 			</section>
-			{wareHouseData.map((data) => (
+			{searchFilter(wareHouseData).map((data) => (
 				<WarehouseComponent
 					key={data.id}
 					warehouseName={data.warehouse_name}
