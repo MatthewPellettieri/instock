@@ -62,7 +62,12 @@ export default function WarehouseComponent({
 					</div>
 				</div>
 				<div className="warehouseCard__icons">
-					<img src={deleteIcon} alt={"delete-icon"} onClick={toggleModal} />
+					<img
+						className="warehouseCard__icons--delete"
+						src={deleteIcon}
+						alt={"delete-icon"}
+						onClick={toggleModal}
+					/>
 					<img src={editIcon} alt={"edit-icon"} />
 				</div>
 			</section>
