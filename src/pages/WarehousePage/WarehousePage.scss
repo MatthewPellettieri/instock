@@ -176,8 +176,13 @@ input.warehouse__search-bar {
 	background: transparent url(../../assets/Icons/search-24px.svg) no-repeat 13px;
 	background-position: right;
 	height: 2rem;
-	border: 1px solid $instock-cloud;
+	outline: 1px solid $instock-cloud;
+	border: none;
 	margin-bottom: 0.8rem;
+
+	&:focus {
+		outline: 1px solid $instock-indigo;
+	}
 
 	@include tablet {
 		width: 28%;
