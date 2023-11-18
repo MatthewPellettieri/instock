@@ -13,7 +13,9 @@ function InventoryCard({
 	category,
 	warehouse,
 	id,
+	deleteItem
 }) {
+
 	const upperStatus = status.toUpperCase();
 
 	const ifInventoryPage = () => {
@@ -26,8 +28,7 @@ function InventoryCard({
 
 	// MODAL LOGIC BELOW
 	const [modal, setModal] = useState(false);
-	const toggleModal = (event) => {
-		const inventoryItem = event.target.parentNode;
+	const toggleModal = () => {
 		setModal(!modal);
 	};
 	if (modal) {
@@ -39,7 +40,7 @@ function InventoryCard({
 	return (
 		<div className="inventoryCard">
 			{modal === true && (
-				<DeleteInventoryModal toggleModal={toggleModal} itemName={itemName} />
+				<DeleteInventoryModal deleteItem={() => deleteItem(id)} toggleModal={toggleModal} itemName={itemName} />
 			)}
 			<div className="inventoryCard__top">
 				<div className="inventoryCard__container--left">

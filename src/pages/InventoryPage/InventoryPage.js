@@ -6,9 +6,28 @@ import InventoryHeader from "../../components/InventoryHeader/InventoryHeader";
 import InventoryCard from "../../components/InventoryCard/InventoryCard";
 
 function InventoryPage() {
-	const apiURL = "http://localhost:8080/api/inventories";
+	const apiURL = "http://localhost:8080/api/inventories/";
 
 	const [invData, setInvData] = useState();
+
+	const updatePage = () => {
+		axios
+			.get(apiURL)
+			.then((res) => {
+				setInvData(res.data);
+			})
+	}
+	const navigate = useNavigate();
+	const deleteItem = (id) => {
+        axios
+			.delete(apiURL + id )
+			.then(() => {
+				updatePage()
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+}
 
 	useEffect(() => {
 		axios
@@ -20,8 +39,6 @@ function InventoryPage() {
 				console.error(err);
 			});
 	}, []);
-
-	const navigate = useNavigate();
 
 	const handleClick = () => {
 		navigate("/addItem");
@@ -60,6 +77,7 @@ function InventoryPage() {
 						status={item.status}
 						category={item.category}
 						warehouse={item.warehouse_name}
+						deleteItem={deleteItem}
 					/>
 				))}
 			</div>
