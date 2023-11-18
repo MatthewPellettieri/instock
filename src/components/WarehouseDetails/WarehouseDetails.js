@@ -1,28 +1,34 @@
 import "./WarehouseDetails.scss";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import InventoryCard from "../InventoryCard/InventoryCard";
 import InventoryHeader from "../InventoryHeader/InventoryHeader";
-import warehouseData from "../../test_data/warehouse_JSON.json";
-import inventoryData from "../../test_data/inventory_JSON.json";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function WarehouseDetails() {
-	const {
-		warehouse_name,
-		address,
-		city,
-		country,
-		contact_name,
-		contact_email,
-		contact_phone,
-		contact_position,
-	} = warehouseData[0];
+	const { id } = useParams();
 
-	const warehouseInv = inventoryData.filter((item) => item.warehouse_id === 1);
+	const [warehouseData, setWarehouseData] = useState();
 
+	useEffect(() => {
+		axios.get(`http://localhost:8080/api/warehouses/${id}`).then((res) => {
+			setWarehouseData(res.data[0]);
+		});
+	}, []);
+
+	const [currentInv, setCurrentInv] = useState();
+
+	useEffect(() => {
+		axios
+			.get(`http://localhost:8080/api/warehouses/${id}/inventories`)
+			.then((res) => {
+				setCurrentInv(res.data);
+			});
+	}, []);
 	return (
 		<div>
-			<div className="warehouseDetails">
+			{/* <div className="warehouseDetails">
 				<div className="warehouseDetails__header">
 					<div className="warehouseDetails__header--container">
 						<Link to="/" className="warehouseDetails__header--link">
@@ -58,10 +64,10 @@ function WarehouseDetails() {
 					</div>
 				</div>
 			</div>
-			<div className="inventoryList">
-				{/* inventoryHeader is only visable at 768px and above */}
-				<InventoryHeader />
-				{warehouseInv.map((item) => (
+			<div className="inventoryList"> */}
+			{/* inventoryHeader is only visable at 768px and above */}
+			{/* <InventoryHeader />
+				{currentInv.map((item) => (
 					<InventoryCard
 						key={item.id}
 						itemName={item.item_name}
@@ -70,7 +76,7 @@ function WarehouseDetails() {
 						category={item.category}
 					/>
 				))}
-			</div>
+			</div> */}
 		</div>
 	);
 }
