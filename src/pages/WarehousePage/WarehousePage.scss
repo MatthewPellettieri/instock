@@ -2,200 +2,212 @@
 @use "../../styles/partials/variables" as *;
 
 .warehouse {
-  @include desktop {
-    margin-left: 8rem;
-    margin-right: 8rem;
-  }
+	@include desktop {
+		margin-left: 8rem;
+		margin-right: 8rem;
+	}
 
-  &__container {
-    background-color: white;
-    border-radius: 4px;
+	&__container {
+		background-color: white;
+		border-radius: 4px;
 
-    @include tablet {
-      padding-right: 0.5rem;
-      padding-left: 0.7rem;
-    }
+		@include tablet {
+			padding-right: 0.5rem;
+			padding-left: 0.7rem;
+		}
 
-    @include desktop {
-      padding-left: 3rem;
-      padding-right: 2rem;
-    }
-  }
+		@include desktop {
+			padding-left: 3rem;
+			padding-right: 2rem;
+		}
+	}
 
-  &__head {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-radius: 4px;
+	&__head {
+		padding-left: 1rem;
+		padding-right: 1rem;
+		border-radius: 4px;
 
-    @include tablet {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding-top: 2rem;
-      padding-bottom: 1rem;
-    }
-  }
+		@include tablet {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			padding-top: 2rem;
+			padding-bottom: 1rem;
+		}
+	}
 
-  &__header {
-    @include m-h1;
-    padding-top: 2rem;
-    padding-bottom: 0.7rem;
+	&__header {
+		@include m-h1;
+		padding-top: 2rem;
+		padding-bottom: 0.7rem;
 
-    @include tablet {
-      padding-top: 0rem;
-      margin-right: 7rem;
-      @include d-h1;
-    }
+		@include tablet {
+			padding-top: 0rem;
+			margin-right: 7rem;
+			@include d-h1;
+		}
 
-    @include desktop {
-      padding-top: 0rem;
-      margin-right: 29rem;
-      @include d-h1;
-    }
-  }
+		@include desktop {
+			padding-top: 0rem;
+			margin-right: 29rem;
+			@include d-h1;
+		}
+	}
 
-  &__button-blue {
-    width: 100%;
-    border-radius: 1.25rem;
-    padding-left: 0.7rem;
-    background-position: right;
-    height: 2.3rem;
-    border: none;
-    background-color: $instock-indigo;
-    margin-bottom: 1rem;
+	&__button-blue {
+		width: 100%;
+		border-radius: 1.25rem;
+		padding-left: 0.7rem;
+		background-position: right;
+		height: 2.3rem;
+		border: none;
+		background-color: $instock-indigo;
+		margin-bottom: 1rem;
 
-    @include tablet {
-      width: 25%;
-    }
+		&:hover {
+			cursor: pointer;
+		}
 
-    @include desktop {
-      width: 18%;
-      padding: 0;
-    }
-  }
+		@include tablet {
+			width: 25%;
+			&:hover {
+				background-color: $instock-graphite;
+			}
+		}
 
-  &__button-text {
-    color: $white;
+		@include desktop {
+			width: 18%;
+			padding: 0;
+		}
+	}
 
-    @include tablet {
-      padding-right: 0.7rem;
-    }
-  }
+	&__button-text {
+		color: $white;
+
+		@include tablet {
+			padding-right: 0.7rem;
+		}
+	}
 }
 
 /*styling for the the greybar on tablet and desktop*/
 .warehouseList {
-  display: none;
+	display: none;
 }
 
 @include tablet {
-  .warehouseList {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    gap: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    background-color: $instock-light-grey;
-    height: 2rem;
+	.warehouseList {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		gap: 2rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		background-color: $instock-light-grey;
+		height: 2rem;
 
-    &__label {
-      display: flex;
-      align-items: center;
-      min-width: 100px;
-    }
+		&__label {
+			display: flex;
+			align-items: center;
+			min-width: 100px;
+		}
 
-    &__label-info {
-      min-width: 170px;
-      display: flex;
-      align-items: center;
-      @include m-p3;
-      color: $instock-slate;
-      text-transform: uppercase;
-    }
+		&__label-info {
+			min-width: 170px;
+			display: flex;
+			align-items: center;
+			@include m-p3;
+			color: $instock-slate;
+			text-transform: uppercase;
+		}
 
-    &__name {
-      text-transform: uppercase;
-      @include m-p3;
-      color: $instock-slate;
-    }
-  }
+		&__name {
+			text-transform: uppercase;
+			@include m-p3;
+			color: $instock-slate;
+		}
+	}
 }
 
 @include desktop {
-  .warehouseList {
-    display: flex;
-    padding-left: 4rem;
+	.warehouseList {
+		display: flex;
+		padding-left: 4rem;
 
-    &__label.one {
-      width: 290px;
-    }
+		&__label.one {
+			width: 290px;
+		}
 
-    &__label {
-      display: flex;
-      align-items: center;
-      min-width: 200px;
-    }
+		&__label {
+			display: flex;
+			align-items: center;
+			min-width: 200px;
+		}
 
-    &__label-info {
-      min-width: 230px;
-      display: flex;
-      align-items: center;
-      @include m-p3;
-      color: $instock-slate;
-      text-transform: uppercase;
-    }
+		&__label-info {
+			min-width: 230px;
+			display: flex;
+			align-items: center;
+			@include m-p3;
+			color: $instock-slate;
+			text-transform: uppercase;
+		}
 
-    &__label.two {
-      width: 350px;
-    }
+		&__label.two {
+			width: 350px;
+		}
 
-    &__label.three {
-      width: 230px;
-    }
+		&__label.three {
+			width: 230px;
+		}
 
-    &__name {
-      text-transform: uppercase;
-      @include m-p3;
-      color: $instock-slate;
-    }
-  }
+		&__name {
+			text-transform: uppercase;
+			@include m-p3;
+			color: $instock-slate;
+		}
+	}
 }
 
 input.warehouse__search-bar {
-  width: 100%;
-  border-radius: 1.25rem;
-  padding-left: 0.7rem;
-  background: transparent url(../../assets/Icons/search-24px.svg) no-repeat 13px;
-  background-position: right;
-  height: 2rem;
-  border: 1px solid $instock-cloud;
-  margin-bottom: 0.8rem;
+	width: 100%;
+	border-radius: 1.25rem;
+	padding-left: 0.7rem;
+	background: transparent url(../../assets/Icons/search-24px.svg) no-repeat 13px;
+	background-position: right;
+	height: 2rem;
+	outline: 1px solid $instock-cloud;
+	border: none;
+	margin-bottom: 0.8rem;
 
-  @include tablet {
-    width: 28%;
-    height: 2.2rem;
-  }
+	&:focus {
+		outline: 1px solid $instock-indigo;
+	}
 
-  @include desktop {
-    width: 25%;
-  }
+	@include tablet {
+		width: 28%;
+		height: 2.2rem;
+	}
+
+	@include desktop {
+		width: 25%;
+	}
 }
 
 @include tablet {
-  .warehouse__head {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 2rem 0.5rem 1rem 1rem;
-  }
+	.warehouse__head {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 2rem 0.5rem 1rem 1rem;
+	}
 }
 
 @include desktop {
-  .warehouse__head {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 2rem 0.5rem 1rem 1rem;
-  }
+	.warehouse__head {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 2rem 0.5rem 1rem 1rem;
+	}
 }

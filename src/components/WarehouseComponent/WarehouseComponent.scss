@@ -1,14 +1,11 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/animations" as *;
 
 @include mobile {
 	.warehouseCard {
 		@include divider;
 		padding-bottom: 1rem;
-
-		&:hover {
-			background-color: $instock-light-grey;
-		}
 
 		&__flex-container {
 			display: flex;
@@ -29,6 +26,12 @@
 		&__icons {
 			display: flex;
 			justify-content: space-between;
+
+			&--delete {
+				&:hover {
+					cursor: pointer;
+				}
+			}
 		}
 
 		&__name-box,
@@ -99,6 +102,15 @@
 		&__name-link {
 			width: 6.25rem;
 			padding-bottom: 0rem;
+
+			&:hover {
+				text-decoration: underline;
+				text-decoration-color: $instock-indigo;
+			}
+
+			&:hover .arrow {
+				animation: slide-out 0.5s ease-in-out forwards;
+			}
 		}
 
 		&__postal {
@@ -136,6 +148,10 @@
 		padding-left: 4rem;
 		padding-bottom: 0rem;
 		height: 6rem;
+
+		&:hover {
+			background-color: rgba($color: $instock-indigo, $alpha: 0.05);
+		}
 
 		&__flex-container {
 			display: flex;
@@ -189,6 +205,12 @@
 		&__contact-info {
 			width: 400px;
 		}
+	}
+}
+
+@include tablet {
+	.arrow {
+		animation: slide-in 0.5s ease-in-out forwards;
 	}
 }
 

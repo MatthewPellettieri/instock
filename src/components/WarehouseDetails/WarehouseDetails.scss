@@ -53,6 +53,10 @@
 		background-position: center;
 		background-repeat: no-repeat;
 
+		&:hover {
+			cursor: pointer;
+		}
+
 		@include tablet {
 			display: none;
 		}
@@ -77,6 +81,7 @@
 				background-repeat: no-repeat;
 
 				&:hover {
+					cursor: pointer;
 					background-color: $instock-graphite;
 				}
 			}

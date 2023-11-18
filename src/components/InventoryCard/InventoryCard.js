@@ -94,13 +94,13 @@ function InventoryCard({
 			<div className="inventoryCard__btm">
 				<img
 					onClick={toggleModal}
-					className="inventoryCard__btm--icon"
+					className="inventoryCard__btm--delete"
 					src={deleteIcon}
 					alt="delete-icon"
 				/>
 				<Link to={"/editInventory/:id"} className="inventoryCard__btm--link">
 					<img
-						className="inventoryCard__btm--icon"
+						className="inventoryCard__btm--edit"
 						src={editIcon}
 						alt="edit-icon"
 					/>
