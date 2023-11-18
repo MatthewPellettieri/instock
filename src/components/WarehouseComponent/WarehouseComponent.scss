@@ -1,5 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/animations" as *;
 
 @include mobile {
 	.warehouseCard {
@@ -99,6 +100,15 @@
 		&__name-link {
 			width: 6.25rem;
 			padding-bottom: 0rem;
+
+			&:hover {
+				text-decoration: underline;
+				text-decoration-color: $instock-indigo;
+			}
+
+			&:hover .arrow {
+				animation: slide-out 0.5s ease-in-out forwards;
+			}
 		}
 
 		&__postal {
@@ -189,6 +199,12 @@
 		&__contact-info {
 			width: 400px;
 		}
+	}
+}
+
+@include tablet {
+	.arrow {
+		animation: slide-in 0.5s ease-in-out forwards;
 	}
 }
 
