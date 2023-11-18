@@ -26,6 +26,12 @@
 		&__icons {
 			display: flex;
 			justify-content: space-between;
+
+			&--delete {
+				&:hover {
+					cursor: pointer;
+				}
+			}
 		}
 
 		&__name-box,
