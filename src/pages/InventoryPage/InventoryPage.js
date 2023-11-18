@@ -30,6 +30,16 @@ function InventoryPage() {
 	// search functionality
 	const [searchQuery, setSearchQuery] = useState("");
 
+	const searchFilter = (data) => {
+		return data.filter((item) => {
+			return (
+				item.item_name.toLowerCase().includes(searchQuery) ||
+				item.category.toLowerCase().includes(searchQuery) ||
+				item.warehouse_name.toLowerCase().includes(searchQuery)
+			);
+		});
+	};
+
 	if (!invData) {
 		console.log("loading data");
 	} else {
@@ -57,19 +67,17 @@ function InventoryPage() {
 					</div>
 				</div>
 				<InventoryHeader />
-				{invData
-					.filter((item) => item.item_name.toLowerCase().includes(searchQuery))
-					.map((item) => (
-						<InventoryCard
-							key={item.id}
-							id={item.id}
-							itemName={item.item_name}
-							quantity={item.quantity}
-							status={item.status}
-							category={item.category}
-							warehouse={item.warehouse_name}
-						/>
-					))}
+				{searchFilter(invData).map((item) => (
+					<InventoryCard
+						key={item.id}
+						id={item.id}
+						itemName={item.item_name}
+						quantity={item.quantity}
+						status={item.status}
+						category={item.category}
+						warehouse={item.warehouse_name}
+					/>
+				))}
 			</div>
 		);
 	}
