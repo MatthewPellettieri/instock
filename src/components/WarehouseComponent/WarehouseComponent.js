@@ -36,7 +36,9 @@ export default function WarehouseComponent({
 						<div className="warehouseCard__name">
 							<p className="warehouseCard__name-text">warehouse</p>
 							<div className="warehouseCard__name-link">
-								<Link to={`${id}`} className="warehouseCard__name-link">
+								<Link
+									to={`/warehouse/${id}`}
+									className="warehouseCard__name-link">
 									<p className="warehouseCard__location">{warehouseName}</p>
 									<img
 										className="arrow"
