@@ -38,7 +38,7 @@ function WarehouseForms(props) {
 		dataToSend.contact_phone = event.target.phoneNumber.value;
 		dataToSend.contact_email = event.target.email.value;
 		
-		if (window.location.href.includes("addWarehouse")) {
+		if (window.location.href.includes("add")) {
 			axios
 			.post(apiURL , dataToSend)
 			.then((res) =>{

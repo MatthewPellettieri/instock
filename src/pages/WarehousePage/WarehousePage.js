@@ -99,7 +99,6 @@ function WarehousePage() {
 				</div>
 			</section>
 			{searchFilter(wareData).map((data) => (
-			{wareData.map((data) => (
 				<WarehouseComponent
 					key={data.id}
 					id={data.id}
