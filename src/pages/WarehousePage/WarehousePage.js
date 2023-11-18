@@ -20,7 +20,9 @@ function WarehousePage() {
 				warehouse.contact_name.toLowerCase().includes(searchQuery) ||
 				warehouse.contact_email.toLowerCase().includes(searchQuery) ||
 				warehouse.contact_phone.toLowerCase().includes(searchQuery) ||
-				warehouse.address.toLowerCase().includes(searchQuery)
+				warehouse.address.toLowerCase().includes(searchQuery) ||
+				warehouse.city.toLowerCase().includes(searchQuery) ||
+				warehouse.country.toLowerCase().includes(searchQuery)
 			);
 		});
 	};
