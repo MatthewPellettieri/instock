@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import wareHouseData from "../../test_data/warehouse_JSON.json";
 import WarehouseComponent from "../../components/WarehouseComponent/WarehouseComponent";
 import doubleArrow from "../../assets/Icons/sort-24px.svg";
 import "./WarehousePage.scss";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function WarehousePage() {
+
 	// search functionality
 	const [searchQuery, setSearchQuery] = useState("");
 
@@ -26,6 +27,25 @@ function WarehousePage() {
 			);
 		});
 	};
+  
+  const apiURL = "http://localhost:8080/api/warehouses";
+	
+	const [wareData, setWareData] = useState();
+
+	useEffect(() => {
+		axios
+			.get(apiURL)
+			.then((res) => {
+				setWareData(res.data);
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	}, []);
+	
+	if (!wareData) {
+		console.log("loading data");
+	} else {
 
 	return (
 		<>
@@ -78,9 +98,11 @@ function WarehousePage() {
 					<p className="warehouseList__name action">actions</p>
 				</div>
 			</section>
-			{searchFilter(wareHouseData).map((data) => (
+			{searchFilter(wareData).map((data) => (
+			{wareData.map((data) => (
 				<WarehouseComponent
 					key={data.id}
+					id={data.id}
 					warehouseName={data.warehouse_name}
 					contactName={data.contact_name}
 					contactEmail={data.contact_email}
@@ -92,6 +114,7 @@ function WarehousePage() {
 			))}
 		</>
 	);
+			}
 }
 
 export default WarehousePage;

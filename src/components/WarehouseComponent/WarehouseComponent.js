@@ -3,17 +3,18 @@ import { useState } from "react";
 import arrow from "../../assets/Icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
-import { toFormData } from "axios";
 import DeleteWarehouseModal from "../../components/DeleteModal/DeleteWarehouseModal";
+import { Link } from "react-router-dom";
 
 export default function WarehouseComponent({
+	id,
 	warehouseName,
-	contactName,
-	contactEmail,
-	contactPhone,
 	address,
 	city,
 	country,
+	contactName,
+	contactPhone,
+	contactEmail
 }) {
 	const [modal, setModal] = useState(false);
 	const toggleModal = () => {
@@ -33,11 +34,12 @@ export default function WarehouseComponent({
 						<div className="warehouseCard__name">
 							<p className="warehouseCard__name-text">warehouse</p>
 							<div className="warehouseCard__name-link">
-								<p className="warehouseCard__location">{warehouseName}</p>
+								<Link to={`${id}`} className="warehouseCard__name-link"><p className="warehouseCard__location">{warehouseName}</p>
 								<img
 									className="arrow"
 									src={arrow}
 									alt={"blue arrow link"}></img>
+								</Link>
 							</div>
 						</div>
 						<div className="warehouseCard__address">
