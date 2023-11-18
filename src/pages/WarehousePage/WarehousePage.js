@@ -90,9 +90,6 @@ function WarehousePage() {
 					country={data.country}
 				/>
 			))}
-			<Link to="/warehouseDetails">
-				<p> To warehouseDetails</p>
-			</Link>
 		</>
 	);
 }
