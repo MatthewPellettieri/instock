@@ -27,6 +27,23 @@ function InventoryPage() {
 		navigate("/addItem");
 	};
 
+	// search functionality
+	const [searchQuery, setSearchQuery] = useState("");
+
+	const handleSearch = (e) => {
+		return setSearchQuery(e.target.value.toLocaleLowerCase());
+	};
+
+	const searchFilter = (data) => {
+		return data.filter((item) => {
+			return (
+				item.item_name.toLowerCase().includes(searchQuery) ||
+				item.category.toLowerCase().includes(searchQuery) ||
+				item.warehouse_name.toLowerCase().includes(searchQuery)
+			);
+		});
+	};
+
 	if (!invData) {
 		console.log("loading data");
 	} else {
@@ -43,7 +60,8 @@ function InventoryPage() {
 								type="text"
 								id="search"
 								name="search"
-								placeholder="Search..."></input>
+								placeholder="Search..."
+								onChange={handleSearch}></input>
 						</form>
 						<button className="inventoryPage__button" onClick={handleClick}>
 							+ Add New Item
@@ -51,7 +69,7 @@ function InventoryPage() {
 					</div>
 				</div>
 				<InventoryHeader />
-				{invData.map((item) => (
+				{searchFilter(invData).map((item) => (
 					<InventoryCard
 						key={item.id}
 						id={item.id}

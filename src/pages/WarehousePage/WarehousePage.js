@@ -6,7 +6,29 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function WarehousePage() {
-	const apiURL = "http://localhost:8080/api/warehouses";
+
+	// search functionality
+	const [searchQuery, setSearchQuery] = useState("");
+
+	const handleSearch = (e) => {
+		return setSearchQuery(e.target.value.toLocaleLowerCase());
+	};
+
+	const searchFilter = (data) => {
+		return data.filter((warehouse) => {
+			return (
+				warehouse.warehouse_name.toLowerCase().includes(searchQuery) ||
+				warehouse.contact_name.toLowerCase().includes(searchQuery) ||
+				warehouse.contact_email.toLowerCase().includes(searchQuery) ||
+				warehouse.contact_phone.toLowerCase().includes(searchQuery) ||
+				warehouse.address.toLowerCase().includes(searchQuery) ||
+				warehouse.city.toLowerCase().includes(searchQuery) ||
+				warehouse.country.toLowerCase().includes(searchQuery)
+			);
+		});
+	};
+  
+  const apiURL = "http://localhost:8080/api/warehouses";
 	
 	const [wareData, setWareData] = useState();
 
@@ -34,7 +56,8 @@ function WarehousePage() {
 					<input
 						className="warehouse__search-bar"
 						type="text"
-						placeholder="Search..."></input>
+						placeholder="Search..."
+						onChange={handleSearch}></input>
 
 					<button className="warehouse__button-blue">
 						<p className="warehouse__button-text">+ Add New Warehouse</p>
@@ -75,6 +98,7 @@ function WarehousePage() {
 					<p className="warehouseList__name action">actions</p>
 				</div>
 			</section>
+			{searchFilter(wareData).map((data) => (
 			{wareData.map((data) => (
 				<WarehouseComponent
 					key={data.id}
@@ -88,9 +112,6 @@ function WarehousePage() {
 					country={data.country}
 				/>
 			))}
-			<Link to="/warehouseDetails">
-				<p> To warehouseDetails</p>
-			</Link>
 		</>
 	);
 			}

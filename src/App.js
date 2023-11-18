@@ -19,14 +19,14 @@ function App() {
 					<Routes>
 						{/* ------------------Warehouse-------------------------------- */}
 						<Route path="/" element={<WarehousePage />}></Route>
-						<Route path="/warehouseDetails" element={<WarehouseDetails />} />
+						<Route path="/warehouse/:id" element={<WarehouseDetails />} />
 						<Route
-							path="/editWarehouse/:id"
+							path="/warehouse/:id/edit"
 							element={
 								<WarehouseForms heading="Edit Warehouse" buttonText="Save" />
 							}></Route>
 						<Route
-							path="/addWarehouse"
+							path="/warehouse/add"
 							element={
 								<WarehouseForms
 									heading="Add New Warehouse"
@@ -38,14 +38,16 @@ function App() {
 							{/* <Route path="/inventory/:id" element={<Inventory />} /> */}
 						</Route>
 						<Route path="/inventory/:id" element={<InventoryItem />} />
-						{/* <Route path="/editInventory/:id" element={<EditInventory />}></Route>
-						<Route path="/addInventory" element={<AddInventory />}></Route>*/}
+						<Route
+							path="/inventory/:id/edit"
+							element={<EditInventory />}></Route>
+						<Route path="/inventory/add" element={<AddInventory />}></Route>
 					</Routes>
 				</div>
 			</BrowserRouter>
-      <Footer />
-    </>
-  );
+			<Footer />
+		</>
+	);
 }
 
 export default App;
