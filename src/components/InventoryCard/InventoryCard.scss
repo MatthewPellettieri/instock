@@ -241,6 +241,13 @@
 			width: 1.5rem;
 			height: 1.5rem;
 		}
+
+		&--delete {
+			@extend .inventoryCard__btm--link;
+			&:hover {
+				cursor: pointer;
+			}
+		}
 	}
 }
 
