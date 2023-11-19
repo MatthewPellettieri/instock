@@ -6,7 +6,6 @@
 	border-radius: 4px;
 
 	&__container {
-		margin: 0.5rem 1.5rem;
 		padding-bottom: 1rem;
 		display: flex;
 		flex-direction: column;
@@ -65,12 +64,17 @@
 			&::placeholder{
 				color:$instock-slate;
 			}
+			&:focus{
+				border: none;
+				outline: 1px solid $instock-indigo;
+			}
 		}
 	}
 	
 	&__buttons {
 		padding: 1rem 1.5rem;
 		display: flex;
+		background-color: $instock-light-grey;
 		@include tablet{
 			justify-content: flex-end;
 		}
@@ -86,14 +90,24 @@
 			@include tablet{
 				width: max-content;
 				padding: 0.5rem 1rem;
+				&:hover {
+					background-color: $instock-graphite;
+				}
 			}
 			border: 1px solid $instock-cloud;
+			&:hover {
+				cursor: pointer;
+			}
 		}
 
 		&--cancel{
 			margin-right: 0.5rem;
 			color: $instock-slate;
 			background-color: white;
+			&:hover {
+				background-color: white;
+				border-color: $instock-indigo;
+			}
 		}
 
 		&--addWarehouse{
@@ -120,6 +134,9 @@
 			display: flex;
 			align-items: center;
 			padding: 2rem 1.5rem 1.5rem 1.75rem;
+			@include tablet {
+				padding-bottom: 1.65rem;
+			}
 			@include divider;
 		}
 
