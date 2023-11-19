@@ -32,8 +32,8 @@
 
 		@include desktop {
 			justify-content: flex-start;
-			gap: 256px;
-			width: 40%;
+			gap: 12rem;
+			width: 38%;
 		}
 
 		&--inventoryPage {
@@ -44,7 +44,7 @@
 			}
 
 			@include desktop {
-				width: 43%;
+				width: 42%;
 			}
 		}
 	}

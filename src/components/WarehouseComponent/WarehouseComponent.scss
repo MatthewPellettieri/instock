@@ -216,6 +216,7 @@
 
 @include tablet {
 	.arrow {
+		z-index: -1;
 		animation: slide-in 0.5s ease-in-out forwards;
 	}
 }

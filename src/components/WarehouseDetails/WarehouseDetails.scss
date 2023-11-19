@@ -87,7 +87,7 @@
 			}
 
 			@include desktop {
-				width: 8%;
+				width: 9%;
 				background-position: 16px 8px;
 			}
 		}
@@ -122,15 +122,16 @@
 		justify-content: space-between;
 
 		@include tablet {
-			width: 60%;
+			width: 61%;
 			border-left: 1px solid $instock-cloud;
-			padding: 0rem 3rem;
+			padding: 0rem 2.5rem;
 			justify-content: flex-start;
-			gap: 3.5rem;
+			gap: 3.3rem;
 		}
 
 		@include desktop {
-			gap: 10.8rem;
+			width: 60%;
+			gap: 7.5rem;
 		}
 	}
 
