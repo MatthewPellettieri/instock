@@ -32,6 +32,10 @@ function WarehouseDetails() {
 			});
 	}, [id]);
 
+	const handleClick = () => {
+		navigate(`/warehouse/${id}/edit`);
+	};
+
 	if (!warehouseData || !currentInv) {
 		console.log("loading data");
 	} else {
@@ -51,8 +55,14 @@ function WarehouseDetails() {
 								{warehouseData.warehouse_name}
 							</p>
 						</div>
-						<button className="warehouseDetails__button"></button>
-						<button className="warehouseDetails__button--special">Edit</button>
+						<button
+							className="warehouseDetails__button"
+							onClick={handleClick}></button>
+						<button
+							className="warehouseDetails__button--special"
+							onClick={handleClick}>
+							Edit
+						</button>
 					</div>
 					<div className="warehouseDetails__details">
 						<div className="warehouseDetails__address">

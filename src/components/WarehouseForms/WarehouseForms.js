@@ -8,7 +8,7 @@ import errorIcon from "../../assets/Icons/error-24px.svg";
 function WarehouseForms(props) {
 	let navigate = useNavigate();
 
-	const apiURL = "http://localhost:8080/api/warehouses/"
+	const apiURL = "http://localhost:8080/api/warehouses/";
 
 	const [warehouseName, setWarehouseName] = useState("");
 	const [address, setAddress] = useState("");
@@ -22,9 +22,9 @@ function WarehouseForms(props) {
 	const clickHandler = (event) => {
 		event.preventDefault();
 		navigate(-1);
-	}
+	};
 
-	const {id} = useParams();
+	const { id } = useParams();
 
 	const changeHandler = (event) => {
 		event.preventDefault();
@@ -48,6 +48,7 @@ function WarehouseForms(props) {
 		dataToSend.contact_position = event.target.position.value;
 		dataToSend.contact_phone = event.target.phoneNumber.value;
 		dataToSend.contact_email = event.target.email.value;
+
 		
 		if (event.target.warehouseName.value === ""){
 			let textAreaDOM = document.getElementsByName("warehouseName")
@@ -128,39 +129,39 @@ function WarehouseForms(props) {
 			.catch((err) => {
 				alert(err)
 			})
+
 		}
-	}
+	};
 
 	useEffect(() => {
 		if (id) {
 			axios
-			.get(`${apiURL}${id}`)
-			.then((res) => {
-				setWarehouseName(res.data[0].warehouse_name);
-				setAddress(res.data[0].address);
-				setCity(res.data[0].city);
-				setCountry(res.data[0].country);
-				setContact(res.data[0].contact_name);
-				setPosition(res.data[0].contact_position);
-				setPhone(res.data[0].contact_phone);
-				setEmail(res.data[0].contact_email);
-			})
-			.catch((err) => {
-				alert(err);
-			});
+				.get(`${apiURL}${id}`)
+				.then((res) => {
+					setWarehouseName(res.data[0].warehouse_name);
+					setAddress(res.data[0].address);
+					setCity(res.data[0].city);
+					setCountry(res.data[0].country);
+					setContact(res.data[0].contact_name);
+					setPosition(res.data[0].contact_position);
+					setPhone(res.data[0].contact_phone);
+					setEmail(res.data[0].contact_email);
+				})
+				.catch((err) => {
+					alert(err);
+				});
 		}
 	}, [id]);
 
 	return (
 		<div className="warehouseForms">
 			<div className="warehouseForms__header--container">
-				<Link to="/" className="warehouseForms__header--link">
-					<img
-						className="warehouseForms__header--icon"
-						src={backArrow}
-						alt="back-arrow"
-					/>
-				</Link>
+				<img
+					className="warehouseForms__header--icon"
+					src={backArrow}
+					alt="back-arrow"
+					onClick={clickHandler}
+				/>
 				<p className="warehouseForms__header--title">{props.heading}</p>
 			</div>
 			<form onSubmit={submitHandler}>
@@ -169,6 +170,7 @@ function WarehouseForms(props) {
 						<h2 className="warehouseForms__form--title">Warehouse Details</h2>
 
 						<h3 className="warehouseForms__form--label">Warehouse Name</h3>
+
 						<textarea  onChange={changeHandler} name="warehouseName" placeholder="Warehouse Name" className="warehouseForms__form--input" defaultValue={warehouseName}></textarea>
 						<p className="warehouseForms__form--noerrorText" name="warehouseName_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
 
@@ -183,12 +185,14 @@ function WarehouseForms(props) {
 						<h3 className="warehouseForms__form--label">Country</h3>
 						<textarea onChange={changeHandler} name="country" placeholder="Country" className="warehouseForms__form--input" defaultValue={country}></textarea>
 						<p className="warehouseForms__form--noerrorText" name="country_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
+
 					</div>
-					<hr className="warehouseForms__divider"/>
+					<hr className="warehouseForms__divider" />
 					<div className="warehouseForms__form">
 						<h2 className="warehouseForms__form--title">Contact Details</h2>
 
 						<h3 className="warehouseForms__form--label">Contact Name</h3>
+
 						<textarea onChange={changeHandler} name="contactName" placeholder="Contact Name" className="warehouseForms__form--input" defaultValue={contact}></textarea>
 						<p className="warehouseForms__form--noerrorText" name="contactName_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
 
@@ -203,11 +207,20 @@ function WarehouseForms(props) {
 						<h3 className="warehouseForms__form--label">Email</h3>
 						<textarea onChange={changeHandler} name="email" placeholder="Email" className="warehouseForms__form--input" defaultValue={email}></textarea>
 						<p className="warehouseForms__form--noerrorText" name="email_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
+
 					</div>
 				</div>
 				<div className="warehouseForms__buttons">
-					<button className="warehouseForms__buttons--button warehouseForms__buttons--cancel" onClick={clickHandler}>Cancel</button>
-					<button className="warehouseForms__buttons--button warehouseForms__buttons--addWarehouse" type="submit">{props.buttonText}</button>
+					<button
+						className="warehouseForms__buttons--button warehouseForms__buttons--cancel"
+						onClick={clickHandler}>
+						Cancel
+					</button>
+					<button
+						className="warehouseForms__buttons--button warehouseForms__buttons--addWarehouse"
+						type="submit">
+						{props.buttonText}
+					</button>
 				</div>
 			</form>
 		</div>
