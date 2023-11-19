@@ -89,6 +89,7 @@ function WarehouseDetails() {
 					{currentInv.map((item) => (
 						<InventoryCard
 							key={item.id}
+							id={item.id}
 							itemName={item.item_name}
 							quantity={item.quantity}
 							status={item.status}
