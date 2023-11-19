@@ -102,7 +102,7 @@ function InventoryCard({
 					src={deleteIcon}
 					alt="delete-icon"
 				/>
-				<Link to={"/editInventory/:id"} className="inventoryCard__btm--link">
+				<Link to={`/inventory/${id}/edit`} className="inventoryCard__btm--link">
 					<img
 						className="inventoryCard__btm--edit"
 						src={editIcon}
