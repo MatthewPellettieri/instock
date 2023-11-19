@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import WarehouseComponent from "../../components/WarehouseComponent/WarehouseComponent";
 import doubleArrow from "../../assets/Icons/sort-24px.svg";
 import "./WarehousePage.scss";
@@ -69,6 +69,7 @@ function WarehousePage() {
 	} else {
 		return (
 			<>
+				<Navigate to="/warehouse" replace={true} />
 				<div className="warehouse__container">
 					<div className="warehouse__head">
 						<h1 className="warehouse__header">Warehouses</h1>
