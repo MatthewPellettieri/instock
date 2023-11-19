@@ -30,6 +30,9 @@
 		}
 		@include tablet {
 			padding: 0;
+			&:hover {
+				cursor: pointer;
+			}
 		}
 		@include desktop {
 			padding: 0;
@@ -75,6 +78,9 @@
 			width: 7rem;
 			background-color: $instock-graphite;
 			padding: 0;
+			&:hover {
+				cursor: pointer;
+			}
 		}
 		@include desktop {
 			border-radius: 20px;
@@ -107,6 +113,9 @@
 		width: 7rem;
 		background-color: rgb(18, 23, 43, 0.8);
 		padding: 0;
+		&:hover {
+			cursor: pointer;
+		}
 	}
 	@include desktop {
 		border-radius: 20px;
