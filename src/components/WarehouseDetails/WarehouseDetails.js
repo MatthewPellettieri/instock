@@ -36,6 +36,26 @@ function WarehouseDetails() {
 		navigate(`/warehouse/${id}/edit`);
 	};
 
+	// refresh page on inventory update
+	const updatePage = () => {
+		axios
+			.get(`http://localhost:8080/api/warehouses/${id}/inventories`)
+			.then((res) => {
+				setCurrentInv(res.data);
+			});
+	};
+
+	const deleteItem = (id) => {
+		axios
+			.delete(`http://localhost:8080/api/inventories/${id}`)
+			.then(() => {
+				updatePage();
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	};
+
 	if (!warehouseData || !currentInv) {
 		console.log("loading data");
 	} else {
@@ -104,6 +124,7 @@ function WarehouseDetails() {
 							quantity={item.quantity}
 							status={item.status}
 							category={item.category}
+							deleteItem={deleteItem}
 						/>
 					))}
 				</div>
