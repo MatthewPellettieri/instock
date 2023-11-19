@@ -7,7 +7,7 @@ import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 function WarehouseForms(props) {
 	let navigate = useNavigate();
 
-	const apiURL = "http://localhost:8080/api/warehouses/"
+	const apiURL = "http://localhost:8080/api/warehouses/";
 
 	const [warehouseName, setWarehouseName] = useState("");
 	const [address, setAddress] = useState("");
@@ -21,9 +21,9 @@ function WarehouseForms(props) {
 	const clickHandler = (event) => {
 		event.preventDefault();
 		navigate(-1);
-	}
+	};
 
-	const {id} = useParams();
+	const { id } = useParams();
 
 	const submitHandler = (event) => {
 		event.preventDefault();
@@ -37,61 +37,58 @@ function WarehouseForms(props) {
 		dataToSend.contact_position = event.target.position.value;
 		dataToSend.contact_phone = event.target.phoneNumber.value;
 		dataToSend.contact_email = event.target.email.value;
-		
+
 		if (window.location.href.includes("add")) {
 			axios
-			.post(apiURL , dataToSend)
-			.then((res) =>{
-				alert(`${res.data[0].warehouse_name} added as a new Warehouse`);
-				event.target.reset();
-			})
-			.catch((err) => {
-				alert(err)
-			});
-		}
-
-		else if (window.location.href.includes("editWarehouse")) {
+				.post(apiURL, dataToSend)
+				.then((res) => {
+					alert(`${res.data[0].warehouse_name} added as a new Warehouse`);
+					event.target.reset();
+				})
+				.catch((err) => {
+					alert(err);
+				});
+		} else if (window.location.href.includes("editWarehouse")) {
 			axios
-			.patch(`${apiURL}${id}`, dataToSend)
-			.then((res) =>{
-				alert(`${res.data.warehouse_name}  warehouse updated!`);
-			})
-			.catch((err) => {
-				alert(err)
-			})
+				.patch(`${apiURL}${id}`, dataToSend)
+				.then((res) => {
+					alert(`${res.data.warehouse_name}  warehouse updated!`);
+				})
+				.catch((err) => {
+					alert(err);
+				});
 		}
-	}
+	};
 
 	useEffect(() => {
 		if (id) {
 			axios
-			.get(`${apiURL}${id}`)
-			.then((res) => {
-				setWarehouseName(res.data[0].warehouse_name);
-				setAddress(res.data[0].address);
-				setCity(res.data[0].city);
-				setCountry(res.data[0].country);
-				setContact(res.data[0].contact_name);
-				setPosition(res.data[0].contact_position);
-				setPhone(res.data[0].contact_phone);
-				setEmail(res.data[0].contact_email);
-			})
-			.catch((err) => {
-				alert(err);
-			});
+				.get(`${apiURL}${id}`)
+				.then((res) => {
+					setWarehouseName(res.data[0].warehouse_name);
+					setAddress(res.data[0].address);
+					setCity(res.data[0].city);
+					setCountry(res.data[0].country);
+					setContact(res.data[0].contact_name);
+					setPosition(res.data[0].contact_position);
+					setPhone(res.data[0].contact_phone);
+					setEmail(res.data[0].contact_email);
+				})
+				.catch((err) => {
+					alert(err);
+				});
 		}
 	}, [id]);
 
 	return (
 		<div className="warehouseForms">
 			<div className="warehouseForms__header--container">
-				<Link to="/" className="warehouseForms__header--link">
-					<img
-						className="warehouseForms__header--icon"
-						src={backArrow}
-						alt="back-arrow"
-					/>
-				</Link>
+				<img
+					className="warehouseForms__header--icon"
+					src={backArrow}
+					alt="back-arrow"
+					onClick={clickHandler}
+				/>
 				<p className="warehouseForms__header--title">{props.heading}</p>
 			</div>
 			<form onSubmit={submitHandler}>
@@ -100,37 +97,77 @@ function WarehouseForms(props) {
 						<h2 className="warehouseForms__form--title">Warehouse Details</h2>
 
 						<h3 className="warehouseForms__form--label">Warehouse Name</h3>
-						<textarea  name="warehouseName" placeholder="Warehouse Name" className="warehouseForms__form--input" defaultValue={warehouseName}></textarea>
+						<textarea
+							name="warehouseName"
+							placeholder="Warehouse Name"
+							className="warehouseForms__form--input"
+							defaultValue={warehouseName}></textarea>
 
 						<h3 className="warehouseForms__form--label">Street Address</h3>
-						<textarea  name="streetAddress" placeholder="Street Address" className="warehouseForms__form--input" defaultValue={address}></textarea>
+						<textarea
+							name="streetAddress"
+							placeholder="Street Address"
+							className="warehouseForms__form--input"
+							defaultValue={address}></textarea>
 
 						<h3 className="warehouseForms__form--label">City</h3>
-						<textarea  name="city" placeholder="City" className="warehouseForms__form--input" defaultValue={city}></textarea>
+						<textarea
+							name="city"
+							placeholder="City"
+							className="warehouseForms__form--input"
+							defaultValue={city}></textarea>
 
 						<h3 className="warehouseForms__form--label">Country</h3>
-						<textarea  name="country" placeholder="Country" className="warehouseForms__form--input" defaultValue={country}></textarea>
+						<textarea
+							name="country"
+							placeholder="Country"
+							className="warehouseForms__form--input"
+							defaultValue={country}></textarea>
 					</div>
-					<hr className="warehouseForms__divider"/>
+					<hr className="warehouseForms__divider" />
 					<div className="warehouseForms__form">
 						<h2 className="warehouseForms__form--title">Contact Details</h2>
 
 						<h3 className="warehouseForms__form--label">Contact Name</h3>
-						<textarea  name="contactName" placeholder="Contact Name" className="warehouseForms__form--input" defaultValue={contact}></textarea>
+						<textarea
+							name="contactName"
+							placeholder="Contact Name"
+							className="warehouseForms__form--input"
+							defaultValue={contact}></textarea>
 
 						<h3 className="warehouseForms__form--label">Position</h3>
-						<textarea  name="position" placeholder="Position" className="warehouseForms__form--input" defaultValue={position}></textarea>
+						<textarea
+							name="position"
+							placeholder="Position"
+							className="warehouseForms__form--input"
+							defaultValue={position}></textarea>
 
 						<h3 className="warehouseForms__form--label">Phone Number</h3>
-						<textarea  name="phoneNumber" placeholder="Phone Number" className="warehouseForms__form--input" defaultValue={phone}></textarea>
+						<textarea
+							name="phoneNumber"
+							placeholder="Phone Number"
+							className="warehouseForms__form--input"
+							defaultValue={phone}></textarea>
 
 						<h3 className="warehouseForms__form--label">Email</h3>
-						<textarea  name="email" placeholder="Email" className="warehouseForms__form--input" defaultValue={email}></textarea>
+						<textarea
+							name="email"
+							placeholder="Email"
+							className="warehouseForms__form--input"
+							defaultValue={email}></textarea>
 					</div>
 				</div>
 				<div className="warehouseForms__buttons">
-					<button className="warehouseForms__buttons--button warehouseForms__buttons--cancel" onClick={clickHandler}>Cancel</button>
-					<button className="warehouseForms__buttons--button warehouseForms__buttons--addWarehouse" type="submit">{props.buttonText}</button>
+					<button
+						className="warehouseForms__buttons--button warehouseForms__buttons--cancel"
+						onClick={clickHandler}>
+						Cancel
+					</button>
+					<button
+						className="warehouseForms__buttons--button warehouseForms__buttons--addWarehouse"
+						type="submit">
+						{props.buttonText}
+					</button>
 				</div>
 			</form>
 		</div>
