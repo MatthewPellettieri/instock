@@ -1,0 +1,122 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.inventoryPage {
+	&__header {
+		width: 100%;
+		@include divider;
+		padding: 1.5rem 1rem;
+
+		@include tablet {
+			padding: 1.5rem 2rem;
+			display: flex;
+			justify-content: space-between;
+			border-bottom: none;
+		}
+
+		@include desktop {
+			padding: 1.5rem 3rem;
+		}
+	}
+
+	&__title {
+		padding-bottom: 1rem;
+
+		@include tablet {
+			padding-bottom: 0rem;
+		}
+		&--text {
+			@include m-h1;
+
+			@include tablet {
+				@include d-h1;
+			}
+		}
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		@include tablet {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			gap: 0rem;
+			width: 55%;
+		}
+
+		@include desktop {
+			width: 45%;
+		}
+	}
+
+	&__form {
+		@include tablet {
+			width: 55%;
+		}
+
+		@include desktop {
+			width: 65%;
+		}
+		&--input {
+			height: 2.25rem;
+			width: 100%;
+			padding: 0rem 1rem;
+			border-radius: 1.25rem;
+			border: none;
+			outline: 1px solid $instock-cloud;
+
+			background-image: url("../../assets/Icons/search-24px.svg");
+			background-position: 95% 50%;
+			// background-position-x: 90%;
+
+			background-repeat: no-repeat;
+
+			&:focus {
+				outline: 1px solid $instock-indigo;
+			}
+
+			&::placeholder {
+				color: $instock-slate;
+				@include m-p2;
+			}
+
+			@include tablet {
+				height: 2.375rem;
+				&::placeholder {
+					@include d-p2;
+				}
+			}
+		}
+	}
+
+	&__button {
+		height: 2.25rem;
+		width: 100%;
+		border: none;
+		background-color: $instock-indigo;
+		border-radius: 1.25rem;
+		color: $white;
+		@include m-h3;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		@include tablet {
+			height: 2.375rem;
+			width: 40%;
+			@include d-h3;
+
+			&:hover {
+				background-color: $instock-graphite;
+			}
+		}
+
+		@include desktop {
+			width: 30%;
+		}
+	}
+}

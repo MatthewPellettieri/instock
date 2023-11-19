@@ -1,0 +1,273 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/animations" as *;
+
+.inventoryCard {
+	padding: 1rem;
+	border-radius: 4px;
+	@include divider;
+
+	@include tablet {
+		display: flex;
+		padding: 1rem 2rem;
+	}
+
+	@include desktop {
+		justify-content: space-between;
+		padding: 1rem 3rem;
+
+		&:hover {
+			background-color: rgba($color: $instock-indigo, $alpha: 0.05);
+		}
+	}
+
+	&__top {
+		display: flex;
+		padding-bottom: 1rem;
+
+		@include tablet {
+			width: 90%;
+			padding-bottom: 0rem;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&__container {
+		&--left {
+			width: 55%;
+
+			@include tablet {
+				width: 34%;
+			}
+
+			@include desktop {
+				width: 33%;
+			}
+		}
+
+		&--right {
+			width: 34%;
+
+			@include tablet {
+				width: 52%;
+			}
+
+			@include desktop {
+				width: 53%;
+			}
+
+			&--inventoryPage {
+				width: 34%;
+
+				@include tablet {
+					display: flex;
+					justify-content: space-between;
+					width: 56%;
+				}
+
+				@include desktop {
+					width: 55%;
+				}
+			}
+		}
+
+		&--left,
+		&--right {
+			@include tablet {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+	}
+
+	&__item,
+	&__status {
+		padding-bottom: 1rem;
+
+		@include tablet {
+			padding-bottom: 0rem;
+		}
+	}
+
+	&__status {
+		@include tablet {
+			width: 30%;
+		}
+
+		@include desktop {
+			width: 36%;
+		}
+
+		&--inventoryPage {
+			padding-bottom: 1rem;
+			@include tablet {
+				padding-bottom: 0rem;
+				width: 26%;
+			}
+			@include desktop {
+				width: 35%;
+			}
+		}
+	}
+
+	&__item {
+		@include tablet {
+			width: 60%;
+		}
+	}
+
+	&__quantity {
+		@include tablet {
+			width: 39%;
+		}
+
+		@include desktop {
+			width: 43%;
+		}
+
+		&--inventoryPage {
+			@include tablet {
+				width: 10%;
+			}
+			@include desktop {
+				width: 18%;
+			}
+		}
+	}
+
+	&__category {
+		@include tablet {
+			width: 30%;
+		}
+
+		@include desktop {
+			width: 33%;
+		}
+	}
+
+	&__warehouse {
+		padding-top: 1rem;
+
+		@include tablet {
+			padding-top: 0rem;
+			width: 44%;
+		}
+
+		@include desktop {
+			width: 47%;
+		}
+	}
+
+	&__link {
+		@include tablet {
+			&:hover {
+				text-decoration: underline;
+				text-decoration-color: $instock-indigo;
+			}
+
+			&:hover &--icon {
+				animation: slide-out 0.5s ease-in-out forwards;
+			}
+		}
+
+		&--text {
+			@include m-h3;
+			color: $instock-indigo;
+
+			@include tablet {
+				@include d-h3;
+			}
+		}
+
+		&--icon {
+			position: relative;
+			z-index: -1;
+			width: 1.25rem;
+			height: 1.25rem;
+			vertical-align: middle;
+			animation: slide-in 0.5s ease-in-out forwards;
+		}
+	}
+
+	&__tag {
+		background-color: rgba($color: $instock-green, $alpha: 0.07);
+		border-radius: 1.25rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 1.5rem;
+		@include m-h4;
+		color: $instock-green;
+		width: 70%;
+
+		@include tablet {
+			@include d-h4;
+			height: 1.625rem;
+			width: 80%;
+		}
+
+		@include desktop {
+			width: 40%;
+		}
+
+		&--noStock {
+			@extend .inventoryCard__tag;
+			background-color: rgba($color: $instock-red, $alpha: 0.07);
+			color: $instock-red;
+			width: 100%;
+
+			@include desktop {
+				width: 55%;
+			}
+		}
+	}
+
+	&__label {
+		@include m-h4;
+		color: $instock-slate;
+		padding-bottom: 0.25rem;
+
+		@include tablet {
+			display: none;
+		}
+	}
+
+	&__text {
+		@include m-p2;
+		color: $instock-black;
+
+		@include tablet {
+			@include d-p2;
+		}
+	}
+
+	&__btm {
+		display: flex;
+		justify-content: space-between;
+
+		@include tablet {
+			width: 10%;
+		}
+
+		@include desktop {
+			width: 7%;
+		}
+
+		&--link {
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		&--delete {
+			@extend .inventoryCard__btm--link;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.disable {
+	display: none;
+}

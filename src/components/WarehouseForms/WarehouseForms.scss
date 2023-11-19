@@ -1,0 +1,179 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.warehouseForms {
+	background-color: $white;
+	border-radius: 4px;
+
+	&__container {
+		padding-bottom: 1rem;
+		display: flex;
+		flex-direction: column;
+		@include tablet {
+			flex-direction:row;
+		}
+	}
+
+	&__divider{
+		color: $instock-cloud;
+		@include tablet{
+			margin: 1.5rem 1rem;
+		}
+		@include desktop {
+			margin-top: 2rem;
+			margin-bottom:0.375rem;
+		}
+	}
+
+	&__form {
+		margin: 0.5rem 1.5rem;
+		padding-bottom: 1rem;
+		@include tablet{
+			width: 48%;
+		}
+
+		&--title {
+			@include m-h2;
+			padding-top: 0.5rem;
+
+			@include tablet {
+				@include d-h2;
+			}
+		}
+		
+		&--label {
+			@include m-h3;
+			@include tablet {
+				@include d-h3;
+			}
+			padding-top: 1rem;
+			padding-bottom: 0.25rem;
+		}
+
+		&--input {
+			@include m-p2;
+			@include tablet{
+				@include d-p2;
+			}
+			padding: 0.5rem 1rem;
+			height: 2.25rem;
+			width:100%;
+			background-color:#FAFAFA;
+			border: 1px solid $instock-cloud;
+			border-radius: 20px;
+			&::placeholder{
+				color:$instock-slate;
+			}
+			&:focus{
+				border: none;
+				outline: 1px solid $instock-indigo;
+			}
+		}
+
+		&--error {
+			border: none;
+			outline: 1px solid #C94515;
+		}
+		&--noerrorText{
+			color:#C94515;
+			font: 0.75rem "Titillium";
+			display:none;
+		}
+		&--errorText{
+			display:flex;
+		}
+	}
+	
+	&__buttons {
+		padding: 1rem 1.5rem;
+		display: flex;
+		background-color: $instock-light-grey;
+		@include tablet{
+			justify-content: flex-end;
+		}
+
+		&--button{
+			@include m-h3;
+			@include tablet {
+				@include d-h3;
+			}
+			border-radius: 20px;
+			height: 2.25rem;
+			width: 48%;
+			@include tablet{
+				width: max-content;
+				padding: 0.5rem 1rem;
+				&:hover {
+					background-color: $instock-graphite;
+				}
+			}
+			border: 1px solid $instock-cloud;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		&--cancel{
+			margin-right: 0.5rem;
+			color: $instock-slate;
+			background-color: white;
+			&:hover {
+				background-color: white;
+				border-color: $instock-indigo;
+			}
+		}
+
+		&--addWarehouse{
+			color: white;
+			background-color: $instock-indigo;
+		}
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		padding: 1.5rem 1rem;
+
+		@include tablet {
+			padding: 1.5rem 2rem;
+		}
+
+		@include desktop {
+			padding: 1.5rem 3rem;
+		}
+
+		&--container {
+			display: flex;
+			align-items: center;
+			padding: 2rem 1.5rem 1.5rem 1.75rem;
+			@include tablet {
+				padding-bottom: 1.65rem;
+			}
+			@include divider;
+		}
+
+		&--icon {
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		&--title {
+			@include m-h1;
+			padding-left: 0.5rem;
+
+			@include tablet {
+				@include d-h1;
+			}
+		}
+
+		&--link {
+			height: 1.5rem;
+		}
+	}
+}
+
+
+	
+
+

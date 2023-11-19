@@ -1,0 +1,14 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.footer--text {
+    @include mobile {
+    text-align: center;
+    background-color: $instock-light-grey;
+    padding-bottom: 2.5rem;
+    font-size: 11px;
+    }
+    @include tablet {
+        font-size: 12px;
+    }
+}

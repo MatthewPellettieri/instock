@@ -1,0 +1,129 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.background {
+	@include mobile {
+		padding: 1.5rem 1rem 0 1rem;
+		height: 12.5rem;
+	}
+	@include tablet {
+		height: 11.625rem;
+		padding-top: 2rem;
+		display: flex;
+		justify-content: space-between;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+	@include desktop {
+		height: 11.625rem;
+		padding-top: 2rem;
+		display: flex;
+		justify-content: space-between;
+		padding-left: 8rem;
+		padding-right: 8rem;
+	}
+	background-color: $instock-graphite;
+	.logo--container {
+		@include mobile {
+			text-align: center;
+			padding: 0 0 1rem 0;
+		}
+		@include tablet {
+			padding: 0;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		@include desktop {
+			padding: 0;
+		}
+	}
+	.button--container {
+		@include mobile {
+			display: flex;
+			justify-content: space-around;
+		}
+	}
+	.link {
+		display: contents;
+		text-decoration: none;
+	}
+	.navLink {
+		display: contents;
+		text-decoration: none;
+	}
+	.button--container {
+		@include mobile {
+			display: flex;
+			justify-content: space-around;
+		}
+	}
+	.nav__button {
+		@include mobile {
+			font-size: 13px;
+			border-radius: 20px;
+			border: none;
+			color: white;
+			height: 2.25rem;
+			width: 10rem;
+			background-color: $instock-graphite;
+			padding: 0 1rem 0 1rem;
+		}
+		@include tablet {
+			font-size: 14px;
+			border-radius: 20px;
+			border: none;
+			color: white;
+			height: 2.375rem;
+			width: 7rem;
+			background-color: $instock-graphite;
+			padding: 0;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		@include desktop {
+			border-radius: 20px;
+			border: none;
+			color: white;
+			height: 2.375rem;
+			width: 7rem;
+			background-color: $instock-graphite;
+			padding: 0;
+		}
+	}
+}
+.active {
+	@include mobile {
+		font-size: 13px;
+		border-radius: 20px;
+		border: none;
+		color: white;
+		height: 2.25rem;
+		width: 10rem;
+		background-color: rgb(18, 23, 43, 0.8);
+		padding: 0 1rem 0 1rem;
+	}
+	@include tablet {
+		font-size: 14px;
+		border-radius: 20px;
+		border: none;
+		color: white;
+		height: 2.375rem;
+		width: 7rem;
+		background-color: rgb(18, 23, 43, 0.8);
+		padding: 0;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	@include desktop {
+		border-radius: 20px;
+		border: none;
+		color: white;
+		height: 2.375rem;
+		width: 7rem;
+		background-color: rgb(18, 23, 43, 0.8);
+		padding: 0;
+	}
+}
