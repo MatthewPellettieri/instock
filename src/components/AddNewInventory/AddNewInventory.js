@@ -117,7 +117,7 @@ function AddInventory() {
             </div>
           </form>
         </div>
-        <hr className="AddInventory__divider" />
+
         <div className="AddInventory__form-container">
           <h2 className="AddInventory__form-header AddInventory__form-header--two">
             Item Availability
@@ -190,7 +190,7 @@ function AddInventory() {
             type="submit"
             className="AddInventory__save"
           >
-            Save
+            + Add item
           </button>
         </div>
       </div>

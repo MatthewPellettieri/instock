@@ -90,6 +90,14 @@
       padding-left: 1rem;
       border: 1px solid $instock-cloud;
       margin-bottom: 1rem;
+
+      @include tablet {
+        width: 100%;
+      }
+
+      @include desktop {
+        width: 35%;
+      }
     }
 
     &__details-input {

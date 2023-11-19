@@ -1,7 +1,17 @@
 import backButton from "../../assets/Icons/arrow_back-24px.svg";
 import "./EditInventory.scss";
+import React, { useEffect, useState } from "react";
 
 function EditInventory() {
+  const [quantity, setQuantity] = useState(false);
+  const inStockHandler = () => {
+    setQuantity(true);
+  };
+
+  const outOfStockHandler = () => {
+    setQuantity(false);
+  };
+
   return (
     <section className="editInventory">
       <div className="editInventory__header">
@@ -57,6 +67,7 @@ function EditInventory() {
                 <input
                   name="instock-radio"
                   type="radio"
+                  onClick={inStockHandler}
                   className="editInventory__in-stock"
                 ></input>
                 <p className="editInventory__radio-title">In Stock</p>
@@ -66,11 +77,24 @@ function EditInventory() {
                 <input
                   name="instock-radio"
                   type="radio"
+                  onClick={outOfStockHandler}
                   className="editInventory__in-stock"
                 ></input>
                 <p className="editInventory__radio-title">Out Of Stock</p>
               </div>
             </div>
+
+            {quantity && (
+              <>
+                <h3 className="editInventory__form-header">Quantity</h3>
+                <input
+                  type="text"
+                  name="quantity"
+                  className="editInventory__details-input-1"
+                  placeholder="0"
+                ></input>
+              </>
+            )}
 
             <div className="editInventory__details-dropdown">
               <h3 className="editInventory__form-header">Warehouse</h3>
