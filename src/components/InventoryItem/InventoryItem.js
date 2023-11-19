@@ -44,13 +44,12 @@ function InventoryItem() {
 		<div className="inventoryItem">
 			<div className="inventoryItem__header">
 				<div className="inventoryItem__header--container">
-					<Link to="/inventory" className="inventoryItem__header--link">
 						<img
 							className="inventoryItem__header--icon"
 							src={backArrow}
 							alt="back-arrow"
+                            onClick={()=> {navigate(-1)}}
 						/>
-					</Link>
 					<p className="inventoryItem__header--title">
 						{currentItem.item_name}
 					</p>
