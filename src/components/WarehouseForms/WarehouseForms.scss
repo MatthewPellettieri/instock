@@ -69,6 +69,19 @@
 				outline: 1px solid $instock-indigo;
 			}
 		}
+
+		&--error {
+			border: none;
+			outline: 1px solid #C94515;
+		}
+		&--noerrorText{
+			color:#C94515;
+			font: 0.75rem "Titillium";
+			display:none;
+		}
+		&--errorText{
+			display:flex;
+		}
 	}
 	
 	&__buttons {
