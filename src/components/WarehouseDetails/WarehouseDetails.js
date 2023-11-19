@@ -30,7 +30,7 @@ function WarehouseDetails() {
 				alert(`No warehouse with id:${id} found`);
 				navigate("/");
 			});
-	}, []);
+	}, [id]);
 
 	if (!warehouseData || !currentInv) {
 		console.log("loading data");
