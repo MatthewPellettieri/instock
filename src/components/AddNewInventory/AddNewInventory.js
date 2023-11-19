@@ -9,7 +9,7 @@ const initialValues = {
   category: "",
   quantity: "",
   status: "",
-  warehouse_name: "",
+  warehouse_id: "",
 };
 
 function AddInventory() {
@@ -45,11 +45,17 @@ function AddInventory() {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-
+    // if (name === "warehouse_name") {
+    //   setValues({
+    //     ...values,
+    //     ["warehouse_id"]: value,
+    //   });
+    // } else {
     setValues({
       ...values,
       [name]: value,
     });
+    // }
   };
 
   const handleSubmit = (event) => {
@@ -130,8 +136,8 @@ function AddInventory() {
                   name="status"
                   onClick={inStockHandler}
                   onChange={handleInputChange}
-                  value="in stock"
-                  checked={values.status === "in stock"}
+                  value="In Stock"
+                  checked={values.status === "In Stock"}
                   type="radio"
                   className="AddInventory__in-stock"
                 ></input>
@@ -143,8 +149,8 @@ function AddInventory() {
                   name="status"
                   type="radio"
                   onChange={handleInputChange}
-                  value="out of stock"
-                  checked={values.status === "out of stock"}
+                  value="Out of Stock"
+                  checked={values.status === "Out of Stock"}
                   onClick={outOfStockHandler}
                   className="AddInventory__in-stock"
                 ></input>
@@ -169,13 +175,15 @@ function AddInventory() {
             <div className="AddInventory__details-dropdown ">
               <h3 className="AddInventory__form-header">Warehouse</h3>
               <select
-                name="warehouse_name"
-                value={values.warehouse_name}
+                name="warehouse_id"
+                value={values.warehouse_id}
                 onChange={handleInputChange}
                 className="AddInventory__details-drop-down"
               >
                 {warehouseData.map((data) => (
-                  <option key={data.id}>{data.warehouse_name}</option>
+                  <option key={data.id} value={data.id}>
+                    {data.warehouse_name}
+                  </option>
                 ))}
               </select>
             </div>
