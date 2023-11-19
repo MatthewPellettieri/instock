@@ -11,6 +11,8 @@
 		flex-direction: column;
 		@include tablet {
 			flex-direction:row;
+			gap: 3rem;
+
 		}
 	}
 
@@ -54,23 +56,30 @@
 			@include d-p2;
 		}
 		margin-bottom: 1rem;
+
+		&-container {
+			@include tablet {
+				width: 40%;
+			}
+		}
 	}
 
 	&__divider {
 		display: none;
 		@include tablet {
 			display: block;
-			margin:0rem 2.5rem 1rem;
+			margin-bottom: 1rem;
 		}
-	}
 
-	&__quantity {
-		padding-left: 9rem;
 	}
 
 	&__stats-container {
 		display: flex;
 		justify-content: flex-start;
+		gap: 4.5rem;
+		@include desktop {
+			gap: 9rem;
+		}
 	}
 
 	&__header {
@@ -78,14 +87,10 @@
 		justify-content: space-between;
 		width: 100%;
 		@include divider;
-		padding: 1.5rem 1rem;
+		padding: 2rem 1rem 1.5rem;
 
 		@include tablet {
-			padding: 1.5rem 2rem;
-		}
-
-		@include desktop {
-			padding: 1.5rem 3rem;
+			padding: 2.15rem 2rem 1.5rem;
 		}
 
 		&--container {
@@ -153,7 +158,6 @@
 			}
 
 			@include desktop {
-				width: 8%;
 				background-position: 16px 8px;
 			}
 		}
