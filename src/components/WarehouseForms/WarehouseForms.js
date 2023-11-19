@@ -44,17 +44,19 @@ function WarehouseForms(props) {
 			.then((res) =>{
 				alert(`${res.data[0].warehouse_name} added as a new Warehouse`);
 				event.target.reset();
+				navigate(-1);
 			})
 			.catch((err) => {
 				alert(err)
 			});
 		}
 
-		else if (window.location.href.includes("editWarehouse")) {
+		else if (window.location.href.includes("edit")) {
 			axios
 			.patch(`${apiURL}${id}`, dataToSend)
 			.then((res) =>{
 				alert(`${res.data.warehouse_name}  warehouse updated!`);
+				navigate(-1);
 			})
 			.catch((err) => {
 				alert(err)
