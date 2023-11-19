@@ -45,17 +45,11 @@ function AddInventory() {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    // if (name === "warehouse_name") {
-    //   setValues({
-    //     ...values,
-    //     ["warehouse_id"]: value,
-    //   });
-    // } else {
+
     setValues({
       ...values,
       [name]: value,
     });
-    // }
   };
 
   const handleSubmit = (event) => {
@@ -66,6 +60,7 @@ function AddInventory() {
       .post("http://localhost:8080/api/inventories/", values)
       .then((response) => {
         console.log(response.data);
+        alert("Item added!");
       })
       .catch((err) => {
         console.log(`${err}`);
