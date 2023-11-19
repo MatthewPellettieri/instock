@@ -2,6 +2,7 @@ import backButton from "../../assets/Icons/arrow_back-24px.svg";
 import "./AddNewInventory.scss";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   item_name: "",
@@ -11,7 +12,6 @@ const initialValues = {
   status: "",
   warehouse_id: "",
 };
-import { useNavigate } from "react-router-dom";
 
 function AddInventory() {
   const [quantity, setQuantity] = useState(false);
