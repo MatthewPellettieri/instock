@@ -83,13 +83,12 @@ function WarehouseForms(props) {
 	return (
 		<div className="warehouseForms">
 			<div className="warehouseForms__header--container">
-				<Link to={`/warehouse/${id}`} className="warehouseForms__header--link">
-					<img
-						className="warehouseForms__header--icon"
-						src={backArrow}
-						alt="back-arrow"
-					/>
-				</Link>
+				<img
+					className="warehouseForms__header--icon"
+					src={backArrow}
+					alt="back-arrow"
+					onClick={clickHandler}
+				/>
 				<p className="warehouseForms__header--title">{props.heading}</p>
 			</div>
 			<form onSubmit={submitHandler}>
