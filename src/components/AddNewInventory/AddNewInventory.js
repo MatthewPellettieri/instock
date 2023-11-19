@@ -11,6 +11,7 @@ const initialValues = {
   status: "",
   warehouse_id: "",
 };
+import { useNavigate } from "react-router-dom";
 
 function AddInventory() {
   const [quantity, setQuantity] = useState(false);
@@ -67,6 +68,12 @@ function AddInventory() {
       });
   };
 
+  const navigate = useNavigate();
+
+  const clickHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <section className="AddInventory">
       <div className="AddInventory__header">
@@ -74,6 +81,7 @@ function AddInventory() {
           className="AddInventory__header-back-button"
           src={backButton}
           alt="button to back"
+          onClick={clickHandler}
         ></img>
         <h1 className="AddInventory__title">Add Inventory Item</h1>
       </div>

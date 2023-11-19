@@ -1,6 +1,7 @@
 import backButton from "../../assets/Icons/arrow_back-24px.svg";
 import "./EditInventory.scss";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function EditInventory() {
   const [quantity, setQuantity] = useState(false);
@@ -12,6 +13,12 @@ function EditInventory() {
     setQuantity(false);
   };
 
+  const navigate = useNavigate();
+
+  const clickHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <section className="editInventory">
       <div className="editInventory__header">
@@ -19,6 +26,7 @@ function EditInventory() {
           className="editInventory__header-back-button"
           src={backButton}
           alt="button to back"
+          onClick={clickHandler}
         ></img>
         <h1 className="editInventory__title">Edit Inventory Item</h1>
       </div>
@@ -110,7 +118,9 @@ function EditInventory() {
       </section>
       <div className="editInventory__grey-bar">
         <div className="editInventory__buttons-container">
-          <button className="editInventory__cancel">Cancel</button>
+          <button className="editInventory__cancel" onClick={clickHandler}>
+            Cancel
+          </button>
           <button className="editInventory__save">Save</button>
         </div>
       </div>

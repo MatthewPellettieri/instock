@@ -11,23 +11,21 @@ function InventoryPage() {
 	const [invData, setInvData] = useState();
 
 	const updatePage = () => {
-		axios
-			.get(apiURL)
-			.then((res) => {
-				setInvData(res.data);
-			})
-	}
+		axios.get(apiURL).then((res) => {
+			setInvData(res.data);
+		});
+	};
 	const navigate = useNavigate();
 	const deleteItem = (id) => {
-        axios
-			.delete(apiURL + id )
+		axios
+			.delete(apiURL + id)
 			.then(() => {
-				updatePage()
+				updatePage();
 			})
 			.catch((err) => {
 				console.error(err);
 			});
-}
+	};
 
 	useEffect(() => {
 		axios
@@ -41,7 +39,7 @@ function InventoryPage() {
 	}, []);
 
 	const handleClick = () => {
-		navigate("/addItem");
+		navigate("/inventory/add");
 	};
 
 	// search functionality

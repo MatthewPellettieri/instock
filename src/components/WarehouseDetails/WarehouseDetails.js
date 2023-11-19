@@ -32,6 +32,30 @@ function WarehouseDetails() {
 			});
 	}, [id]);
 
+	const handleClick = () => {
+		navigate(`/warehouse/${id}/edit`);
+	};
+
+	// refresh page on inventory update
+	const updatePage = () => {
+		axios
+			.get(`http://localhost:8080/api/warehouses/${id}/inventories`)
+			.then((res) => {
+				setCurrentInv(res.data);
+			});
+	};
+
+	const deleteItem = (id) => {
+		axios
+			.delete(`http://localhost:8080/api/inventories/${id}`)
+			.then(() => {
+				updatePage();
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	};
+
 	if (!warehouseData || !currentInv) {
 		console.log("loading data");
 	} else {
@@ -51,8 +75,14 @@ function WarehouseDetails() {
 								{warehouseData.warehouse_name}
 							</p>
 						</div>
-						<button className="warehouseDetails__button"></button>
-						<button className="warehouseDetails__button--special">Edit</button>
+						<button
+							className="warehouseDetails__button"
+							onClick={handleClick}></button>
+						<button
+							className="warehouseDetails__button--special"
+							onClick={handleClick}>
+							Edit
+						</button>
 					</div>
 					<div className="warehouseDetails__details">
 						<div className="warehouseDetails__address">
@@ -94,6 +124,7 @@ function WarehouseDetails() {
 							quantity={item.quantity}
 							status={item.status}
 							category={item.category}
+							deleteItem={deleteItem}
 						/>
 					))}
 				</div>
