@@ -1,10 +1,10 @@
 import "./WarehouseComponent.scss";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import arrow from "../../assets/Icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import DeleteWarehouseModal from "../../components/DeleteModal/DeleteWarehouseModal";
-import { Link } from "react-router-dom";
 
 export default function WarehouseComponent({
 	id,
@@ -15,8 +15,9 @@ export default function WarehouseComponent({
 	contactName,
 	contactPhone,
 	contactEmail,
-	deleteWarehouse
+	deleteWarehouse,
 }) {
+	// modal control
 	const [modal, setModal] = useState(false);
 	const toggleModal = () => {
 		setModal(!modal);
@@ -26,20 +27,30 @@ export default function WarehouseComponent({
 	} else {
 		document.body.classList.remove("active--modal");
 	}
+
 	return (
 		<>
 			<section className="warehouseCard">
-				{modal === true && <DeleteWarehouseModal deleteWarehouse={() => deleteWarehouse(id)} warehouseName={warehouseName} toggleModal={toggleModal} />}
+				{modal === true && (
+					<DeleteWarehouseModal
+						deleteWarehouse={() => deleteWarehouse(id)}
+						warehouseName={warehouseName}
+						toggleModal={toggleModal}
+					/>
+				)}
 				<div className="warehouseCard__flex-container">
 					<div className="warehouseCard__name-box">
 						<div className="warehouseCard__name">
 							<p className="warehouseCard__name-text">warehouse</p>
 							<div className="warehouseCard__name-link">
-								<Link to={`${id}`} className="warehouseCard__name-link"><p className="warehouseCard__location">{warehouseName}</p>
-								<img
-									className="arrow"
-									src={arrow}
-									alt={"blue arrow link"}></img>
+								<Link
+									to={`/warehouse/${id}`}
+									className="warehouseCard__name-link">
+									<p className="warehouseCard__location">{warehouseName}</p>
+									<img
+										className="arrow"
+										src={arrow}
+										alt={"blue arrow link"}></img>
 								</Link>
 							</div>
 						</div>
@@ -71,7 +82,11 @@ export default function WarehouseComponent({
 						alt={"delete-icon"}
 						onClick={toggleModal}
 					/>
-					<img src={editIcon} alt={"edit-icon"} />
+					<Link
+						to={`/warehouse/${id}/edit`}
+						className="warehouseCard__icons--edit">
+						<img src={editIcon} alt={"edit-icon"} />
+					</Link>
 				</div>
 			</section>
 		</>

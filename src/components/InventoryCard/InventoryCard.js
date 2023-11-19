@@ -13,9 +13,8 @@ function InventoryCard({
 	category,
 	warehouse,
 	id,
-	deleteItem
+	deleteItem,
 }) {
-
 	const upperStatus = status.toUpperCase();
 
 	const ifInventoryPage = () => {
@@ -40,13 +39,17 @@ function InventoryCard({
 	return (
 		<div className="inventoryCard">
 			{modal === true && (
-				<DeleteInventoryModal deleteItem={() => deleteItem(id)} toggleModal={toggleModal} itemName={itemName} />
+				<DeleteInventoryModal
+					deleteItem={() => deleteItem(id)}
+					toggleModal={toggleModal}
+					itemName={itemName}
+				/>
 			)}
 			<div className="inventoryCard__top">
 				<div className="inventoryCard__container--left">
 					<div className="inventoryCard__item">
 						<p className="inventoryCard__label">INVENTORY ITEM</p>
-						<Link to={`${id}`} className="inventoryCard__link">
+						<Link to={`/inventory/${id}`} className="inventoryCard__link">
 							<span className="inventoryCard__link--text">{itemName}</span>
 							<img
 								className="inventoryCard__link--icon"

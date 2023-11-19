@@ -27,6 +27,12 @@
 			display: flex;
 			justify-content: space-between;
 
+			&--delete,
+			&--edit {
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+
 			&--delete {
 				&:hover {
 					cursor: pointer;
@@ -210,6 +216,7 @@
 
 @include tablet {
 	.arrow {
+		z-index: -1;
 		animation: slide-in 0.5s ease-in-out forwards;
 	}
 }

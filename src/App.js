@@ -19,6 +19,8 @@ function App() {
 					<Routes>
 						{/* ------------------Warehouse-------------------------------- */}
 						<Route path="/" element={<WarehousePage />}></Route>
+						<Route path="/warehouse" element={<WarehousePage />}></Route>
+
 						<Route path="/warehouse/:id" element={<WarehouseDetails />} />
 						<Route
 							path="/warehouse/:id/edit"
@@ -34,9 +36,7 @@ function App() {
 								/>
 							}></Route>
 						{/* -------------------------Inventory----------------- */}
-						<Route path="/inventory" element={<InventoryPage />}>
-							{/* <Route path="/inventory/:id" element={<Inventory />} /> */}
-						</Route>
+						<Route path="/inventory" element={<InventoryPage />}></Route>
 						<Route path="/inventory/:id" element={<InventoryItem />} />
 						<Route
 							path="/inventory/:id/edit"

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import WarehouseComponent from "../../components/WarehouseComponent/WarehouseComponent";
 import doubleArrow from "../../assets/Icons/sort-24px.svg";
 import "./WarehousePage.scss";
@@ -26,7 +26,7 @@ function WarehousePage() {
 			);
 		});
 	};
-
+	const navigate = useNavigate();
 	const apiURL = "http://localhost:8080/api/warehouses/";
 
 	const [wareData, setWareData] = useState();
@@ -60,11 +60,16 @@ function WarehousePage() {
 			});
 	}, []);
 
+	const clickHandler = () => {
+		navigate("/warehouse/add");
+	};
+
 	if (!wareData) {
 		console.log("loading data");
 	} else {
 		return (
 			<>
+				<Navigate to="/warehouse" replace={true} />
 				<div className="warehouse__container">
 					<div className="warehouse__head">
 						<h1 className="warehouse__header">Warehouses</h1>
@@ -75,7 +80,7 @@ function WarehousePage() {
 							placeholder="Search..."
 							onChange={handleSearch}></input>
 
-						<button className="warehouse__button-blue">
+						<button className="warehouse__button-blue" onClick={clickHandler}>
 							<p className="warehouse__button-text">+ Add New Warehouse</p>
 						</button>
 					</div>
@@ -128,9 +133,6 @@ function WarehousePage() {
 						deleteWarehouse={deleteWarehouse}
 					/>
 				))}
-				<Link to="/warehouseDetails">
-					<p> To warehouseDetails</p>
-				</Link>
 			</>
 		);
 	}
