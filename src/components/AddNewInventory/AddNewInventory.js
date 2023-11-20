@@ -16,7 +16,14 @@ const initialValues = {
 function AddInventory() {
 	const [quantity, setQuantity] = useState(false);
 	const [warehouseData, setWarehouseData] = useState([]);
-	const [inventoryData, setInventoryData] = useState([]);
+
+	const invCategory = [
+		{ id: 1, category: "Electronics" },
+		{ id: 2, category: "Gear" },
+		{ id: 3, category: "Apparel" },
+		{ id: 4, category: "Accessories" },
+		{ id: 5, category: "Health" },
+	];
 
 	const wareHouseApi = "http://localhost:8080/api/warehouses";
 	const inventoryApi = "http://localhost:8080/api/inventories";
@@ -25,10 +32,6 @@ function AddInventory() {
 		axios.get(`${wareHouseApi}`).then((response) => {
 			let wareHouseData = response.data;
 			setWarehouseData(wareHouseData);
-		});
-		axios.get(`${inventoryApi}`).then((response) => {
-			let inventoryData = response.data;
-			setInventoryData(inventoryData);
 		});
 	}, []);
 
@@ -55,7 +58,7 @@ function AddInventory() {
 		event.preventDefault();
 
 		axios
-			.post("http://localhost:8080/api/inventories/", values)
+			.post(inventoryApi, values)
 			.then((response) => {
 				alert("Item added!");
 				navigate(-1);
@@ -113,7 +116,7 @@ function AddInventory() {
 								onChange={handleInputChange}
 								className="AddInventory__details-drop-down">
 								<option>Please Select</option>
-								{inventoryData.map((data) => (
+								{invCategory.map((data) => (
 									<option key={data.id}>{data.category}</option>
 								))}
 							</select>
