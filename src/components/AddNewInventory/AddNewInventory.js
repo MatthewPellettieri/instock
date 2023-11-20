@@ -8,7 +8,7 @@ const initialValues = {
 	item_name: "",
 	description: "",
 	category: "",
-	quantity: "0",
+	quantity: "",
 	status: "",
 	warehouse_id: "",
 };
@@ -56,6 +56,9 @@ function AddInventory() {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		if (values.quantity === "") {
+			values.quantity = "0";
+		}
 		if (values.quantity === "0") {
 			values.status = "Out of Stock";
 		}
