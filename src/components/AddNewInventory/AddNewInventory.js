@@ -8,7 +8,7 @@ const initialValues = {
 	item_name: "",
 	description: "",
 	category: "",
-	quantity: "",
+	quantity: "0",
 	status: "",
 	warehouse_id: "",
 };
