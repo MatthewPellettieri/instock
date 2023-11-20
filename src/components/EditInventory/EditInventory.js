@@ -18,7 +18,14 @@ function EditInventory() {
 
 	const [quantity, setQuantity] = useState(false);
 	const [warehouseData, setWarehouseData] = useState([]);
-	const [inventoryData, setInventoryData] = useState([]);
+
+	const invCategory = [
+		{ id: 1, category: "Electronics" },
+		{ id: 2, category: "Gear" },
+		{ id: 3, category: "Apparel" },
+		{ id: 4, category: "Accessories" },
+		{ id: 5, category: "Health" },
+	];
 
 	const wareHouseApi = "http://localhost:8080/api/warehouses/";
 	const inventoryApi = "http://localhost:8080/api/inventories/";
@@ -27,10 +34,6 @@ function EditInventory() {
 		axios.get(`${wareHouseApi}`).then((response) => {
 			let wareHouseData = response.data;
 			setWarehouseData(wareHouseData);
-		});
-		axios.get(`${inventoryApi}`).then((response) => {
-			let inventoryData = response.data;
-			setInventoryData(inventoryData);
 		});
 	}, []);
 
@@ -117,7 +120,7 @@ function EditInventory() {
 								onChange={handleInputChange}
 								className="editInventory__details-drop-down">
 								<option>Please Select</option>
-								{inventoryData.map((data) => (
+								{invCategory.map((data) => (
 									<option>{data.category}</option>
 								))}
 							</select>
