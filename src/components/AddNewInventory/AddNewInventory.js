@@ -56,6 +56,9 @@ function AddInventory() {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		if (values.quantity === "0") {
+			values.status = "Out of Stock";
+		}
 
 		axios
 			.post(inventoryApi, values)
