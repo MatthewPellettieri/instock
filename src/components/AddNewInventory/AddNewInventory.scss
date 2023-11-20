@@ -4,6 +4,9 @@
 @include mobile {
 	.AddInventory {
 		&__header-back-button {
+			&:hover {
+				cursor: pointer;
+			}
 			@include tablet {
 				padding-right: 0.5rem;
 			}
@@ -137,6 +140,10 @@
 			appearance: none;
 			margin-bottom: 1.5rem;
 
+			&:hover {
+				cursor: pointer;
+			}
+
 			&:focus {
 				outline: 1px solid $instock-indigo;
 			}
@@ -182,6 +189,12 @@
 			gap: 0.5rem;
 		}
 
+		&__in-stock {
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
 		&__radio-title {
 			@include m-p3;
 		}
@@ -208,6 +221,10 @@
 			border: 1px solid $instock-cloud;
 			background-color: white;
 
+			&:hover {
+				cursor: pointer;
+			}
+
 			@include tablet {
 				width: 40%;
 			}
@@ -224,6 +241,10 @@
 			border: none;
 			color: white;
 			height: 2rem;
+
+			&:hover {
+				cursor: pointer;
+			}
 
 			@include tablet {
 				width: 40%;
