@@ -14,7 +14,6 @@ function WarehousePage() {
   };
 
   const searchFilter = (data) => {
-    console.log({ data });
     return data.filter((warehouse) => {
       return (
         warehouse.warehouse_name.toLowerCase().includes(searchQuery) ||
