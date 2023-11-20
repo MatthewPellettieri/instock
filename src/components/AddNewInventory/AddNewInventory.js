@@ -119,6 +119,7 @@ function AddInventory() {
                 onChange={handleInputChange}
                 className="AddInventory__details-drop-down"
               >
+                <option>Please Select</option>
                 {inventoryData.map((data) => (
                   <option key={data.id}>{data.category}</option>
                 ))}
@@ -183,6 +184,7 @@ function AddInventory() {
                 onChange={handleInputChange}
                 className="AddInventory__details-drop-down"
               >
+                <option>Please Select</option>
                 {warehouseData.map((data) => (
                   <option key={data.id} value={data.id}>
                     {data.warehouse_name}
