@@ -195,7 +195,9 @@ function AddInventory() {
 			</section>
 			<div className="AddInventory__grey-bar">
 				<div className="AddInventory__buttons-container">
-					<button className="AddInventory__cancel">Cancel</button>
+					<button className="AddInventory__cancel" onClick={clickHandler}>
+						Cancel
+					</button>
 					<button
 						onClick={handleSubmit}
 						type="submit"
