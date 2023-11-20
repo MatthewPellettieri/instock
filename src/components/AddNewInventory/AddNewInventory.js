@@ -23,12 +23,10 @@ function AddInventory() {
 
 	useEffect(() => {
 		axios.get(`${wareHouseApi}`).then((response) => {
-			console.log(response.data);
 			let wareHouseData = response.data;
 			setWarehouseData(wareHouseData);
 		});
 		axios.get(`${inventoryApi}`).then((response) => {
-			console.log(response.data);
 			let inventoryData = response.data;
 			setInventoryData(inventoryData);
 		});
@@ -55,17 +53,15 @@ function AddInventory() {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(values);
 
 		axios
 			.post("http://localhost:8080/api/inventories/", values)
 			.then((response) => {
-				console.log(response.data);
 				alert("Item added!");
 				navigate(-1);
 			})
-			.catch((err) => {
-				console.log(`${err}`);
+			.catch(() => {
+				alert("failed to add item");
 			});
 	};
 

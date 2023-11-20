@@ -25,7 +25,6 @@ function EditInventory() {
 
 	useEffect(() => {
 		axios.get(`${wareHouseApi}`).then((response) => {
-			console.log("from edit:", response.data);
 			let wareHouseData = response.data;
 			setWarehouseData(wareHouseData);
 		});
@@ -67,7 +66,6 @@ function EditInventory() {
 			axios
 				.put(`http://localhost:8080/api/inventories/${id}`, values)
 				.then((response) => {
-					console.log(response.data);
 					alert(`${response.data.item_name} edited`);
 					navigate(-1);
 				})
