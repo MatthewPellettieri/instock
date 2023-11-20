@@ -212,6 +212,7 @@ function EditInventory() {
 									value={values.warehouse_id}
 									onChange={handleInputChange}
 									className="editInventory__details-drop-down">
+									{/* its not get warehouse id from placeholder */}
 									<option value={currentWarehouse[0].id}>
 										{currentWarehouse[0].warehouse_name}
 									</option>
