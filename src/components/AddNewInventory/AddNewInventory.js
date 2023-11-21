@@ -42,6 +42,7 @@ function AddInventory() {
 		});
 	}, []);
 
+	// controls whether quantity field is rendered
 	const inStockHandler = () => {
 		setQuantity(true);
 	};
@@ -52,7 +53,6 @@ function AddInventory() {
 
 	const [values, setValues] = useState(initialValues);
 
-	// accessing and saving of form data
 	const handleInputChange = (event) => {
 		const { name, value } = event.target;
 
