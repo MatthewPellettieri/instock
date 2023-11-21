@@ -53,23 +53,6 @@ function AddInventory() {
 			...values,
 			[name]: value,
 		});
-
-		// if (event.target.attributes[0].value === "status") {
-		// 	return;
-		// } else if (event.target.value !== "") {
-		// 	let textAreaDOM = document.getElementsByName(
-		// 		event.target.attributes.name.value
-		// 	);
-		// 	let sub = 0;
-		// 	if (textAreaDOM.length > 1) {
-		// 		sub = 1;
-		// 	}
-		// 	textAreaDOM[sub].classList.remove("AddInventory--error");
-		// 	let errorTextDOM = document.getElementsByName(
-		// 		`${event.target.attributes.name.value}_error`
-		// 	);
-		// 	errorTextDOM[0].classList.remove("AddInventory--errorText");
-		// }
 	};
 
 	const handleSubmit = (event) => {

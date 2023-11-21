@@ -47,7 +47,7 @@ function EditInventory() {
 					let inventoryData = response.data;
 					setValues({
 						...values,
-						"warehouse_id": response.data[0].warehouse_id,
+						warehouse_id: response.data[0].warehouse_id,
 					});
 					if (response.data[0].quantity > 0) {
 						setQuantity(true);
@@ -56,7 +56,7 @@ function EditInventory() {
 					setLoadingInv(true);
 				})
 			);
-	});
+	}, []);
 
 	const inStockHandler = () => {
 		setQuantity(true);
@@ -81,20 +81,6 @@ function EditInventory() {
 			...values,
 			[name]: value,
 		});
-
-		if (event.target.attributes[0].value === "status") {
-			return;
-		}
-		else if (event.target.value !== ""){ 
-			let textAreaDOM = document.getElementsByName(event.target.attributes.name.value);
-			let sub = 0;
-			if (textAreaDOM.length > 1){
-				sub = 1;
-			}
-			textAreaDOM[sub].classList.remove("editInventory--error")
-			let errorTextDOM = document.getElementsByName(`${event.target.attributes.name.value}_error`)
-			errorTextDOM[0].classList.remove("editInventory--errorText")
-		}
 	};
 
 	const handleSubmit = (event) => {
@@ -110,31 +96,31 @@ function EditInventory() {
 		}
 
 		if (values.item_name === "") {
-			let textAreaDOM = document.getElementsByName("item_name")
-			textAreaDOM[0].classList.add("editInventory--error")
-			let errorTextDOM = document.getElementsByName(`item_name_error`)
-			errorTextDOM[0].classList.add("editInventory--errorText")
+			let textAreaDOM = document.getElementsByName("item_name");
+			textAreaDOM[0].classList.add("editInventory--error");
+			let errorTextDOM = document.getElementsByName(`item_name_error`);
+			errorTextDOM[0].classList.add("editInventory--errorText");
 		}
 
 		if (values.description === "") {
-			let textAreaDOM = document.getElementsByName("description")
-			textAreaDOM[1].classList.add("editInventory--error")
-			let errorTextDOM = document.getElementsByName(`description_error`)
-			errorTextDOM[0].classList.add("editInventory--errorText")
+			let textAreaDOM = document.getElementsByName("description");
+			textAreaDOM[1].classList.add("editInventory--error");
+			let errorTextDOM = document.getElementsByName(`description_error`);
+			errorTextDOM[0].classList.add("editInventory--errorText");
 		}
 
 		if (values.category === "" || values.category === "Please Select") {
-			let textAreaDOM = document.getElementsByName("category")
-			textAreaDOM[0].classList.add("editInventory--error")
-			let errorTextDOM = document.getElementsByName(`category_error`)
-			errorTextDOM[0].classList.add("editInventory--errorText")
+			let textAreaDOM = document.getElementsByName("category");
+			textAreaDOM[0].classList.add("editInventory--error");
+			let errorTextDOM = document.getElementsByName(`category_error`);
+			errorTextDOM[0].classList.add("editInventory--errorText");
 		}
 
 		if (values.warehouse_id === "") {
-			let textAreaDOM = document.getElementsByName("warehouse_id")
-			textAreaDOM[0].classList.add("editInventory--error")
-			let errorTextDOM = document.getElementsByName(`warehouse_id_error`)
-			errorTextDOM[0].classList.add("editInventory--errorText")
+			let textAreaDOM = document.getElementsByName("warehouse_id");
+			textAreaDOM[0].classList.add("editInventory--error");
+			let errorTextDOM = document.getElementsByName(`warehouse_id_error`);
+			errorTextDOM[0].classList.add("editInventory--errorText");
 		}
 
 		if (id) {
@@ -147,7 +133,7 @@ function EditInventory() {
 				.catch((err) => {
 					// alert("failed to edit item");
 					alert(err);
-					console.log(values)
+					console.log(values);
 				});
 		}
 	};
@@ -188,7 +174,10 @@ function EditInventory() {
 								value={values.item_name}
 								onChange={handleInputChange}
 								className="editInventory__details-input-1"></input>
-								<p className="editInventory--noerrorText" name="item_name_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
+							<p className="editInventory--noerrorText" name="item_name_error">
+								<img src={errorIcon} alt="errorIcon" />
+								This field is required
+							</p>
 
 							<h3 className="editInventory__form-header">Description</h3>
 							<textarea
@@ -197,9 +186,13 @@ function EditInventory() {
 								value={values.description}
 								onChange={handleInputChange}
 								className="editInventory__details-input"
-								rows="5"
-								placeholder='This 50", 4K LED TV provides a crystal-clear picture and vivid colors'></textarea>
-								<p className="editInventory--noerrorText" name="description_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
+								rows="5"></textarea>
+							<p
+								className="editInventory--noerrorText"
+								name="description_error">
+								<img src={errorIcon} alt="errorIcon" />
+								This field is required
+							</p>
 
 							<div className="editInventory__details-dropdown">
 								<h3 className="editInventory__form-header">Category</h3>
@@ -213,7 +206,10 @@ function EditInventory() {
 										<option>{data.category}</option>
 									))}
 								</select>
-								<p className="editInventory--noerrorText" name="category_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
+								<p className="editInventory--noerrorText" name="category_error">
+									<img src={errorIcon} alt="errorIcon" />
+									This field is required
+								</p>
 							</div>
 						</form>
 					</div>
@@ -258,8 +254,7 @@ function EditInventory() {
 										name="quantity"
 										value={values.quantity}
 										onChange={handleInputChange}
-										className="editInventory__details-input-1"
-										placeholder="0"></input>
+										className="editInventory__details-input-1"></input>
 								</>
 							)}
 
@@ -282,7 +277,12 @@ function EditInventory() {
 											</option>
 										))}
 								</select>
-								<p className="editInventory--noerrorText" name="warehouse_id_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
+								<p
+									className="editInventory--noerrorText"
+									name="warehouse_id_error">
+									<img src={errorIcon} alt="errorIcon" />
+									This field is required
+								</p>
 							</div>
 						</form>
 					</div>
