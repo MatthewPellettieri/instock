@@ -5,9 +5,12 @@ import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import axios from "axios";
 
 function InventoryItem() {
+	// sets id to id in search bar
 	const { id } = useParams();
+
 	const [currentItem, setCurrentItem] = useState({});
 	const [warehouseName, setWarehouseName] = useState("");
+
 	useEffect(() => {
 		const staticData = {
 			item_name: "Item Not Found",
@@ -16,6 +19,7 @@ function InventoryItem() {
 			status: "Out of Stock",
 			quantity: 0,
 		};
+		// GET logic for item and warehouse 
 		axios
 			.get(`http://localhost:8080/api/inventories/${id}`)
 			.then((res) => {
@@ -35,6 +39,7 @@ function InventoryItem() {
 	}, [id]);
 
 	let navigate = useNavigate();
+	// redirects to edit item clicked
 	const clickHandler = (event) => {
 		event.preventDefault();
 		navigate(`/inventory/${id}/edit`);
