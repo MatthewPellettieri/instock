@@ -44,6 +44,13 @@ function EditInventory() {
 			.then(
 				axios.get(`${inventoryApi}/${id}`).then((response) => {
 					let inventoryData = response.data;
+					setValues({
+						...values,
+						"warehouse_id": response.data[0].warehouse_id,
+					});
+					if (response.data[0].quantity > 0) {
+						setQuantity(true);
+					}
 					setInventoryData(inventoryData);
 					setLoadingInv(true);
 				})
@@ -77,6 +84,9 @@ function EditInventory() {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		if (!quantity) {
+			values.quantity = "0";
+		}
 		if (values.quantity === "") {
 			values.quantity = "0";
 		}
@@ -91,8 +101,10 @@ function EditInventory() {
 					alert(`${response.data.item_name} edited`);
 					navigate(-1);
 				})
-				.catch(() => {
-					alert("failed to edit item");
+				.catch((err) => {
+					// alert("failed to edit item");
+					alert(err);
+					console.log(values)
 				});
 		}
 	};
