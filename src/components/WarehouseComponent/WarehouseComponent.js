@@ -19,6 +19,7 @@ export default function WarehouseComponent({
 }) {
 	// modal control
 	const [modal, setModal] = useState(false);
+	// modal toggle switch
 	const toggleModal = () => {
 		setModal(!modal);
 	};
@@ -31,6 +32,7 @@ export default function WarehouseComponent({
 	return (
 		<>
 			<section className="warehouseCard">
+				{/* renders if modal is active */}
 				{modal === true && (
 					<DeleteWarehouseModal
 						deleteWarehouse={() => deleteWarehouse(id)}

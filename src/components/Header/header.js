@@ -15,6 +15,7 @@ function Header() {
 				</Link>
 				<nav className="button--container">
 					<NavLink to={"/warehouse"} className="navLink">
+						{/* adds styling for route that is active */}
 						{({ isActive }) => (
 							<button className={isActive ? "active" : "nav__button"}>
 								Warehouses
@@ -22,6 +23,7 @@ function Header() {
 						)}
 					</NavLink>
 					<NavLink to={"/inventory"} className="navLink">
+						{/* adds styling for route that is active */}
 						{({ isActive }) => (
 							<button className={isActive ? "active" : "nav__button"}>
 								Inventory

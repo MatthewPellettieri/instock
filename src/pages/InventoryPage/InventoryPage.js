@@ -8,14 +8,19 @@ import InventoryCard from "../../components/InventoryCard/InventoryCard";
 function InventoryPage() {
 	const apiURL = "http://localhost:8080/api/inventories/";
 
+	// state that holds the data for inventory page
 	const [invData, setInvData] = useState();
 
+	// refreshes page for delete request
 	const updatePage = () => {
 		axios.get(apiURL).then((res) => {
 			setInvData(res.data);
 		});
 	};
+
 	const navigate = useNavigate();
+
+	// delete logic
 	const deleteItem = (id) => {
 		axios
 			.delete(apiURL + id)
@@ -27,6 +32,7 @@ function InventoryPage() {
 			});
 	};
 
+	// Renders the data for inventory page from API
 	useEffect(() => {
 		axios
 			.get(apiURL)
@@ -38,17 +44,16 @@ function InventoryPage() {
 			});
 	}, []);
 
+	// redirects to add warehouse
 	const handleClick = () => {
 		navigate("/inventory/add");
 	};
-
-	// search functionality
+	// search functionality 
 	const [searchQuery, setSearchQuery] = useState("");
 
 	const handleSearch = (e) => {
 		return setSearchQuery(e.target.value.toLocaleLowerCase());
 	};
-
 	const searchFilter = (data) => {
 		return data.filter((item) => {
 			return (
@@ -58,7 +63,7 @@ function InventoryPage() {
 			);
 		});
 	};
-
+	// loading data notification
 	if (!invData) {
 		console.log("loading data");
 	} else {

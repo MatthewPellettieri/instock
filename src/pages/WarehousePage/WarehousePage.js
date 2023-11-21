@@ -8,11 +8,9 @@ import axios from "axios";
 function WarehousePage() {
   // search functionality
   const [searchQuery, setSearchQuery] = useState("");
-
   const handleSearch = (e) => {
     return setSearchQuery(e.target.value.toLocaleLowerCase());
   };
-
   const searchFilter = (data) => {
     return data.filter((warehouse) => {
       return (
@@ -26,17 +24,21 @@ function WarehousePage() {
       );
     });
   };
+
   const navigate = useNavigate();
   const apiURL = "http://localhost:8080/api/warehouses/";
 
+  // state that holds warehouse data 
   const [wareData, setWareData] = useState();
 
+  // Refreshes page on delete request
   const updatePage = () => {
     axios.get(apiURL).then((res) => {
       setWareData(res.data);
     });
   };
 
+  // delete logic 
   const deleteWarehouse = (id) => {
     console.log(id);
     axios
@@ -49,6 +51,7 @@ function WarehousePage() {
       });
   };
 
+  // renders warehouse data from API
   useEffect(() => {
     axios
       .get(apiURL)
@@ -60,10 +63,12 @@ function WarehousePage() {
       });
   }, []);
 
+  // redirects to add warehouse
   const clickHandler = () => {
     navigate("/warehouse/add");
   };
 
+  // loading data notification 
   if (!wareData) {
     console.log("loading data");
   } else {
