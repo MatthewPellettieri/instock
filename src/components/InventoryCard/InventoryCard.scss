@@ -1,6 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/animations" as *;
+// all --inventoryPage classes are only displayed on /inventory
 
 .inventoryCard {
 	padding: 1rem;
