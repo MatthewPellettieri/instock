@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
+// these are replaced by api data and saved in state. read on post to send data to api
 const initialValues = {
 	item_name: "",
 	description: "",
@@ -17,9 +18,17 @@ const initialValues = {
 function EditInventory() {
 	let { id } = useParams();
 
+	const navigate = useNavigate();
+
+	const clickHandler = () => {
+		navigate(-1);
+	};
+
 	const [quantity, setQuantity] = useState(false);
 	const [warehouseData, setWarehouseData] = useState([]);
 	const [inventoryData, setInventoryData] = useState([]);
+
+	// check to see if all data is loaded
 	const [loadingWare, setLoadingWare] = useState(false);
 	const [loadingInv, setLoadingInv] = useState(false);
 
@@ -49,6 +58,7 @@ function EditInventory() {
 						...values,
 						warehouse_id: response.data[0].warehouse_id,
 					});
+					// controls initial render of quantity field
 					if (response.data[0].quantity > 0) {
 						setQuantity(true);
 					}
@@ -58,6 +68,7 @@ function EditInventory() {
 			);
 	}, []);
 
+	// controls whether quantity field is rendered
 	const inStockHandler = () => {
 		setQuantity(true);
 	};
@@ -66,14 +77,9 @@ function EditInventory() {
 		setQuantity(false);
 	};
 
-	const navigate = useNavigate();
-
-	const clickHandler = () => {
-		navigate(-1);
-	};
-
 	const [values, setValues] = useState(initialValues);
 
+	// accessing and saving of form data
 	const handleInputChange = (event) => {
 		const { name, value } = event.target;
 
@@ -85,6 +91,7 @@ function EditInventory() {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		// form validation
 		if (!quantity) {
 			values.quantity = "0";
 		}
@@ -123,6 +130,7 @@ function EditInventory() {
 			errorTextDOM[0].classList.add("editInventory--errorText");
 		}
 
+		// post request
 		if (id) {
 			axios
 				.put(`http://localhost:8080/api/inventories/${id}`, values)
@@ -131,7 +139,6 @@ function EditInventory() {
 					navigate(-1);
 				})
 				.catch((err) => {
-					// alert("failed to edit item");
 					alert(err);
 					console.log(values);
 				});
@@ -141,6 +148,7 @@ function EditInventory() {
 	if (!loadingInv || !loadingWare) {
 		console.log("loading data");
 	} else {
+		// once data is loaded . replace initial values with api data
 		const currentWarehouse = warehouseData.filter((warehouse) => {
 			return inventoryData[0].warehouse_id === warehouse.id;
 		});
@@ -246,6 +254,7 @@ function EditInventory() {
 								</div>
 							</div>
 
+							{/* only renders if quantity is true. this is set by radio buttons */}
 							{quantity && (
 								<>
 									<h3 className="editInventory__form-header">Quantity</h3>
@@ -265,7 +274,6 @@ function EditInventory() {
 									value={values.warehouse_id}
 									onChange={handleInputChange}
 									className="editInventory__details-drop-down">
-									{/* its not get warehouse id from placeholder */}
 									<option value={currentWarehouse[0].id}>
 										{currentWarehouse[0].warehouse_name}
 									</option>

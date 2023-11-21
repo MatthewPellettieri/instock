@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+// these are edited in state and read to send data to api
 const initialValues = {
 	item_name: "",
 	description: "",
@@ -17,6 +18,11 @@ const initialValues = {
 function AddInventory() {
 	const [quantity, setQuantity] = useState(false);
 	const [warehouseData, setWarehouseData] = useState([]);
+
+	const navigate = useNavigate();
+	const clickHandler = () => {
+		navigate(-1);
+	};
 
 	const invCategory = [
 		{ id: 1, category: "Electronics" },
@@ -46,6 +52,7 @@ function AddInventory() {
 
 	const [values, setValues] = useState(initialValues);
 
+	// accessing and saving of form data
 	const handleInputChange = (event) => {
 		const { name, value } = event.target;
 
@@ -57,6 +64,7 @@ function AddInventory() {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		// form validation
 		if (values.quantity === "") {
 			values.quantity = "0";
 		}
@@ -92,6 +100,7 @@ function AddInventory() {
 			errorTextDOM[0].classList.add("AddInventory--errorText");
 		}
 
+		// post request
 		axios
 			.post(inventoryApi, values)
 			.then((response) => {
@@ -101,12 +110,6 @@ function AddInventory() {
 			.catch(() => {
 				alert("failed to add item");
 			});
-	};
-
-	const navigate = useNavigate();
-
-	const clickHandler = () => {
-		navigate(-1);
 	};
 
 	return (
@@ -203,6 +206,7 @@ function AddInventory() {
 							</div>
 						</div>
 
+						{/* only renders if quantity is true. this is set by radio buttons */}
 						{quantity && (
 							<>
 								<h3 className="AddInventory__form-header">Quantity</h3>
