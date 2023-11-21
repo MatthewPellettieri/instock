@@ -1,4 +1,5 @@
 import backButton from "../../assets/Icons/arrow_back-24px.svg";
+import errorIcon from "../../assets/Icons/error-24px.svg";
 import "./EditInventory.scss";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -55,7 +56,7 @@ function EditInventory() {
 					setLoadingInv(true);
 				})
 			);
-	}, []);
+	});
 
 	const inStockHandler = () => {
 		setQuantity(true);
@@ -80,6 +81,20 @@ function EditInventory() {
 			...values,
 			[name]: value,
 		});
+
+		if (event.target.attributes[0].value === "status") {
+			return;
+		}
+		else if (event.target.value !== ""){ 
+			let textAreaDOM = document.getElementsByName(event.target.attributes.name.value);
+			let sub = 0;
+			if (textAreaDOM.length > 1){
+				sub = 1;
+			}
+			textAreaDOM[sub].classList.remove("editInventory--error")
+			let errorTextDOM = document.getElementsByName(`${event.target.attributes.name.value}_error`)
+			errorTextDOM[0].classList.remove("editInventory--errorText")
+		}
 	};
 
 	const handleSubmit = (event) => {
@@ -92,6 +107,34 @@ function EditInventory() {
 		}
 		if (values.quantity === "0") {
 			values.status = "Out of Stock";
+		}
+
+		if (values.item_name === "") {
+			let textAreaDOM = document.getElementsByName("item_name")
+			textAreaDOM[0].classList.add("editInventory--error")
+			let errorTextDOM = document.getElementsByName(`item_name_error`)
+			errorTextDOM[0].classList.add("editInventory--errorText")
+		}
+
+		if (values.description === "") {
+			let textAreaDOM = document.getElementsByName("description")
+			textAreaDOM[1].classList.add("editInventory--error")
+			let errorTextDOM = document.getElementsByName(`description_error`)
+			errorTextDOM[0].classList.add("editInventory--errorText")
+		}
+
+		if (values.category === "" || values.category === "Please Select") {
+			let textAreaDOM = document.getElementsByName("category")
+			textAreaDOM[0].classList.add("editInventory--error")
+			let errorTextDOM = document.getElementsByName(`category_error`)
+			errorTextDOM[0].classList.add("editInventory--errorText")
+		}
+
+		if (values.warehouse_id === "") {
+			let textAreaDOM = document.getElementsByName("warehouse_id")
+			textAreaDOM[0].classList.add("editInventory--error")
+			let errorTextDOM = document.getElementsByName(`warehouse_id_error`)
+			errorTextDOM[0].classList.add("editInventory--errorText")
 		}
 
 		if (id) {
@@ -145,6 +188,7 @@ function EditInventory() {
 								value={values.item_name}
 								onChange={handleInputChange}
 								className="editInventory__details-input-1"></input>
+								<p className="editInventory--noerrorText" name="item_name_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
 
 							<h3 className="editInventory__form-header">Description</h3>
 							<textarea
@@ -155,6 +199,7 @@ function EditInventory() {
 								className="editInventory__details-input"
 								rows="5"
 								placeholder='This 50", 4K LED TV provides a crystal-clear picture and vivid colors'></textarea>
+								<p className="editInventory--noerrorText" name="description_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
 
 							<div className="editInventory__details-dropdown">
 								<h3 className="editInventory__form-header">Category</h3>
@@ -168,6 +213,7 @@ function EditInventory() {
 										<option>{data.category}</option>
 									))}
 								</select>
+								<p className="editInventory--noerrorText" name="category_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
 							</div>
 						</form>
 					</div>
@@ -236,6 +282,7 @@ function EditInventory() {
 											</option>
 										))}
 								</select>
+								<p className="editInventory--noerrorText" name="warehouse_id_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
 							</div>
 						</form>
 					</div>

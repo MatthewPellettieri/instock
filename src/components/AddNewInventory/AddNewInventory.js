@@ -54,7 +54,10 @@ function AddInventory() {
 			[name]: value,
 		});
 
-		if (event.target.value !== ""){
+		if (event.target.attributes[0].value === "status") {
+			return;
+		}
+		else if (event.target.value !== ""){ 
 			let textAreaDOM = document.getElementsByName(event.target.attributes.name.value);
 			let sub = 0;
 			if (textAreaDOM.length > 1){
