@@ -1,4 +1,5 @@
 import backButton from "../../assets/Icons/arrow_back-24px.svg";
+import errorIcon from "../../assets/Icons/error-24px.svg";
 import "./AddNewInventory.scss";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -52,6 +53,17 @@ function AddInventory() {
 			...values,
 			[name]: value,
 		});
+
+		if (event.target.value !== ""){
+			let textAreaDOM = document.getElementsByName(event.target.attributes.name.value);
+			let sub = 0;
+			if (textAreaDOM.length > 1){
+				sub = 1;
+			}
+			textAreaDOM[sub].classList.remove("AddInventory--error")
+			let errorTextDOM = document.getElementsByName(`${event.target.attributes.name.value}_error`)
+			errorTextDOM[0].classList.remove("AddInventory--errorText")
+		}
 	};
 
 	const handleSubmit = (event) => {
@@ -63,6 +75,35 @@ function AddInventory() {
 			values.status = "Out of Stock";
 		}
 
+		if (values.item_name === "") {
+			let textAreaDOM = document.getElementsByName("item_name")
+			textAreaDOM[0].classList.add("AddInventory--error")
+			let errorTextDOM = document.getElementsByName(`item_name_error`)
+			errorTextDOM[0].classList.add("AddInventory--errorText")
+		}
+
+		if (values.description === "") {
+			let textAreaDOM = document.getElementsByName("description")
+			textAreaDOM[1].classList.add("AddInventory--error")
+			let errorTextDOM = document.getElementsByName(`description_error`)
+			errorTextDOM[0].classList.add("AddInventory--errorText")
+		}
+
+		if (values.category === "") {
+			let textAreaDOM = document.getElementsByName("category")
+			textAreaDOM[0].classList.add("AddInventory--error")
+			let errorTextDOM = document.getElementsByName(`category_error`)
+			errorTextDOM[0].classList.add("AddInventory--errorText")
+		}
+
+		if (values.warehouse_id === "") {
+			let textAreaDOM = document.getElementsByName("warehouse_id")
+			textAreaDOM[0].classList.add("AddInventory--error")
+			let errorTextDOM = document.getElementsByName(`warehouse_id_error`)
+			errorTextDOM[0].classList.add("AddInventory--errorText")
+		}
+
+		
 		axios
 			.post(inventoryApi, values)
 			.then((response) => {
@@ -103,6 +144,7 @@ function AddInventory() {
 							onChange={handleInputChange}
 							className="AddInventory__details-input-1"
 							placeholder="Item Name"></input>
+							<p className="AddInventory--noerrorText" name="item_name_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
 
 						<h3 className="AddInventory__form-header">Description</h3>
 						<textarea
@@ -113,6 +155,7 @@ function AddInventory() {
 							className="AddInventory__details-input"
 							rows="5"
 							placeholder="Please enter a brief item description"></textarea>
+							<p className="AddInventory--noerrorText" name="description_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
 
 						<div className="AddInventory__details-dropdown">
 							<h3 className="AddInventory__form-header">Category</h3>
@@ -126,6 +169,7 @@ function AddInventory() {
 									<option key={data.id}>{data.category}</option>
 								))}
 							</select>
+							<p className="AddInventory--noerrorText" name="category_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>		
 						</div>
 					</form>
 				</div>
@@ -189,6 +233,7 @@ function AddInventory() {
 									</option>
 								))}
 							</select>
+							<p className="AddInventory--noerrorText" name="warehouse_id_error"><img src={errorIcon} alt="errorIcon"/>This feild is required</p>
 						</div>
 					</form>
 				</div>

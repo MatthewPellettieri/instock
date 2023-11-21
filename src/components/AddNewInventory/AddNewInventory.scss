@@ -3,6 +3,7 @@
 
 @include mobile {
 	.AddInventory {
+
 		&__header-back-button {
 			&:hover {
 				cursor: pointer;
@@ -261,6 +262,21 @@
 			height: 3rem;
 			text-align: center;
 			padding-top: 0.5rem;
+		}
+
+		&--error {
+			border: none;
+			outline: 1px solid #C94515;
+		}
+		
+		&--noerrorText{
+			color:#C94515;
+			font: 0.75rem "Titillium";
+			display:none;
+		}
+
+		&--errorText{
+			display:flex;
 		}
 	}
 }
