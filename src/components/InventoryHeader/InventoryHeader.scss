@@ -1,5 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+// all --inventoryPage classes are only displayed on /inventory
 
 .inventoryHeader {
 	display: none;

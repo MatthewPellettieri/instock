@@ -2,6 +2,7 @@ import "./InventoryHeader.scss";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 
 function InventoryHeader() {
+	// displays certain fields only when URL is inventory, by adding --inventoryPage as class
 	const ifInventoryPage = () => {
 		if (window.location.href === "http://localhost:3000/inventory") {
 			return true;
